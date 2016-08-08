@@ -1,3 +1,8 @@
 {
-
+  "menu": [
+    {
+      "text": "Admin",
+      "module": "path/to/module"
+    }
+  ]
 }
