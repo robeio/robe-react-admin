@@ -4,7 +4,7 @@ import Grid from "react-bootstrap/lib/Grid";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 
-class WelcomePage extends ShallowComponent {
+export default class WelcomePage extends ShallowComponent {
     constructor(props) {
         super(props);
     };
@@ -22,5 +22,3 @@ class WelcomePage extends ShallowComponent {
         );
     };
 }
-
-module.exports = WelcomePage;

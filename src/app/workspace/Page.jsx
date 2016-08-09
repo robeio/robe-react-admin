@@ -5,7 +5,7 @@ import Panel from "react-bootstrap/lib/Panel";
 import Alert from "react-bootstrap/lib/Alert";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 
-class Page extends ShallowComponent {
+export default class Page extends ShallowComponent {
 
     static propTypes = {
         header: React.PropTypes.string.isRequired,
@@ -45,8 +45,4 @@ class Page extends ShallowComponent {
         }
 
     }
-
-
 }
-
-module.exports = Page;

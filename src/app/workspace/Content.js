@@ -4,12 +4,11 @@ import Header from "app/workspace/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
 
-class Content extends ShallowComponent {
+export default class Content extends ShallowComponent {
     constructor(props) {
         super(props);
         this.state = {
             toggled: false,
-            value: undefined,
             windowHeight: window.innerHeight
             || document.documentElement.clientHeight
             || document.body.clientHeight
@@ -23,7 +22,9 @@ class Content extends ShallowComponent {
                 <Header open={this.__onMenuOpenClick}/>
                 <Col id="wrapper" className={toggled}>
                     <Col id="sidebar-wrapper">
-                        <SideMenu items={this.props.menu[0]} value={this.state.value} onChange={this.handleChange.bind(this)}/>
+                        <Col className="SideMenu-wrapper">
+                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"} onChange={this.handleChange.bind(this)}/>
+                        </Col>
                     </Col>
                     <Col style={{height:this.state.windowHeight,overflowY:"auto"}}>
                         <Col id="page-content-wrapper" onClick={this.__onPageClick}>
@@ -85,15 +86,17 @@ class Content extends ShallowComponent {
                 });
             }
         }.bind(this));
+
+        var initialSelection = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1);
+        if (initialSelection) {
+            this.props.router.push(initialSelection);
+        }
     };
 
     componentWillUnmount = () => {
         this.state.mql.removeListener(this.__mediaQueryChanged);
         this.props.router.listen(null);
         window.removeEventListener('resize', this.handleResize);
-
     };
 
 }
-
-module.exports = Content;

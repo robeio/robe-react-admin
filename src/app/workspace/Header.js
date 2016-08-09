@@ -8,7 +8,7 @@ import Col from "react-bootstrap/lib/Col";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 import Link from "react-router/lib/Link";
 
-class Header extends ShallowComponent {
+export default class Header extends ShallowComponent {
     constructor(props) {
         super(props);
 
@@ -55,9 +55,4 @@ class Header extends ShallowComponent {
     __onExit = ()=> {
     };
 
-    componentDidMount = ()=> {
-    };
-
 }
-
-module.exports = Header;

@@ -11,6 +11,12 @@ class HasAuthorization extends ShallowComponent {
         super(props);
     }
 
+    static importComponent(component) {
+        if (component.default) {
+            return component.default;
+        }
+        return component;
+    }
     render() {
         this.ROUTES = [];
         let routes = this.__wrap(this.props.menu);
@@ -22,7 +28,7 @@ class HasAuthorization extends ShallowComponent {
         const INDEX_ROUTE = {
             getComponent(location, cb) {
                 require.ensure([], (require) => {
-                    cb(null, require("app/workspace/WelcomePage"))
+                    cb(null, HasAuthorization.importComponent(require("app/workspace/WelcomePage")))
                 })
             }
         };
@@ -31,7 +37,7 @@ class HasAuthorization extends ShallowComponent {
             path: "*",
             getComponent(location, cb) {
                 require.ensure([], (require) => {
-                    cb(null, require("app/Common/NotFound"))
+                    cb(null, HasAuthorization.importComponent(require("app/common/NotFound")))
                 })
             }
         };
@@ -44,7 +50,7 @@ class HasAuthorization extends ShallowComponent {
         return ({
             menu: routes,
             path: window.applicationRootPath,
-            component: require("app/workspace/Workspace"),
+            component: HasAuthorization.importComponent(require("app/workspace/Workspace")),
             indexRoute: INDEX_ROUTE,
             childRoutes: this.ROUTES
         });
@@ -61,7 +67,7 @@ class HasAuthorization extends ShallowComponent {
                     path: item.module,
                     getComponent(location, cb) {
                         require.ensure([], (require) => {
-                            cb(null, require(path))
+                            cb(null, HasAuthorization.importComponent(require(path)))
                         })
                     }
                 };

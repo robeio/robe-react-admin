@@ -8,7 +8,7 @@ import BrowserHistory from "react-router/lib/browserHistory";
 import Main from "app/Common/Main";
 import Login from "app/Login/Login";
 
-class NoAuthorization extends ShallowComponent {
+export default class NoAuthorization extends ShallowComponent {
 
     constructor(props) {
         super(props);
@@ -27,5 +27,3 @@ class NoAuthorization extends ShallowComponent {
     }
 
 }
-
-module.exports = NoAuthorization;

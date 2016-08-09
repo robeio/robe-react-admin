@@ -5,7 +5,7 @@ import "react-notifications/lib/notifications.css";
 import NotificationContainer from "react-notifications/lib/NotificationContainer";
 
 
-class Workspace extends ShallowComponent {
+export default class Workspace extends ShallowComponent {
 
     static contextTypes = {
         router: React.PropTypes.object.isRequired
@@ -24,6 +24,4 @@ class Workspace extends ShallowComponent {
         );
     };
 }
-
-module.exports = Workspace;
 
