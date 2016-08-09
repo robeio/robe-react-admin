@@ -7,13 +7,13 @@ class Switch extends ShallowComponent {
         super(props);
         this.state = {
             hasAuth: (cookie.load("username") === "demo" && cookie.load("password") === "demo"),
-            menu: []
+            menu: undefined
         };
     }
 
     render() {
         if (this.state.hasAuth) {
-            if (this.state.menu.length == 0) {
+            if (!this.state.menu) {
                 return (<span>Loading please wait</span>);
             } else {
                 let HasAuthorization = require("app/HasAuthorization");

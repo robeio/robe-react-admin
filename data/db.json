@@ -1,8 +1,127 @@
 {
   "menu": [
     {
-      "text": "Admin",
-      "module": "path/to/module"
+      "oid": null,
+      "lastUpdated": 0,
+      "text": "Menü",
+      "path": "root",
+      "index": 1,
+      "parentOid": null,
+      "module": "Root",
+      "icon": null,
+      "items": [
+        {
+          "oid": null,
+          "lastUpdated": 0,
+          "text": "Yönetici",
+          "path": "Manager",
+          "index": 1,
+          "parentOid": null,
+          "module": "Manager",
+          "icon": "fa-cogs",
+          "items": [
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Sistem Bilgileri",
+              "path": "app/modules/dash/Dash",
+              "index": 0,
+              "parentOid": null,
+              "module": "Dashboard",
+              "icon": "fa-tachometer",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Mail Şablon Yönetimi",
+              "path": "app/modules/mailtemplate/MailTemplate",
+              "index": 0,
+              "parentOid": null,
+              "module": "MailTemplate",
+              "icon": "fa-envelope",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "İş Zamanlama Yönetimi",
+              "path": "app/modules/quartz/QuartzJob",
+              "index": 0,
+              "parentOid": null,
+              "module": "QuartzJob",
+              "icon": "fa-bell",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Sistem Parametre Yönetimi",
+              "path": "app/modules/systemparameter/SystemParameter",
+              "index": 0,
+              "parentOid": null,
+              "module": "SystemParameter",
+              "icon": "fa-steam",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Kullanıcı Yönetimi",
+              "path": "app/modules/user/User",
+              "index": 1,
+              "parentOid": null,
+              "module": "User",
+              "icon": "fa-users",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Profil Bilgileri Yönetimi",
+              "path": "app/modules/profile/Profile",
+              "index": 1,
+              "parentOid": null,
+              "module": "Profile",
+              "icon": "fa-user",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Menü Yönetimi",
+              "path": "app/modules/menu/Menu",
+              "index": 1,
+              "parentOid": null,
+              "module": "Menu",
+              "icon": "fa-tasks",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "Rol Yönetimi",
+              "path": "app/modules/role/Role",
+              "index": 1,
+              "parentOid": null,
+              "module": "Role",
+              "icon": "fa-user-secret",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "İzin Yönetimi",
+              "path": "app/modules/permission/Permission",
+              "index": 1,
+              "parentOid": null,
+              "module": "Permission",
+              "icon": "fa-check-square-o",
+              "items": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }
