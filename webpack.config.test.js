@@ -7,7 +7,9 @@ const commonSettings = require("./webpack.config.common.js")("/site", "/build", 
  * Json Server
  * @type {config|exports|module.exports}
  */
-const ConfigUtils = require("./ConfigUtil");
+const JsonServer = require("./config/JsonServer");
+const server = new JsonServer(3001);
+server.route("data/db.json").start();
 
 /**
  * @link https://webpack.github.io/docs/configuration.html#cache
@@ -56,7 +58,6 @@ commonSettings.isparta = {
     }
 };
 
-ConfigUtils.createJsonServer(3000, commonSettings.paths.root + "/testdb.json", "/files", "temp");
 module.exports = function configure(config) {
     config.set({
         captureTimeout: 3000,

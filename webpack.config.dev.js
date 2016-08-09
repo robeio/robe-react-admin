@@ -1,7 +1,14 @@
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CachePlugin = require("webpack/lib/CachePlugin");
-const ConfigUtils = require("./ConfigUtil");
+
+/**
+ * Json Server
+ * @type {config|exports|module.exports}
+ */
+const JsonServer = require("./config/JsonServer");
+const server = new JsonServer(3001);
+server.route("data/db.json").start();
 
 const webPackConfig = require("./webpack.config.common.js")("/src", "/build", "__test__");
 
@@ -50,7 +57,5 @@ webPackConfig.plugins.push(new CopyWebpackPlugin([
 
 webPackConfig.plugins.push(new CachePlugin({}));
 
-
-ConfigUtils.createJsonServer(3000, "data/db.json");
 
 module.exports = webPackConfig;
