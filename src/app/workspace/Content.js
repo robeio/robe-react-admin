@@ -9,6 +9,7 @@ class Content extends ShallowComponent {
         super(props);
         this.state = {
             toggled: false,
+            value: undefined,
             windowHeight: window.innerHeight
             || document.documentElement.clientHeight
             || document.body.clientHeight
@@ -22,7 +23,7 @@ class Content extends ShallowComponent {
                 <Header open={this.__onMenuOpenClick}/>
                 <Col id="wrapper" className={toggled}>
                     <Col id="sidebar-wrapper">
-                        <SideMenu items={this.props.menu[0]}/>
+                        <SideMenu items={this.props.menu[0]} value={this.state.value} onChange={this.handleChange.bind(this)}/>
                     </Col>
                     <Col style={{height:this.state.windowHeight,overflowY:"auto"}}>
                         <Col id="page-content-wrapper" onClick={this.__onPageClick}>
@@ -32,6 +33,10 @@ class Content extends ShallowComponent {
                 </Col>
             </Col>
         );
+    };
+
+    handleChange = (item: Object) => {
+        this.props.router.push(item.module);
     };
 
     __onPageClick = (ev)=> {

@@ -7,7 +7,7 @@ const CachePlugin = require("webpack/lib/CachePlugin");
  * @type {config|exports|module.exports}
  */
 const JsonServer = require("./config/JsonServer");
-const server = new JsonServer(3001);
+const server = new JsonServer(3000);
 server.route("data/db.json").start();
 
 const webPackConfig = require("./webpack.config.common.js")("/src", "/build", "__test__");
