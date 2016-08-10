@@ -1,0 +1,26 @@
+{
+  "name": "SystemParameterModel",
+  "columns": [
+    {
+      "label": "id",
+      "type": "string",
+      "code": "id",
+      "tooltip": "id",
+      "visible": false
+    },
+    {
+      "label": "Key",
+      "code": "key",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Value",
+      "code": "value",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    }
+  ]
+}

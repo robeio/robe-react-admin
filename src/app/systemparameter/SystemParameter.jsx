@@ -1,21 +1,21 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Page from "app/workspace/Page";
-import MailTemplateModel from "./MailTemplateModel.json";
+import SystemParameterModel from "./SystemParameterModel.json";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
 import Store from "robe-react-commons/lib/stores/Store";
 
 
-export default class MailTemplate extends ShallowComponent {
+export default class SystemParameter extends ShallowComponent {
 
     constructor(props: Object) {
         super(props);
 
         let store = new Store({
             endPoint: new RemoteEndPoint({
-                url: "http://localhost:3000/mailtemplates"
+                url: "http://localhost:3000/systemparameters"
             }),
             idField: "id",
             autoLoad: true,
@@ -23,7 +23,7 @@ export default class MailTemplate extends ShallowComponent {
         });
 
         this.state = {
-            columns: MailTemplateModel.columns,
+            columns: SystemParameterModel.columns,
             store: store,
             showModal: false,
             item: {}
@@ -32,7 +32,7 @@ export default class MailTemplate extends ShallowComponent {
 
     render(): Object {
         return (
-            <Page description={"description"} header={"Mail Template"}>
+            <Page description={"description"} header={"System Parameter "}>
                 <DataGrid
                     toolbar={["create", "edit"]}
                     columns={this.state.columns}
@@ -48,7 +48,7 @@ export default class MailTemplate extends ShallowComponent {
                 />
                 <ModalDataForm
                     ref="detailModal"
-                    header="Mail Template"
+                    header="System Parameter"
                     show={this.state.showModal}
                     onSubmit={this.__onSave}
                     onCancel={this.__onCancel}

@@ -45,23 +45,23 @@
             {
               "oid": null,
               "lastUpdated": 0,
-              "text": "İş Zamanlama Yönetimi",
-              "path": "app/quartz/QuartzJob",
-              "index": 0,
-              "parentOid": null,
-              "module": "QuartzJob",
-              "icon": "fa-bell",
-              "items": []
-            },
-            {
-              "oid": null,
-              "lastUpdated": 0,
               "text": "Sistem Parametre Yönetimi",
               "path": "app/systemparameter/SystemParameter",
               "index": 0,
               "parentOid": null,
               "module": "SystemParameter",
               "icon": "fa-steam",
+              "items": []
+            },
+            {
+              "oid": null,
+              "lastUpdated": 0,
+              "text": "İş Zamanlama Yönetimi",
+              "path": "app/quartz/QuartzJob",
+              "index": 0,
+              "parentOid": null,
+              "module": "QuartzJob",
+              "icon": "fa-bell",
               "items": []
             },
             {
@@ -2735,6 +2735,6 @@
       "description": "Returns all TriggerEntity as a collection. (GET /triggers)"
     }
   ],
-  "mailtemplates": [
-  ]
+  "mailtemplates": [],
+  "systemparameters": []
 }
