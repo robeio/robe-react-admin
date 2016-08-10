@@ -1,5 +1,5 @@
 {
-  "menu": [
+  "menus": [
     {
       "oid": null,
       "lastUpdated": 0,
@@ -2734,5 +2734,7 @@
       "group": "QuartzJob",
       "description": "Returns all TriggerEntity as a collection. (GET /triggers)"
     }
+  ],
+  "mailtemplates": [
   ]
 }

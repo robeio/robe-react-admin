@@ -1,0 +1,45 @@
+{
+  "name": "MailTemplate",
+  "columns": [
+    {
+      "label": "id",
+      "type": "string",
+      "code": "id",
+      "tooltip": "id",
+      "visible": false
+    },
+    {
+      "label": "Language",
+      "code": "il",
+      "type": "select",
+      "required": true,
+      "items": [
+        {
+          "value": "TR",
+          "text": "Turkish"
+        },
+        {
+          "value": "EN",
+          "text": "English"
+        },
+        {
+          "value": "KR",
+          "text": "Kurdish"
+        }
+      ]
+    },
+    {
+      "label": "Code",
+      "code": "code",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Template",
+      "code": "template",
+      "type": "editor",
+      "required": true
+    }
+  ]
+}

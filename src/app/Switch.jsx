@@ -29,7 +29,7 @@ class Switch extends ShallowComponent {
     componentDidMount = () => {
         if (this.state.hasAuth) {
             let _readRequest = new AjaxRequest({
-                url: "http://localhost:3000/menu",
+                url: "http://localhost:3000/menus",
                 type: "GET"
             });
 
