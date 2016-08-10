@@ -123,5 +123,2616 @@
         }
       ]
     }
+  ],
+  "users": [
+    {
+      "oid": "ff808081566fa36501566fa37299023f",
+      "lastUpdated": 0,
+      "email": "admin@robe.io",
+      "name": "Super",
+      "surname": "Admin",
+      "password": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e",
+      "active": true,
+      "failCount": 0,
+      "lastLoginTime": 1470809495000,
+      "lastLogoutTime": null,
+      "roleOid": "ff808081566fa36501566fa36f8c0000"
+    }
+  ],
+  "roles": [
+    {
+      "oid": "ff808081566fa36501566fa36f8c0000",
+      "lastUpdated": 0,
+      "code": "io/robe/admin",
+      "name": "Super Admin"
+    }
+  ],
+  "groups": [
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "ActionHistory",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Address",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Approvement",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "BankInformation",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Category",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Common",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Contact",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "CustomFilter",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "DailyStockPrice",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "District",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "FirmType",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "JobEntity",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Language",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "MailTemplate",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Menu",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Merchant",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "MerchantComment",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Message",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Notification",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "OrderPayment",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Orders",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Permission",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "PostAd",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "PostAdPriority",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "PriceRange",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Product",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "ProductMutation",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Province",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "PublicAction",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "QuartzJob",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Role",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Service",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "SigningAuthority",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "Stock",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "SystemParameter",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "UNGROUPED",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "User",
+      "description": null
+    },
+    {
+      "oid": null,
+      "lastUpdated": 0,
+      "path": null,
+      "method": null,
+      "group": "WebService",
+      "description": null
+    }
+  ],
+  "services": [
+    {
+      "oid": "ff808081566fa36501566fa370c40005",
+      "lastUpdated": 0,
+      "path": "/approvements/{id}",
+      "method": "GET",
+      "group": "Approvement",
+      "description": "Returns a Approvement resource matches with the given id. (GET /approvements/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370c80007",
+      "lastUpdated": 0,
+      "path": "/approvements",
+      "method": "POST",
+      "group": "Approvement",
+      "description": "Create as a Approvement resource. (POST /approvements)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370cb0009",
+      "lastUpdated": 0,
+      "path": "/approvements/{id}",
+      "method": "DELETE",
+      "group": "Approvement",
+      "description": "Deletes a single Approvement matches with the given id. (DELETE /approvements/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370ce000b",
+      "lastUpdated": 0,
+      "path": "/approvements/{id}",
+      "method": "PUT",
+      "group": "Approvement",
+      "description": "Updates a single Approvement matches with the given id. (PUT /approvements/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370d1000d",
+      "lastUpdated": 0,
+      "path": "/approvements/{id}",
+      "method": "PATCH",
+      "group": "Approvement",
+      "description": "Updates a single Approvement matches with the given id. (PATCH /approvements/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370d3000f",
+      "lastUpdated": 0,
+      "path": "/approvements",
+      "method": "GET",
+      "group": "Approvement",
+      "description": "Returns all Approvements as a collection. (GET /approvements)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370d40011",
+      "lastUpdated": 0,
+      "path": "/approvements/export",
+      "method": "GET",
+      "group": "Approvement",
+      "description": "Export Approvements resource. (GET /approvements/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370d60013",
+      "lastUpdated": 0,
+      "path": "/bankinformations",
+      "method": "POST",
+      "group": "BankInformation",
+      "description": "Create as a BankInformation resource. (POST /bankinformations)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370d80015",
+      "lastUpdated": 0,
+      "path": "/bankinformations/{id}",
+      "method": "PUT",
+      "group": "BankInformation",
+      "description": "Updates a single BankInformation matches with the given id. (PUT /bankinformations/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370da0017",
+      "lastUpdated": 0,
+      "path": "/bankinformations/current",
+      "method": "GET",
+      "group": "BankInformation",
+      "description": "get current BankInformation (GET /bankinformations/current)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370dc0019",
+      "lastUpdated": 0,
+      "path": "/languages/{id}",
+      "method": "GET",
+      "group": "Language",
+      "description": "Return Language resource. (GET /languages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370de001b",
+      "lastUpdated": 0,
+      "path": "/languages",
+      "method": "POST",
+      "group": "Language",
+      "description": "Create Language resource and return given Language path link at header Location=example/{id]. (POST /languages)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e0001d",
+      "lastUpdated": 0,
+      "path": "/languages/{id}",
+      "method": "DELETE",
+      "group": "Language",
+      "description": "Delete Language resource. (DELETE /languages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e2001f",
+      "lastUpdated": 0,
+      "path": "/languages/{id}",
+      "method": "PUT",
+      "group": "Language",
+      "description": "Update Language resource and matches with the given id. (PUT /languages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e40021",
+      "lastUpdated": 0,
+      "path": "/languages/{id}",
+      "method": "PATCH",
+      "group": "Language",
+      "description": "Update Language resource. (PATCH /languages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e60023",
+      "lastUpdated": 0,
+      "path": "/languages",
+      "method": "GET",
+      "group": "Language",
+      "description": "Returns all Languages as a collection. (GET /languages)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e80025",
+      "lastUpdated": 0,
+      "path": "/tickets/{id}",
+      "method": "GET",
+      "group": "QuartzJob",
+      "description": "Returns a ticket resource with the given id (GET /tickets/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370e90027",
+      "lastUpdated": 0,
+      "path": "/tickets",
+      "method": "POST",
+      "group": "QuartzJob",
+      "description": "Creates a ticket resource. (POST /tickets)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370eb0029",
+      "lastUpdated": 0,
+      "path": "/tickets/{id}",
+      "method": "DELETE",
+      "group": "QuartzJob",
+      "description": "Deletes a ticket resource matches with the given id. (DELETE /tickets/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370ec002b",
+      "lastUpdated": 0,
+      "path": "/tickets/{id}",
+      "method": "PUT",
+      "group": "QuartzJob",
+      "description": "Updates a ticket resource matches with the given id. (PUT /tickets/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370ee002d",
+      "lastUpdated": 0,
+      "path": "/tickets/{id}",
+      "method": "PATCH",
+      "group": "QuartzJob",
+      "description": "Updates a ticket resource matches with the given id. (PATCH /tickets/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370ef002f",
+      "lastUpdated": 0,
+      "path": "/tickets",
+      "method": "GET",
+      "group": "QuartzJob",
+      "description": "Return all tickets as a collection. (GET /tickets)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f10031",
+      "lastUpdated": 0,
+      "path": "/users/{id}",
+      "method": "GET",
+      "group": "User",
+      "description": "Returns a User resource matches with the given id. (GET /users/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f30033",
+      "lastUpdated": 0,
+      "path": "/users",
+      "method": "POST",
+      "group": "User",
+      "description": "Create as a User resource. (POST /users)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f40035",
+      "lastUpdated": 0,
+      "path": "/users/{id}",
+      "method": "DELETE",
+      "group": "User",
+      "description": "Deletes a single User matches with the given id. (DELETE /users/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f60037",
+      "lastUpdated": 0,
+      "path": "/users/{id}",
+      "method": "PUT",
+      "group": "User",
+      "description": "Updates a single User matches with the given id. (PUT /users/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f70039",
+      "lastUpdated": 0,
+      "path": "/users/{id}",
+      "method": "PATCH",
+      "group": "User",
+      "description": "Updates a single User matches with the given id. (PATCH /users/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370f9003b",
+      "lastUpdated": 0,
+      "path": "/users",
+      "method": "GET",
+      "group": "User",
+      "description": "Returns all Users as a collection. (GET /users)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370fb003d",
+      "lastUpdated": 0,
+      "path": "/actionhistory",
+      "method": "GET",
+      "group": "ActionHistory",
+      "description": "Returns all ActionHistory as a collection. (GET /actionhistory)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370fc003f",
+      "lastUpdated": 0,
+      "path": "/actionhistory/export",
+      "method": "GET",
+      "group": "ActionHistory",
+      "description": "Export Category resource. (GET /actionhistory/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa370fe0041",
+      "lastUpdated": 0,
+      "path": "/products/{id}",
+      "method": "GET",
+      "group": "Product",
+      "description": "Returns a Product resource with the matches given id. (GET /products/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371000043",
+      "lastUpdated": 0,
+      "path": "/products",
+      "method": "POST",
+      "group": "Product",
+      "description": "Create a Product resource. (POST /products)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371010045",
+      "lastUpdated": 0,
+      "path": "/products/{id}",
+      "method": "DELETE",
+      "group": "Product",
+      "description": "Delete a Product resource with the matches given id. (DELETE /products/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371030047",
+      "lastUpdated": 0,
+      "path": "/products/{id}",
+      "method": "PUT",
+      "group": "Product",
+      "description": "Update a Product resource with the matches given id. (PUT /products/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371050049",
+      "lastUpdated": 0,
+      "path": "/products/{id}",
+      "method": "PATCH",
+      "group": "Product",
+      "description": "Update a Product resource with the matches given id. (PATCH /products/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37106004b",
+      "lastUpdated": 0,
+      "path": "/products",
+      "method": "GET",
+      "group": "Product",
+      "description": "Returns all Product as a collection. (GET /products)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37108004d",
+      "lastUpdated": 0,
+      "path": "/products/export",
+      "method": "GET",
+      "group": "Product",
+      "description": "Export Product resource. (GET /products/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3710a004f",
+      "lastUpdated": 0,
+      "path": "/products/labels/{parentOid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /products/labels/{parentOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3710c0051",
+      "lastUpdated": 0,
+      "path": "/products/approve",
+      "method": "POST",
+      "group": "Product",
+      "description": "Create a Product resource. (POST /products/approve)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3710f0053",
+      "lastUpdated": 0,
+      "path": "/dailystockprices",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "get filtered stock prices (GET /dailystockprices)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371100055",
+      "lastUpdated": 0,
+      "path": "/dailystockprices/export",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "Export dailystockprices (GET /dailystockprices/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371120057",
+      "lastUpdated": 0,
+      "path": "/dailystockprices/detail/{cats}",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "get filtered stock prices (GET /dailystockprices/detail/{cats})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371140059",
+      "lastUpdated": 0,
+      "path": "/dailystockprices/{cats}",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "get filtered stock prices (GET /dailystockprices/{cats})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37116005b",
+      "lastUpdated": 0,
+      "path": "/dailystockprices/bestsellers",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "get random DailyStockPrice for bestsellers (GET /dailystockprices/bestsellers)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37117005d",
+      "lastUpdated": 0,
+      "path": "/dailystockprices/slider",
+      "method": "GET",
+      "group": "DailyStockPrice",
+      "description": "get filtered stock prices for top slider (GET /dailystockprices/slider)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37119005f",
+      "lastUpdated": 0,
+      "path": "/quartzjobs/{id}",
+      "method": "GET",
+      "group": "JobEntity",
+      "description": "Returns a JobEntity resource with the matches given id. (GET /quartzjobs/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3711b0061",
+      "lastUpdated": 0,
+      "path": "/quartzjobs",
+      "method": "POST",
+      "group": "JobEntity",
+      "description": "Create a JobEntity resource. (POST /quartzjobs)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3711d0063",
+      "lastUpdated": 0,
+      "path": "/quartzjobs/{id}",
+      "method": "DELETE",
+      "group": "JobEntity",
+      "description": "Delete a JobEntity resource with the matches given id. (DELETE /quartzjobs/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3711e0065",
+      "lastUpdated": 0,
+      "path": "/quartzjobs/{id}",
+      "method": "PUT",
+      "group": "JobEntity",
+      "description": "Update a JobEntity resource with the matches given id. (PUT /quartzjobs/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371200067",
+      "lastUpdated": 0,
+      "path": "/quartzjobs/{id}",
+      "method": "PATCH",
+      "group": "JobEntity",
+      "description": "Update a JobEntity resource with the matches given id. (PATCH /quartzjobs/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371210069",
+      "lastUpdated": 0,
+      "path": "/quartzjobs",
+      "method": "GET",
+      "group": "JobEntity",
+      "description": "Returns all JobEntity as a collection. (GET /quartzjobs)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37123006b",
+      "lastUpdated": 0,
+      "path": "/quartzjobs/{id}/triggers",
+      "method": "GET",
+      "group": "JobEntity",
+      "description": "Returns all Trigger as a collection with the matches given job id. (GET /quartzjobs/{id}/triggers)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37124006d",
+      "lastUpdated": 0,
+      "path": "/contacts/{id}",
+      "method": "GET",
+      "group": "Contact",
+      "description": "Returns a Contact resource with the matches given id. (GET /contacts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37126006f",
+      "lastUpdated": 0,
+      "path": "/contacts",
+      "method": "POST",
+      "group": "Contact",
+      "description": "Create a Contact resource. (POST /contacts)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371270071",
+      "lastUpdated": 0,
+      "path": "/contacts/{id}",
+      "method": "DELETE",
+      "group": "Contact",
+      "description": "Delete a Contact resource with the matches given id. (DELETE /contacts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371290073",
+      "lastUpdated": 0,
+      "path": "/contacts/{id}",
+      "method": "PUT",
+      "group": "Contact",
+      "description": "Update a Contact resource with the matches given id. (PUT /contacts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3712b0075",
+      "lastUpdated": 0,
+      "path": "/contacts/{id}",
+      "method": "PATCH",
+      "group": "Contact",
+      "description": "Update a Contact resource with the matches given id. (PATCH /contacts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3712d0077",
+      "lastUpdated": 0,
+      "path": "/contacts",
+      "method": "GET",
+      "group": "Contact",
+      "description": "Returns all Contact as a collection. (GET /contacts)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371300079",
+      "lastUpdated": 0,
+      "path": "/orderpayments/callback",
+      "method": "POST",
+      "group": "OrderPayment",
+      "description": "Payment Callback. (POST /orderpayments/callback)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37132007b",
+      "lastUpdated": 0,
+      "path": "/orderpayments",
+      "method": "POST",
+      "group": "OrderPayment",
+      "description": "Create a OrderPayment resource. (POST /orderpayments)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37133007d",
+      "lastUpdated": 0,
+      "path": "/orderpayments/callback",
+      "method": "GET",
+      "group": "OrderPayment",
+      "description": "Payment Callback. (GET /orderpayments/callback)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37135007f",
+      "lastUpdated": 0,
+      "path": "/orderpayments/validate",
+      "method": "GET",
+      "group": "OrderPayment",
+      "description": "Payment Callback. (GET /orderpayments/validate)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371360081",
+      "lastUpdated": 0,
+      "path": "/merchantcomments",
+      "method": "POST",
+      "group": "MerchantComment",
+      "description": "Create a MerchantComment resource. (POST /merchantcomments)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371380083",
+      "lastUpdated": 0,
+      "path": "/merchantcomments/publics/comments/{id}",
+      "method": "GET",
+      "group": "MerchantComment",
+      "description": "Returns a MerchantComment comments with the matches given id. (GET /merchantcomments/publics/comments/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371390085",
+      "lastUpdated": 0,
+      "path": "/merchantcomments/publics/rating/{id}",
+      "method": "GET",
+      "group": "MerchantComment",
+      "description": "Returns a MerchantComment average rating star with the matches given id. (GET /merchantcomments/publics/rating/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3713b0087",
+      "lastUpdated": 0,
+      "path": "/permissions/{id}",
+      "method": "GET",
+      "group": "Permission",
+      "description": "Returns a permission resource with the given id (GET /permissions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3713d0089",
+      "lastUpdated": 0,
+      "path": "/permissions",
+      "method": "POST",
+      "group": "Permission",
+      "description": "Creates a permission resource. (POST /permissions)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3713e008b",
+      "lastUpdated": 0,
+      "path": "/permissions/{id}",
+      "method": "DELETE",
+      "group": "Permission",
+      "description": "Deletes a permission resource matches with the given id. (DELETE /permissions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37140008d",
+      "lastUpdated": 0,
+      "path": "/permissions/{id}",
+      "method": "PUT",
+      "group": "Permission",
+      "description": "Updates a permission resource matches with the given id. (PUT /permissions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37141008f",
+      "lastUpdated": 0,
+      "path": "/permissions/{id}",
+      "method": "PATCH",
+      "group": "Permission",
+      "description": "Updates a permission resource matches with the given id. (PATCH /permissions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371430091",
+      "lastUpdated": 0,
+      "path": "/permissions",
+      "method": "GET",
+      "group": "Permission",
+      "description": "Return all permissions as a collection. (GET /permissions)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371440093",
+      "lastUpdated": 0,
+      "path": "/permissions/menus",
+      "method": "GET",
+      "group": "Permission",
+      "description": "Get hierarchical menu service for permission (GET /permissions/menus)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371460095",
+      "lastUpdated": 0,
+      "path": "/permissions/group/{groupCode}",
+      "method": "POST",
+      "group": "Permission",
+      "description": "On select group list service and menu service (POST /permissions/group/{groupCode})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371470097",
+      "lastUpdated": 0,
+      "path": "/permissions/{roleOid}",
+      "method": "POST",
+      "group": "Permission",
+      "description": "Create Or Update Service And Menu (POST /permissions/{roleOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371490099",
+      "lastUpdated": 0,
+      "path": "/messages/{id}",
+      "method": "GET",
+      "group": "Message",
+      "description": "Returns a Message resource with the matches given id. (GET /messages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3714b009b",
+      "lastUpdated": 0,
+      "path": "/messages",
+      "method": "POST",
+      "group": "Message",
+      "description": "Create a Message resource. (POST /messages)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3714c009d",
+      "lastUpdated": 0,
+      "path": "/messages/{id}",
+      "method": "DELETE",
+      "group": "Message",
+      "description": "Delete a Message resource with the matches given id. (DELETE /messages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3714e009f",
+      "lastUpdated": 0,
+      "path": "/messages/{id}",
+      "method": "PUT",
+      "group": "Message",
+      "description": "Update a Message resource with the matches given id. (PUT /messages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3714f00a1",
+      "lastUpdated": 0,
+      "path": "/messages/{id}",
+      "method": "PATCH",
+      "group": "Message",
+      "description": "Update a Message resource with the matches given id. (PATCH /messages/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715100a3",
+      "lastUpdated": 0,
+      "path": "/messages",
+      "method": "GET",
+      "group": "Message",
+      "description": "Return all Message as a collection. (GET /messages)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715200a5",
+      "lastUpdated": 0,
+      "path": "/messages/merchants/{merchantOid}",
+      "method": "GET",
+      "group": "Message",
+      "description": "Return Message resource and matches with the given id. (GET /messages/merchants/{merchantOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715300a7",
+      "lastUpdated": 0,
+      "path": "/messages/unreadcount",
+      "method": "GET",
+      "group": "Message",
+      "description": "Return all Message as a collection. (GET /messages/unreadcount)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715500a9",
+      "lastUpdated": 0,
+      "path": "/messages/update/merchant/{merchantOid}",
+      "method": "POST",
+      "group": "Message",
+      "description": "Return Message resource and matches with the given id. (POST /messages/update/merchant/{merchantOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715700ab",
+      "lastUpdated": 0,
+      "path": "/messages/merchants",
+      "method": "GET",
+      "group": "Message",
+      "description": "Return Message resource and matches with the given id. (GET /messages/merchants)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715800ad",
+      "lastUpdated": 0,
+      "path": "/merchants/{id}",
+      "method": "GET",
+      "group": "Merchant",
+      "description": "Returns a Merchant resource with the matches given id. (GET /merchants/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715a00af",
+      "lastUpdated": 0,
+      "path": "/merchants",
+      "method": "POST",
+      "group": "Merchant",
+      "description": "Create a Merchant resource. (POST /merchants)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715b00b1",
+      "lastUpdated": 0,
+      "path": "/merchants/{id}",
+      "method": "DELETE",
+      "group": "Merchant",
+      "description": "Delete a Merchant resource with the matches given id. (DELETE /merchants/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715d00b3",
+      "lastUpdated": 0,
+      "path": "/merchants/{id}",
+      "method": "PUT",
+      "group": "Merchant",
+      "description": "Update a Merchant resource with the matches given id. (PUT /merchants/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715e00b5",
+      "lastUpdated": 0,
+      "path": "/merchants/{id}",
+      "method": "PATCH",
+      "group": "Merchant",
+      "description": "Update a Merchant resource with the matches given id. (PATCH /merchants/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3715f00b7",
+      "lastUpdated": 0,
+      "path": "/merchants",
+      "method": "GET",
+      "group": "Merchant",
+      "description": "Returns all Merchant as a collection. (GET /merchants)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716100b9",
+      "lastUpdated": 0,
+      "path": "/merchants/me",
+      "method": "GET",
+      "group": "Merchant",
+      "description": "Returns a Merchant resource. (GET /merchants/me)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716200bb",
+      "lastUpdated": 0,
+      "path": "/merchants/me/contact",
+      "method": "GET",
+      "group": "Merchant",
+      "description": "Returns a Merchant contact resource. (GET /merchants/me/contact)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716400bd",
+      "lastUpdated": 0,
+      "path": "/merchants/report",
+      "method": "GET",
+      "group": "Merchant",
+      "description": "Returns all MerchantReport as a collection. (GET /merchants/report)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716600bf",
+      "lastUpdated": 0,
+      "path": "/districts/{id}",
+      "method": "GET",
+      "group": "District",
+      "description": "Return District resource and matches with the given id. (GET /districts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716700c1",
+      "lastUpdated": 0,
+      "path": "/districts",
+      "method": "POST",
+      "group": "District",
+      "description": "Create District resource. (POST /districts)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716800c3",
+      "lastUpdated": 0,
+      "path": "/districts/{id}",
+      "method": "DELETE",
+      "group": "District",
+      "description": "Delete District resource. (DELETE /districts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716a00c5",
+      "lastUpdated": 0,
+      "path": "/districts/{id}",
+      "method": "PUT",
+      "group": "District",
+      "description": "Update District resource and matches with the given id. (PUT /districts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716b00c7",
+      "lastUpdated": 0,
+      "path": "/districts/{id}",
+      "method": "PATCH",
+      "group": "District",
+      "description": "Update District resource and matches with the given id. (PATCH /districts/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716d00c9",
+      "lastUpdated": 0,
+      "path": "/districts",
+      "method": "GET",
+      "group": "District",
+      "description": "Returns all District as a collection. (GET /districts)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3716e00cb",
+      "lastUpdated": 0,
+      "path": "/districts/export",
+      "method": "GET",
+      "group": "District",
+      "description": "Export District resource. (GET /districts/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717000cd",
+      "lastUpdated": 0,
+      "path": "/customfilters/add",
+      "method": "POST",
+      "group": "CustomFilter",
+      "description": "Create a CustomFilter resource. (POST /customfilters/add)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717100cf",
+      "lastUpdated": 0,
+      "path": "/customfilters/{id}",
+      "method": "DELETE",
+      "group": "CustomFilter",
+      "description": "Delete a CustomFilter resource. (DELETE /customfilters/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717300d1",
+      "lastUpdated": 0,
+      "path": "/customfilters",
+      "method": "GET",
+      "group": "CustomFilter",
+      "description": "Get user's custom filters if logged in (GET /customfilters)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717500d3",
+      "lastUpdated": 0,
+      "path": "/categories/{id}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Returns a Category resource with the matches given id. (GET /categories/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717600d5",
+      "lastUpdated": 0,
+      "path": "/categories",
+      "method": "POST",
+      "group": "Category",
+      "description": "Create a Category resource. (POST /categories)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717800d7",
+      "lastUpdated": 0,
+      "path": "/categories/{id}",
+      "method": "DELETE",
+      "group": "Category",
+      "description": "Delete a Category resource with the matches given id. (DELETE /categories/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717900d9",
+      "lastUpdated": 0,
+      "path": "/categories/tree",
+      "method": "GET",
+      "group": "Category",
+      "description": "Returns tree of Categories as collection (GET /categories/tree)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717b00db",
+      "lastUpdated": 0,
+      "path": "/categories/{id}",
+      "method": "PUT",
+      "group": "Category",
+      "description": "Update a Category resource with the matches given id. (PUT /categories/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717c00dd",
+      "lastUpdated": 0,
+      "path": "/categories/{id}",
+      "method": "PATCH",
+      "group": "Category",
+      "description": "Update a Category resource with the matches given id. (PATCH /categories/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717e00df",
+      "lastUpdated": 0,
+      "path": "/categories",
+      "method": "GET",
+      "group": "Category",
+      "description": "Returns all Category as a collection. (GET /categories)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3717f00e1",
+      "lastUpdated": 0,
+      "path": "/categories/export",
+      "method": "GET",
+      "group": "Category",
+      "description": "Export Category resource. (GET /categories/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718100e3",
+      "lastUpdated": 0,
+      "path": "/categories/public/search/{id}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Returns all Categories as a collection (GET /categories/public/search/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718200e5",
+      "lastUpdated": 0,
+      "path": "/categories/tree/{id}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Get category recursive (GET /categories/tree/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718400e7",
+      "lastUpdated": 0,
+      "path": "/categories/stocks/available/{adType}/{parentOid}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Get category recursive (GET /categories/stocks/available/{adType}/{parentOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718500e9",
+      "lastUpdated": 0,
+      "path": "/categories/stocks/available/{adType}/{parentOid}/{merchantOid}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Get category of merchant available stocks recursively for admin user (GET /categories/stocks/available/{adType}/{parentOid}/{merchantOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718700eb",
+      "lastUpdated": 0,
+      "path": "/categories/stocks/availablelastnode/{adType}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Get category recursive (GET /categories/stocks/availablelastnode/{adType})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718800ed",
+      "lastUpdated": 0,
+      "path": "/categories/stocks/availablelastnode/{adType}/{merchantOid}",
+      "method": "GET",
+      "group": "Category",
+      "description": "Get last node category of merchants available stocks recursively for admin user (GET /categories/stocks/availablelastnode/{adType}/{merchantOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718b00ef",
+      "lastUpdated": 0,
+      "path": "/authentication/login",
+      "method": "POST",
+      "group": "UNGROUPED",
+      "description": " (POST /authentication/login)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718d00f1",
+      "lastUpdated": 0,
+      "path": "/authentication/logout",
+      "method": "POST",
+      "group": "UNGROUPED",
+      "description": " (POST /authentication/logout)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3718e00f3",
+      "lastUpdated": 0,
+      "path": "/authentication/profile",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /authentication/profile)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719000f5",
+      "lastUpdated": 0,
+      "path": "/authentication/password",
+      "method": "POST",
+      "group": "UNGROUPED",
+      "description": " (POST /authentication/password)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719100f7",
+      "lastUpdated": 0,
+      "path": "/commons/notifications/{id}",
+      "method": "PUT",
+      "group": "Common",
+      "description": "Update Notification resource and matches with the given id. (PUT /commons/notifications/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719300f9",
+      "lastUpdated": 0,
+      "path": "/commons/roles",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Role as a collection. (GET /commons/roles)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719400fb",
+      "lastUpdated": 0,
+      "path": "/commons/merchants",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Merchant as a collection. (GET /commons/merchants)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719600fd",
+      "lastUpdated": 0,
+      "path": "/commons/provinces",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Province as a collection (GET /commons/provinces)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719700ff",
+      "lastUpdated": 0,
+      "path": "/commons/notifications/unread",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all un read Notification as a collection. (GET /commons/notifications/unread)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371990101",
+      "lastUpdated": 0,
+      "path": "/commons/districts",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all District as a collection. (GET /commons/districts)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719a0103",
+      "lastUpdated": 0,
+      "path": "/commons/districts/{provinceCode}",
+      "method": "GET",
+      "group": "Common",
+      "description": "Return Districts resource and matches with the given id. (GET /commons/districts/{provinceCode})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719c0105",
+      "lastUpdated": 0,
+      "path": "/commons/firmtypes",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all FirmType as a collection. (GET /commons/firmtypes)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719d0107",
+      "lastUpdated": 0,
+      "path": "/commons/products",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Product as a collection. (GET /commons/products)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3719f0109",
+      "lastUpdated": 0,
+      "path": "/commons/users",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all User as a collection. (GET /commons/users)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a0010b",
+      "lastUpdated": 0,
+      "path": "/commons/categories",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Category as a collection. (GET /commons/categories)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a2010d",
+      "lastUpdated": 0,
+      "path": "/commons/categories/leafs",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns all Category as a collection. (GET /commons/categories/leafs)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a3010f",
+      "lastUpdated": 0,
+      "path": "/commons/merchants/{registrationNumber}",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns a Merchant resource with the matches given id. (GET /commons/merchants/{registrationNumber})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a50111",
+      "lastUpdated": 0,
+      "path": "/commons/mymerchant",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns a Merchant resource with the matches given id. (GET /commons/mymerchant)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a60113",
+      "lastUpdated": 0,
+      "path": "/commons/logistic/address",
+      "method": "GET",
+      "group": "Common",
+      "description": "Returns a Logistic Address resource. (GET /commons/logistic/address)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371a80115",
+      "lastUpdated": 0,
+      "path": "/menus/{id}",
+      "method": "GET",
+      "group": "Menu",
+      "description": "Returns a Menu resource matches with the given id. (GET /menus/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371aa0117",
+      "lastUpdated": 0,
+      "path": "/menus",
+      "method": "POST",
+      "group": "Menu",
+      "description": "Create a Menu resource. (POST /menus)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ab0119",
+      "lastUpdated": 0,
+      "path": "/menus/{id}",
+      "method": "DELETE",
+      "group": "Menu",
+      "description": "Deletes a single Menu matches with the given id. (DELETE /menus/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ad011b",
+      "lastUpdated": 0,
+      "path": "/menus/{id}",
+      "method": "PUT",
+      "group": "Menu",
+      "description": "Updates a single Menu matches with the given id. (PUT /menus/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ae011d",
+      "lastUpdated": 0,
+      "path": "/menus/{id}",
+      "method": "PATCH",
+      "group": "Menu",
+      "description": "Updates a single Menu matches with the given id. (PATCH /menus/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371af011f",
+      "lastUpdated": 0,
+      "path": "/menus",
+      "method": "GET",
+      "group": "Menu",
+      "description": "Returns all Menu's as a collection. (GET /menus)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371b30121",
+      "lastUpdated": 0,
+      "path": "/menus/user",
+      "method": "GET",
+      "group": "Menu",
+      "description": "Get menu for logged user (GET /menus/user)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371b50123",
+      "lastUpdated": 0,
+      "path": "/addresses/{id}",
+      "method": "GET",
+      "group": "Address",
+      "description": "Returns a Address resource matches with the given id. (GET /addresses/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371b60125",
+      "lastUpdated": 0,
+      "path": "/addresses",
+      "method": "POST",
+      "group": "Address",
+      "description": "Create as a Address resource. (POST /addresses)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371b80127",
+      "lastUpdated": 0,
+      "path": "/addresses/{id}",
+      "method": "DELETE",
+      "group": "Address",
+      "description": "Deletes a single Address matches with the given id. (DELETE /addresses/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371b90129",
+      "lastUpdated": 0,
+      "path": "/addresses/{id}",
+      "method": "PUT",
+      "group": "Address",
+      "description": "Updates a single Address matches with the given id. (PUT /addresses/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371bb012b",
+      "lastUpdated": 0,
+      "path": "/addresses/{id}",
+      "method": "PATCH",
+      "group": "Address",
+      "description": "Updates a single Address matches with the given id. (PATCH /addresses/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371bd012d",
+      "lastUpdated": 0,
+      "path": "/addresses",
+      "method": "GET",
+      "group": "Address",
+      "description": "Returns all Addresses as a collection. (GET /addresses)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371be012f",
+      "lastUpdated": 0,
+      "path": "/addresses/export",
+      "method": "GET",
+      "group": "Address",
+      "description": "Export Address resource. (GET /addresses/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c00131",
+      "lastUpdated": 0,
+      "path": "/signingauthority/{id}",
+      "method": "GET",
+      "group": "SigningAuthority",
+      "description": "Returns a SigningAuthority resource matches with the given id. (GET /signingauthority/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c10133",
+      "lastUpdated": 0,
+      "path": "/signingauthority",
+      "method": "POST",
+      "group": "SigningAuthority",
+      "description": "Create as a SigningAuthority resource. (POST /signingauthority)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c30135",
+      "lastUpdated": 0,
+      "path": "/signingauthority/{id}",
+      "method": "DELETE",
+      "group": "SigningAuthority",
+      "description": "Deletes a single SigningAuthority matches with the given id. (DELETE /signingauthority/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c40137",
+      "lastUpdated": 0,
+      "path": "/signingauthority/{id}",
+      "method": "PUT",
+      "group": "SigningAuthority",
+      "description": "Updates a single SigningAuthority matches with the given id. (PUT /signingauthority/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c60139",
+      "lastUpdated": 0,
+      "path": "/signingauthority/{id}",
+      "method": "PATCH",
+      "group": "SigningAuthority",
+      "description": "Updates a single SigningAuthority matches with the given id. (PATCH /signingauthority/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c7013b",
+      "lastUpdated": 0,
+      "path": "/signingauthority",
+      "method": "GET",
+      "group": "SigningAuthority",
+      "description": "Returns all SigningAuthority as a collection. (GET /signingauthority)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371c9013d",
+      "lastUpdated": 0,
+      "path": "/signingauthority/registrationNumber/{id}",
+      "method": "GET",
+      "group": "SigningAuthority",
+      "description": "Returns a SigningAuthority resource matches with the given id. (GET /signingauthority/registrationNumber/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ca013f",
+      "lastUpdated": 0,
+      "path": "/signingauthority/me",
+      "method": "GET",
+      "group": "SigningAuthority",
+      "description": "Returns a SigningAuthority resource matches with the given id. (GET /signingauthority/me)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ce0141",
+      "lastUpdated": 0,
+      "path": "/assets",
+      "method": "DELETE",
+      "group": "UNGROUPED",
+      "description": " (DELETE /assets)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371cf0143",
+      "lastUpdated": 0,
+      "path": "/assets/thumbnail/{oid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/thumbnail/{oid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d10145",
+      "lastUpdated": 0,
+      "path": "/assets/preview/{oid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/preview/{oid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d20147",
+      "lastUpdated": 0,
+      "path": "/assets/download/order/{code}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/download/order/{code})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d30149",
+      "lastUpdated": 0,
+      "path": "/assets/preview/postad/{oid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/preview/postad/{oid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d5014b",
+      "lastUpdated": 0,
+      "path": "/assets/preview/default/{productOid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/preview/default/{productOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d6014d",
+      "lastUpdated": 0,
+      "path": "/assets",
+      "method": "POST",
+      "group": "UNGROUPED",
+      "description": " (POST /assets)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d8014f",
+      "lastUpdated": 0,
+      "path": "/assets/download/{oid}",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /assets/download/{oid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371d90151",
+      "lastUpdated": 0,
+      "path": "/services/{id}",
+      "method": "GET",
+      "group": "Service",
+      "description": "Return Service resource. (GET /services/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371db0153",
+      "lastUpdated": 0,
+      "path": "/services",
+      "method": "POST",
+      "group": "Service",
+      "description": "Create Service resource and return given Service path link at header Location=example/{id]. (POST /services)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371dc0155",
+      "lastUpdated": 0,
+      "path": "/services/{id}",
+      "method": "DELETE",
+      "group": "Service",
+      "description": "Delete Service resource. (DELETE /services/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371de0157",
+      "lastUpdated": 0,
+      "path": "/services/{id}",
+      "method": "PUT",
+      "group": "Service",
+      "description": "Update Service resource and matches with the given id. (PUT /services/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371df0159",
+      "lastUpdated": 0,
+      "path": "/services/{id}",
+      "method": "PATCH",
+      "group": "Service",
+      "description": "Update Service resource. (PATCH /services/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e1015b",
+      "lastUpdated": 0,
+      "path": "/services",
+      "method": "GET",
+      "group": "Service",
+      "description": "Returns all Services as a collection. (GET /services)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e2015d",
+      "lastUpdated": 0,
+      "path": "/services/groups",
+      "method": "GET",
+      "group": "Permission",
+      "description": "Get all services group for permission (GET /services/groups)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e4015f",
+      "lastUpdated": 0,
+      "path": "/services/refresh",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /services/refresh)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e50161",
+      "lastUpdated": 0,
+      "path": "/postadpriorities",
+      "method": "POST",
+      "group": "PostAdPriority",
+      "description": "Create a PostAdPriority resource. (POST /postadpriorities)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e70163",
+      "lastUpdated": 0,
+      "path": "/postadpriorities/{id}",
+      "method": "DELETE",
+      "group": "PostAdPriority",
+      "description": "Delete a PostAdPriority resource with the matches given id. (DELETE /postadpriorities/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371e80165",
+      "lastUpdated": 0,
+      "path": "/postadpriorities/{id}",
+      "method": "PUT",
+      "group": "PostAdPriority",
+      "description": "Update a PostAdPriority resource with the matches given id. (PUT /postadpriorities/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ea0167",
+      "lastUpdated": 0,
+      "path": "/postadpriorities",
+      "method": "GET",
+      "group": "PostAdPriority",
+      "description": "Returns all PostAdPriority as a collection. (GET /postadpriorities)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371eb0169",
+      "lastUpdated": 0,
+      "path": "/postadpriorities/postadforadmin",
+      "method": "GET",
+      "group": "PostAdPriority",
+      "description": "Returns all PostAdPriority for admin as a collection. (GET /postadpriorities/postadforadmin)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ed016b",
+      "lastUpdated": 0,
+      "path": "/webservices/stocks",
+      "method": "POST",
+      "group": "WebService",
+      "description": "Create Stock resource. (POST /webservices/stocks)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ef016d",
+      "lastUpdated": 0,
+      "path": "/webservices/categories",
+      "method": "POST",
+      "group": "WebService",
+      "description": "Create or Category Category resource. (POST /webservices/categories)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371f0016f",
+      "lastUpdated": 0,
+      "path": "/webservices/priceranges",
+      "method": "POST",
+      "group": "WebService",
+      "description": "Create PriceRange resource (POST /webservices/priceranges)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371f40171",
+      "lastUpdated": 0,
+      "path": "/webservices/productmutations",
+      "method": "POST",
+      "group": "WebService",
+      "description": "Create or update ProductMutation resource (POST /webservices/productmutations)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371f60173",
+      "lastUpdated": 0,
+      "path": "/webservices/merchants",
+      "method": "POST",
+      "group": "WebService",
+      "description": "Create or update Merchant resource. (POST /webservices/merchants)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371f90175",
+      "lastUpdated": 0,
+      "path": "/priceranges/{id}",
+      "method": "GET",
+      "group": "PriceRange",
+      "description": "Returns a PriceRange resource with the matches given id. (GET /priceranges/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371fa0177",
+      "lastUpdated": 0,
+      "path": "/priceranges",
+      "method": "GET",
+      "group": "PriceRange",
+      "description": "Returns all PriceRange as a collection. (GET /priceranges)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371fc0179",
+      "lastUpdated": 0,
+      "path": "/priceranges/export",
+      "method": "GET",
+      "group": "PriceRange",
+      "description": "Export PriceRange resource. (GET /priceranges/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371fe017b",
+      "lastUpdated": 0,
+      "path": "/mailtemplates/{id}",
+      "method": "GET",
+      "group": "MailTemplate",
+      "description": "Return MailTemplate resource and matches with the given id. (GET /mailtemplates/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa371ff017d",
+      "lastUpdated": 0,
+      "path": "/mailtemplates",
+      "method": "POST",
+      "group": "MailTemplate",
+      "description": "Create MailTemplate resource. (POST /mailtemplates)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37201017f",
+      "lastUpdated": 0,
+      "path": "/mailtemplates/{id}",
+      "method": "DELETE",
+      "group": "MailTemplate",
+      "description": "Delete MailTemplate resource. (DELETE /mailtemplates/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372020181",
+      "lastUpdated": 0,
+      "path": "/mailtemplates/{id}",
+      "method": "PUT",
+      "group": "MailTemplate",
+      "description": "Update MailTemplate resource and matches with the given id. (PUT /mailtemplates/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372040183",
+      "lastUpdated": 0,
+      "path": "/mailtemplates/{id}",
+      "method": "PATCH",
+      "group": "MailTemplate",
+      "description": "Update MailTemplate resource and matches with the given id. (PATCH /mailtemplates/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372050185",
+      "lastUpdated": 0,
+      "path": "/mailtemplates",
+      "method": "GET",
+      "group": "MailTemplate",
+      "description": "Returns all MailTemplate as a collection. (GET /mailtemplates)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372070187",
+      "lastUpdated": 0,
+      "path": "/systems/heapdump",
+      "method": "GET",
+      "group": "UNGROUPED",
+      "description": " (GET /systems/heapdump)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372090189",
+      "lastUpdated": 0,
+      "path": "/productmutations",
+      "method": "POST",
+      "group": "ProductMutation",
+      "description": "Create a ProductMutation resource. (POST /productmutations)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3720a018b",
+      "lastUpdated": 0,
+      "path": "/productmutations/{id}",
+      "method": "DELETE",
+      "group": "ProductMutation",
+      "description": "Delete a ProductMutation resource with the matches given id. (DELETE /productmutations/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3720c018d",
+      "lastUpdated": 0,
+      "path": "/productmutations/{id}",
+      "method": "PUT",
+      "group": "ProductMutation",
+      "description": "Update a ProductMutation resource with the matches given id. (PUT /productmutations/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3720e018f",
+      "lastUpdated": 0,
+      "path": "/productmutations",
+      "method": "GET",
+      "group": "ProductMutation",
+      "description": "Returns all ProductMutation as a collection. (GET /productmutations)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3720f0191",
+      "lastUpdated": 0,
+      "path": "/productmutations/categories/{id}",
+      "method": "GET",
+      "group": "ProductMutation",
+      "description": "Returns all ProductMutation as a collection. (GET /productmutations/categories/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372110193",
+      "lastUpdated": 0,
+      "path": "/firmtypes/{id}",
+      "method": "GET",
+      "group": "FirmType",
+      "description": "Returns a FirmType resource with the matches given id. (GET /firmtypes/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372130195",
+      "lastUpdated": 0,
+      "path": "/firmtypes",
+      "method": "POST",
+      "group": "FirmType",
+      "description": "Create a FirmType resource. (POST /firmtypes)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372140197",
+      "lastUpdated": 0,
+      "path": "/firmtypes/{id}",
+      "method": "DELETE",
+      "group": "FirmType",
+      "description": "Delete a FirmType resource with the matches given id. (DELETE /firmtypes/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372160199",
+      "lastUpdated": 0,
+      "path": "/firmtypes/{id}",
+      "method": "PUT",
+      "group": "FirmType",
+      "description": "Update a FirmType resource with the matches given id. (PUT /firmtypes/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37217019b",
+      "lastUpdated": 0,
+      "path": "/firmtypes/{id}",
+      "method": "PATCH",
+      "group": "FirmType",
+      "description": "Update a FirmType resource with the matches given id. (PATCH /firmtypes/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37218019d",
+      "lastUpdated": 0,
+      "path": "/firmtypes",
+      "method": "GET",
+      "group": "FirmType",
+      "description": "Returns all FirmType as a collection. (GET /firmtypes)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3721a019f",
+      "lastUpdated": 0,
+      "path": "/firmtypes/export",
+      "method": "GET",
+      "group": "FirmType",
+      "description": "Export FirmType resource. (GET /firmtypes/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3721c01a1",
+      "lastUpdated": 0,
+      "path": "/notifications/{id}",
+      "method": "GET",
+      "group": "Notification",
+      "description": "Returns a Notification resource with the matches given id. (GET /notifications/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3721d01a3",
+      "lastUpdated": 0,
+      "path": "/notifications/{id}",
+      "method": "PUT",
+      "group": "Notification",
+      "description": "Update a Notification resource with the matches given id. (PUT /notifications/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3721e01a5",
+      "lastUpdated": 0,
+      "path": "/notifications",
+      "method": "GET",
+      "group": "Notification",
+      "description": "Returns all Notification as a collection. (GET /notifications)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722001a7",
+      "lastUpdated": 0,
+      "path": "/notifications/export",
+      "method": "GET",
+      "group": "Notification",
+      "description": "Export Notification resource. (GET /notifications/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722101a9",
+      "lastUpdated": 0,
+      "path": "/systemparameters/{id}",
+      "method": "GET",
+      "group": "SystemParameter",
+      "description": "Return SystemParameter resource. (GET /systemparameters/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722301ab",
+      "lastUpdated": 0,
+      "path": "/systemparameters",
+      "method": "POST",
+      "group": "SystemParameter",
+      "description": "Create SystemParameter resource and return given SystemParameter path link at header Location=example/{id]. (POST /systemparameters)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722401ad",
+      "lastUpdated": 0,
+      "path": "/systemparameters/{id}",
+      "method": "DELETE",
+      "group": "SystemParameter",
+      "description": "Delete SystemParameter resource. (DELETE /systemparameters/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722601af",
+      "lastUpdated": 0,
+      "path": "/systemparameters/{id}",
+      "method": "PUT",
+      "group": "SystemParameter",
+      "description": "Update SystemParameter resource and matches with the given id. (PUT /systemparameters/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722701b1",
+      "lastUpdated": 0,
+      "path": "/systemparameters/{id}",
+      "method": "PATCH",
+      "group": "SystemParameter",
+      "description": "Update SystemParameter resource. (PATCH /systemparameters/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722801b3",
+      "lastUpdated": 0,
+      "path": "/systemparameters",
+      "method": "GET",
+      "group": "SystemParameter",
+      "description": "Returns all SystemParameter as a collection. (GET /systemparameters)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722a01b5",
+      "lastUpdated": 0,
+      "path": "/systemparameters/admin",
+      "method": "POST",
+      "group": "SystemParameter",
+      "description": "Create or update SystemParameter resource. (POST /systemparameters/admin)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722d01b7",
+      "lastUpdated": 0,
+      "path": "/postads/{id}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return PostAd resource and matches with the given id. (GET /postads/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3722e01b9",
+      "lastUpdated": 0,
+      "path": "/postads",
+      "method": "POST",
+      "group": "PostAd",
+      "description": "Create as a PostAd resource. (POST /postads)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723001bb",
+      "lastUpdated": 0,
+      "path": "/postads/{id}",
+      "method": "DELETE",
+      "group": "PostAd",
+      "description": "Delete a PostAd resource with the matches given id. (DELETE /postads/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723101bd",
+      "lastUpdated": 0,
+      "path": "/postads/check/{code}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Check PostAd resource with the matches given code. (GET /postads/check/{code})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723301bf",
+      "lastUpdated": 0,
+      "path": "/postads/{id}",
+      "method": "PUT",
+      "group": "PostAd",
+      "description": "update as a PostAd resource. (PUT /postads/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723401c1",
+      "lastUpdated": 0,
+      "path": "/postads",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Returns all PostAd as a collection. (GET /postads)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723601c3",
+      "lastUpdated": 0,
+      "path": "/postads/export/all",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Export PostAd resource. (GET /postads/export/all)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723701c5",
+      "lastUpdated": 0,
+      "path": "/postads/orderoperation/{id}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return PostAd resource for order operation and matches with the given id. (GET /postads/orderoperation/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723901c7",
+      "lastUpdated": 0,
+      "path": "/postads/categories/{code}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return PostAd resource and matches with the given code. (GET /postads/categories/{code})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723a01c9",
+      "lastUpdated": 0,
+      "path": "/postads/includes/assets",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Returns all PostAd as a collection. (GET /postads/includes/assets)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723c01cb",
+      "lastUpdated": 0,
+      "path": "/postads/includes/assets/approvements",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Returns all PostAd as a collection. (GET /postads/includes/assets/approvements)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723d01cd",
+      "lastUpdated": 0,
+      "path": "/postads/all",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Returns all PostAd as a collection. (GET /postads/all)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3723f01cf",
+      "lastUpdated": 0,
+      "path": "/postads/publics/code/{id}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return PostAd details resource and matches with the given id. (GET /postads/publics/code/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724101d1",
+      "lastUpdated": 0,
+      "path": "/postads/active/{id}",
+      "method": "PUT",
+      "group": "PostAd",
+      "description": "update as a PostAd resource. (PUT /postads/active/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724201d3",
+      "lastUpdated": 0,
+      "path": "/postads/postadpreview/{code}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return PostAd preview resource and matches with the given id. (GET /postads/postadpreview/{code})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724401d5",
+      "lastUpdated": 0,
+      "path": "/postads/myprivatepostads",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "Return private mode PostAds resource and matches with the given code. (GET /postads/myprivatepostads)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724601d7",
+      "lastUpdated": 0,
+      "path": "/postads/postadrangeprice/{id}",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "get PostAdRangePrice's of PostAd (GET /postads/postadrangeprice/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724801d9",
+      "lastUpdated": 0,
+      "path": "/postads/randompostads",
+      "method": "GET",
+      "group": "PostAd",
+      "description": "get random postad's (GET /postads/randompostads)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724a01db",
+      "lastUpdated": 0,
+      "path": "/stocks/category/{id}",
+      "method": "GET",
+      "group": "Stock",
+      "description": "Return Stock (GET /stocks/category/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724b01dd",
+      "lastUpdated": 0,
+      "path": "/stocks",
+      "method": "GET",
+      "group": "Stock",
+      "description": "Returns all Stock as a collection. (GET /stocks)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724d01df",
+      "lastUpdated": 0,
+      "path": "/stocks/export",
+      "method": "GET",
+      "group": "Stock",
+      "description": "Export Stocks resource. (GET /stocks/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3724e01e1",
+      "lastUpdated": 0,
+      "path": "/stocks/category/{categoryoid}/{merchantoid}",
+      "method": "GET",
+      "group": "Stock",
+      "description": "Stock resourse with matches given id (GET /stocks/category/{categoryoid}/{merchantoid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725001e3",
+      "lastUpdated": 0,
+      "path": "/stocks/mutations",
+      "method": "GET",
+      "group": "Stock",
+      "description": "Returns all Stock as a collection. (GET /stocks/mutations)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725201e5",
+      "lastUpdated": 0,
+      "path": "/stocks/stockamount",
+      "method": "POST",
+      "group": "Stock",
+      "description": "Create a Stock resource. (POST /stocks/stockamount)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725601e7",
+      "lastUpdated": 0,
+      "path": "/orders/{id}",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns a Order resource matches with the given id. (GET /orders/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725701e9",
+      "lastUpdated": 0,
+      "path": "/orders",
+      "method": "POST",
+      "group": "Orders",
+      "description": "Create new Order (POST /orders)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725901eb",
+      "lastUpdated": 0,
+      "path": "/orders/accept/{id}",
+      "method": "PUT",
+      "group": "Orders",
+      "description": "Accept order shipped (PUT /orders/accept/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725a01ed",
+      "lastUpdated": 0,
+      "path": "/orders",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns all Order as a collection. (GET /orders)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725c01ef",
+      "lastUpdated": 0,
+      "path": "/orders/export/{path}",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Export Orders resource. (GET /orders/export/{path})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725e01f1",
+      "lastUpdated": 0,
+      "path": "/orders/payments/{id}",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns a Order resource matches with the given id. (GET /orders/payments/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3725f01f3",
+      "lastUpdated": 0,
+      "path": "/orders/comments/{id}",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns a Order resource matches with the given id. (GET /orders/comments/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726101f5",
+      "lastUpdated": 0,
+      "path": "/orders/all",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns all Order as a collection. (GET /orders/all)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726301f7",
+      "lastUpdated": 0,
+      "path": "/orders/seller",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns all Order as a collection. (GET /orders/seller)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726401f9",
+      "lastUpdated": 0,
+      "path": "/orders/buyer",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Returns all Order as a collection. (GET /orders/buyer)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726601fb",
+      "lastUpdated": 0,
+      "path": "/orders/basket",
+      "method": "GET",
+      "group": "Orders",
+      "description": "Sum orders for basket button. (GET /orders/basket)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726801fd",
+      "lastUpdated": 0,
+      "path": "/orders/seller/{id}",
+      "method": "PUT",
+      "group": "Orders",
+      "description": "update Order for seller (PUT /orders/seller/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726901ff",
+      "lastUpdated": 0,
+      "path": "/orders/buyer/{id}",
+      "method": "PUT",
+      "group": "Orders",
+      "description": "Create new Order (PUT /orders/buyer/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726b0201",
+      "lastUpdated": 0,
+      "path": "/provinces/{id}",
+      "method": "GET",
+      "group": "Province",
+      "description": "Returns a Province resource with the matches given id. (GET /provinces/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726d0203",
+      "lastUpdated": 0,
+      "path": "/provinces",
+      "method": "POST",
+      "group": "Province",
+      "description": "Create a Province resource. (POST /provinces)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3726f0205",
+      "lastUpdated": 0,
+      "path": "/provinces/{id}",
+      "method": "DELETE",
+      "group": "Province",
+      "description": "Delete a Province resource with the matches given id. (DELETE /provinces/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372700207",
+      "lastUpdated": 0,
+      "path": "/provinces/{id}",
+      "method": "PUT",
+      "group": "Province",
+      "description": "Update a Province resource with the matches given id. (PUT /provinces/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372720209",
+      "lastUpdated": 0,
+      "path": "/provinces/{id}",
+      "method": "PATCH",
+      "group": "Province",
+      "description": "Update a Province resource with the matches given id. (PATCH /provinces/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37273020b",
+      "lastUpdated": 0,
+      "path": "/provinces",
+      "method": "GET",
+      "group": "Province",
+      "description": "Returns all Province as a collection. (GET /provinces)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37275020d",
+      "lastUpdated": 0,
+      "path": "/provinces/export",
+      "method": "GET",
+      "group": "Province",
+      "description": "Export Province resource. (GET /provinces/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37277020f",
+      "lastUpdated": 0,
+      "path": "/publicactions",
+      "method": "POST",
+      "group": "PublicAction",
+      "description": "Create a Category resource. (POST /publicactions)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372780211",
+      "lastUpdated": 0,
+      "path": "/publicactions/{oid}",
+      "method": "DELETE",
+      "group": "PublicAction",
+      "description": "Delete a PublicAction resource. (DELETE /publicactions/{oid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3727a0213",
+      "lastUpdated": 0,
+      "path": "/publicactions/accept",
+      "method": "PUT",
+      "group": "PublicAction",
+      "description": "Create a PublicAction resource. (PUT /publicactions/accept)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3727b0215",
+      "lastUpdated": 0,
+      "path": "/publicactions/{id}",
+      "method": "PUT",
+      "group": "PublicAction",
+      "description": "Update a PublicAction resource with the matches given id. (PUT /publicactions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3727d0217",
+      "lastUpdated": 0,
+      "path": "/publicactions",
+      "method": "GET",
+      "group": "PublicAction",
+      "description": "Returns all PublicAction as a collection. (GET /publicactions)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3727e0219",
+      "lastUpdated": 0,
+      "path": "/publicactions/export",
+      "method": "GET",
+      "group": "PublicAction",
+      "description": "Export PublicAction resource. (GET /publicactions/export)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3727f021b",
+      "lastUpdated": 0,
+      "path": "/publicactions/{id}",
+      "method": "GET",
+      "group": "PublicAction",
+      "description": "Returns a PublicAuction resource with the matches given id. (GET /publicactions/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37281021d",
+      "lastUpdated": 0,
+      "path": "/publicactions/seller",
+      "method": "GET",
+      "group": "PublicAction",
+      "description": "Get all PublicAction resource. (GET /publicactions/seller)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37282021f",
+      "lastUpdated": 0,
+      "path": "/publicactions/buyer",
+      "method": "GET",
+      "group": "PublicAction",
+      "description": "Get all PublicAction resource. (GET /publicactions/buyer)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372840221",
+      "lastUpdated": 0,
+      "path": "/publicactions/notification",
+      "method": "POST",
+      "group": "PublicAction",
+      "description": "Create a PublicAuction notification for admin. (POST /publicactions/notification)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372850223",
+      "lastUpdated": 0,
+      "path": "/publicactions/{oid}/{postAdOid}",
+      "method": "DELETE",
+      "group": "PublicAction",
+      "description": "Delete a Category resource. (DELETE /publicactions/{oid}/{postAdOid})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372870225",
+      "lastUpdated": 0,
+      "path": "/roles/{id}",
+      "method": "GET",
+      "group": "Role",
+      "description": "Returns a Role resource with the matches given id. (GET /roles/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372880227",
+      "lastUpdated": 0,
+      "path": "/roles",
+      "method": "POST",
+      "group": "Role",
+      "description": "Create a Role resource. (POST /roles)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3728a0229",
+      "lastUpdated": 0,
+      "path": "/roles/{id}",
+      "method": "DELETE",
+      "group": "Role",
+      "description": "Delete a Role resource with the matches given id. (DELETE /roles/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3728b022b",
+      "lastUpdated": 0,
+      "path": "/roles/{id}",
+      "method": "PUT",
+      "group": "Role",
+      "description": "Update a Role resource with the matches given id. (PUT /roles/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3728c022d",
+      "lastUpdated": 0,
+      "path": "/roles/{id}",
+      "method": "PATCH",
+      "group": "Role",
+      "description": "Update a Role resource with the matches given id. (PATCH /roles/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3728e022f",
+      "lastUpdated": 0,
+      "path": "/roles",
+      "method": "GET",
+      "group": "Role",
+      "description": "Returns all Role as a collection. (GET /roles)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa3728f0231",
+      "lastUpdated": 0,
+      "path": "/roles/{id}/permissions",
+      "method": "GET",
+      "group": "Permission",
+      "description": "Returns all services and menus collection with the matches given Role id. (GET /roles/{id}/permissions)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372910233",
+      "lastUpdated": 0,
+      "path": "/triggers/{id}",
+      "method": "GET",
+      "group": "QuartzJob",
+      "description": "Returns a TriggerEntity resource with the matches given id. (GET /triggers/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372920235",
+      "lastUpdated": 0,
+      "path": "/triggers",
+      "method": "POST",
+      "group": "QuartzJob",
+      "description": "Create a TriggerEntity resource. (POST /triggers)"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372930237",
+      "lastUpdated": 0,
+      "path": "/triggers/{id}",
+      "method": "DELETE",
+      "group": "QuartzJob",
+      "description": "Delete a TriggerEntity resource with the matches given id. (DELETE /triggers/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa372950239",
+      "lastUpdated": 0,
+      "path": "/triggers/{id}",
+      "method": "PUT",
+      "group": "QuartzJob",
+      "description": "Update a TriggerEntity resource with the matches given id. (PUT /triggers/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37296023b",
+      "lastUpdated": 0,
+      "path": "/triggers/{id}",
+      "method": "PATCH",
+      "group": "QuartzJob",
+      "description": "Update a TriggerEntity resource with the matches given id. (PATCH /triggers/{id})"
+    },
+    {
+      "oid": "ff808081566fa36501566fa37298023d",
+      "lastUpdated": 0,
+      "path": "/triggers",
+      "method": "GET",
+      "group": "QuartzJob",
+      "description": "Returns all TriggerEntity as a collection. (GET /triggers)"
+    }
   ]
 }
