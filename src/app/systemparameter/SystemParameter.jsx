@@ -34,7 +34,7 @@ export default class SystemParameter extends ShallowComponent {
         return (
             <Page description={"description"} header={"System Parameter "}>
                 <DataGrid
-                    toolbar={["create", "edit"]}
+                    toolbar={["create", "edit","delete"]}
                     columns={this.state.columns}
                     stores={[this.state.store]}
                     ref="table"
@@ -82,7 +82,7 @@ export default class SystemParameter extends ShallowComponent {
 
     __remove = () => {
         let selectedRows = this.refs.table.getSelectedRows();
-        console.log("removing ", selectedRows[0]);
+        this.state.store.delete(selectedRows[0]);
     };
 
     __showModal = (newItem) => {
