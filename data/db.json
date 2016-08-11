@@ -57,7 +57,7 @@
               "id": null,
               "lastUpdated": 0,
               "text": "İş Zamanlama Yönetimi",
-              "path": "app/quartz/QuartzJob",
+              "path": "app/quartz/Quartz",
               "index": 0,
               "parentOid": null,
               "module": "QuartzJob",
@@ -2743,6 +2743,21 @@
       "name": "Demo",
       "surname": "Demo",
       "email": "admin@robe.io"
+    }
+  ],
+  "quartzjobs": [
+    {
+      "id": 1,
+      "name": "Test Job",
+      "description": "Test job for robe."
+    }
+  ],
+  "triggers": [
+    {
+      "id": 1,
+      "name": "asd",
+      "description": "asd",
+      "parentId": 2
     }
   ]
 }

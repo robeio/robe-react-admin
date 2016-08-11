@@ -1,0 +1,26 @@
+{
+  "name": "QuartzModel",
+  "fields": [
+    {
+      "label": "id",
+      "type": "string",
+      "code": "id",
+      "tooltip": "id",
+      "visible": false
+    },
+    {
+      "label": "Name",
+      "code": "name",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Description",
+      "code": "description",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    }
+  ]
+}

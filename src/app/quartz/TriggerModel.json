@@ -1,0 +1,45 @@
+{
+  "name": "TriggerModel",
+  "fields": [
+    {
+      "label": "id",
+      "type": "string",
+      "code": "id",
+      "tooltip": "id",
+      "visible": false
+    },
+    {
+      "label": "Name",
+      "code": "name",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Cron",
+      "code": "cron",
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Start Date",
+      "code": "startDate",
+      "type": "date",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "End Date",
+      "code": "endDate",
+      "type": "date",
+      "required": true,
+      "minLength": 3
+    },
+    {
+      "label": "Repeat Count",
+      "code": "repeatCount",
+      "type": "number"
+    }
+  ]
+}
