@@ -1,6 +1,6 @@
 {
   "name": "RoleModel",
-  "columns": [
+  "fields": [
     {
       "label": "id",
       "type": "string",

@@ -12,9 +12,9 @@ export default class BaseCrudPage extends ShallowComponent {
     static propTypes: Map = {
         url: React.PropTypes.string,
         idField: React.PropTypes.string,
-        columns: React.PropTypes.array,
+        fields: React.PropTypes.array,
         description: React.PropTypes.string,
-        header: React.PropTypes.string,
+        header: React.PropTypes.string
     };
 
     constructor(props: Object) {
@@ -29,7 +29,7 @@ export default class BaseCrudPage extends ShallowComponent {
         });
 
         this.state = {
-            columns: props.columns,
+            fields: props.fields,
             header: props.header,
             description: props.description,
             store: store,
@@ -43,8 +43,8 @@ export default class BaseCrudPage extends ShallowComponent {
             <Page description={this.state.description} header={this.state.header}>
                 <DataGrid
                     toolbar={["create", "edit","delete"]}
-                    columns={this.state.columns}
-                    stores={[this.state.store]}
+                    fields={this.state.fields}
+                    store={this.state.store}
                     ref="table"
                     onNewClick={this.__add}
                     onEditClick={this.__edit}
@@ -61,7 +61,7 @@ export default class BaseCrudPage extends ShallowComponent {
                     onSubmit={this.__onSave}
                     onCancel={this.__onCancel}
                     item={this.state.item}
-                    fields={this.state.columns}
+                    fields={this.state.fields}
                 />
             </Page>
         );

@@ -1,6 +1,6 @@
 {
   "name": "MailTemplate",
-  "columns": [
+  "fields": [
     {
       "label": "id",
       "type": "string",

@@ -23,7 +23,7 @@ export default class SystemParameter extends ShallowComponent {
         });
 
         this.state = {
-            columns: SystemParameterModel.columns,
+            fields: SystemParameterModel.fields,
             store: store,
             showModal: false,
             item: {}
@@ -35,8 +35,8 @@ export default class SystemParameter extends ShallowComponent {
             <Page description={"description"} header={"System Parameter "}>
                 <DataGrid
                     toolbar={["create", "edit","delete"]}
-                    columns={this.state.columns}
-                    stores={[this.state.store]}
+                    fields={this.state.fields}
+                    store={this.state.store}
                     ref="table"
                     onNewClick={this.__add}
                     onEditClick={this.__edit}
@@ -53,7 +53,7 @@ export default class SystemParameter extends ShallowComponent {
                     onSubmit={this.__onSave}
                     onCancel={this.__onCancel}
                     item={this.state.item}
-                    fields={this.state.columns}
+                    fields={this.state.fields}
                 />
             </Page>
         );

@@ -1,0 +1,164 @@
+{
+  "name": "UserModel",
+  "fields": [
+    {
+      "title": "Oid",
+      "type": "string",
+      "code": "oid",
+      "tooltip": "Oid",
+      "visible": false
+    },
+    {
+      "title": "Son Güncelleme",
+      "type": "string",
+      "code": "lastUpdated",
+      "tooltip": "Son Güncelleme",
+      "visible": false
+    },
+    {
+      "title": "Fail Count",
+      "type": "number",
+      "code": "failCount",
+      "tooltip": "Fail Count",
+      "visible": false,
+      "validations": {
+        "required": [true,"Bu alan zorunludur."]
+      }
+    },
+    {
+      "title": "Son Login Zamanı",
+      "type": "date",
+      "code": "lastLoginTime",
+      "tooltip": "Son Login Zamanı",
+      "visible": false
+    },
+    {
+      "title": "Son Çıkış Zamanı",
+      "type": "date",
+      "code": "lastLogoutTime",
+      "tooltip": "Son Çıkış Zamanı",
+      "visible": false
+    },
+    {
+      "title": "Ad   ",
+      "type": "string",
+      "code": "name",
+      "tooltip": "Adı",
+      "validations": {
+        "regex": [
+          "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$",
+          "Sadece harflerden oluşmalıdır."
+        ],
+        "required": [
+          true,
+          "Bu alan zorunludur."
+        ],
+        "max": [
+          50,
+          "Bu alan 50 karakterden fazla olamaz."
+        ],
+        "min": [
+          3,
+          "Bu alan 3 karakterden az olamaz."
+        ]
+      }
+    },
+    {
+      "title": "Soyad",
+      "type": "string",
+      "code": "surname",
+      "tooltip": "Soyadı",
+      "validations": {
+        "regex": [
+          "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$",
+          "Sadece harflerden oluşmalıdır."
+        ],
+        "required": [
+          true,
+          "Bu alan zorunludur."
+        ],
+        "max": [
+          50,
+          "Bu alan 50 karakterden fazla olamaz."
+        ],
+        "min": [
+          2,
+          "Bu alan 2 karakterden az olamaz."
+        ]
+      }
+    },
+    {
+      "title": "E-Posta",
+      "type": "string",
+      "code": "email",
+      "tooltip": "Email",
+      "validations": {
+        "max": [
+          50,
+          "Bu alan 50 karakterden fazla olamaz."
+        ],
+        "min": [
+          5,
+          "Bu alan 5 karakterden az olamaz."
+        ],
+        "regex": [
+          "\\S+@\\S+\\.\\S+",
+          "Bu alan mail formatında olmalıdır."
+        ]
+      },
+      "nonDeleteValues": [
+        "admin@robe.io",
+        "system@robe.io"
+      ],
+      "disableValues": [
+        "admin@robe.io",
+        "system@robe.io"
+      ]
+    },
+    {
+      "title": "Şifre",
+      "type": "password",
+      "code": "password",
+      "tooltip": "Şifre",
+      "validations": {
+        "required": [
+          true,
+          "Bu alan zorunludur."
+        ],
+        "min": [
+          6,
+          "Bu alan 6 karakterden az olamaz."
+        ]
+      }
+    },
+    {
+      "title": "Rol",
+      "type": "list",
+      "code": "roleOid",
+      "tooltip": "Rol",
+      "dataTextField": "name",
+      "dataValueField": "oid",
+      "optionLabel": "<Lütfen Seçiniz>",
+      "validations": {
+        "required": [
+          true,
+          "Bu alan zorunludur."
+        ],
+        "max": [
+          32,
+          "Bu alan 32 karakterden fazla olamaz."
+        ],
+        "min": [
+          32,
+          "Bu alan 32 karakterden az olamaz."
+        ]
+      }
+    },
+    {
+      "title": "Aktif",
+      "type": "bool",
+      "code": "active",
+      "tooltip": "Aktif"
+    }
+  ]
+}

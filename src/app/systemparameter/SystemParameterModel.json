@@ -1,6 +1,6 @@
 {
   "name": "SystemParameterModel",
-  "columns": [
+  "fields": [
     {
       "label": "id",
       "type": "string",

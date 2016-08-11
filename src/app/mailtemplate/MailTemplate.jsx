@@ -23,7 +23,7 @@ export default class MailTemplate extends ShallowComponent {
         });
 
         this.state = {
-            columns: MailTemplateModel.columns,
+            fields: MailTemplateModel.fields,
             store: store,
             showModal: false,
             item: {}
@@ -35,7 +35,7 @@ export default class MailTemplate extends ShallowComponent {
             <Page description={"description"} header={"Mail Template"}>
                 <DataGrid
                     toolbar={["create", "edit","delete"]}
-                    columns={this.state.columns}
+                    fields={this.state.fields}
                     stores={[this.state.store]}
                     ref="table"
                     onNewClick={this.__add}
@@ -53,7 +53,7 @@ export default class MailTemplate extends ShallowComponent {
                     onSubmit={this.__onSave}
                     onCancel={this.__onCancel}
                     item={this.state.item}
-                    fields={this.state.columns}
+                    fields={this.state.fields}
                 />
             </Page>
         );

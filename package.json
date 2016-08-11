@@ -81,6 +81,27 @@
     "webpack-file-changer": "^1.0.0"
   },
   "dependencies": {
-    "robe-react-ui": "1.0.22"
+    "robe-react-ui": "1.0.22",
+    "is-js": "0.1.1",
+    "js-criteria": "0.0.6",
+    "react": "15.3.0",
+    "react-addons-shallow-compare": "15.3.0",
+    "react-cookie": "0.4.7",
+    "react-dom": "15.3.0",
+    "robe-ajax": "1.0.0",
+    "es6-template-strings": "2.0.0",
+    "nprogress": "0.2.0",
+    "numeral": "1.5.3",
+    "react-addons-css-transition-group": "15.3.0",
+    "react-bootstrap": "0.30.2",
+    "react-datepicker": "0.29.0",
+    "react-highlight": "0.8.0",
+    "react-notifications": "1.2.0",
+    "react-quill": "0.4.1",
+    "react-router": "2.6.1",
+    "react-select": "0.9.1",
+    "react-star-rating": "1.4.2",
+    "react-treebeard": "1.1.2",
+    "robe-react-commons": "1.0.38"
   }
 }
