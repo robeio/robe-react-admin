@@ -14,6 +14,11 @@ export default class Page extends ShallowComponent {
         icon: React.PropTypes.string,
     };
 
+    static defaultProps = {
+        bsStyle: "",
+        icon: "fa-info-circle"
+    };
+
     constructor(props) {
         super(props);
     };
@@ -33,16 +38,13 @@ export default class Page extends ShallowComponent {
     };
 
     __renderPageInfo = ()=> {
-        let icon = "";
-        if (this.props.icon) {
-            icon = this.props.icon == true ? "fa-info-circle" : this.props.icon;
-        }
 
-        if (this.props.bsStyle == undefined || this.props.bsStyle == "" || this.props.bsStyle == true) {
-            return (<Col><FaIcon code={icon} size={"fa-sm"}/> {this.props.description}</Col>);
+        let icon = <FaIcon code={this.props.icon} size={"fa-sm"}/>;
+
+        if (this.props.bsStyle === "") {
+            return (<Col>{icon}{this.props.description}</Col>);
         } else {
-            return (<Alert bsStyle={this.props.bsStyle}><FaIcon code={icon} size={"fa-sm"}/> {this.props.description}</Alert>)
+            return (<Alert bsStyle={this.props.bsStyle}><Col>{icon}{this.props.description}</Col></Alert>)
         }
-
     }
 }
