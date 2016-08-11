@@ -1,29 +1,37 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Page from "app/workspace/Page";
-import MailTemplateModel from "./MailTemplateModel.json";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
 import Store from "robe-react-commons/lib/stores/Store";
 
 
-export default class MailTemplate extends ShallowComponent {
+export default class BaseCrudPage extends ShallowComponent {
+
+    static propTypes: Map = {
+        url: React.PropTypes.string,
+        idField: React.PropTypes.string,
+        columns: React.PropTypes.array,
+        description: React.PropTypes.string,
+        header: React.PropTypes.string,
+    };
 
     constructor(props: Object) {
         super(props);
 
         let store = new Store({
             endPoint: new RemoteEndPoint({
-                url: "http://localhost:3000/mailtemplates"
+                url: props.url
             }),
-            idField: "id",
-            autoLoad: true,
-            _offset: "offset"
+            idField: props.idField,
+            autoLoad: true
         });
 
         this.state = {
-            columns: MailTemplateModel.columns,
+            columns: props.columns,
+            header: props.header,
+            description: props.description,
             store: store,
             showModal: false,
             item: {}
@@ -32,7 +40,7 @@ export default class MailTemplate extends ShallowComponent {
 
     render(): Object {
         return (
-            <Page description={"description"} header={"Mail Template"}>
+            <Page description={this.state.description} header={this.state.header}>
                 <DataGrid
                     toolbar={["create", "edit","delete"]}
                     columns={this.state.columns}
@@ -48,7 +56,7 @@ export default class MailTemplate extends ShallowComponent {
                 />
                 <ModalDataForm
                     ref="detailModal"
-                    header="Mail Template"
+                    header={this.props.header}
                     show={this.state.showModal}
                     onSubmit={this.__onSave}
                     onCancel={this.__onCancel}
