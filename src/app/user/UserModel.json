@@ -2,21 +2,21 @@
   "name": "UserModel",
   "fields": [
     {
-      "title": "Oid",
+      "label": "Oid",
       "type": "string",
       "code": "oid",
       "tooltip": "Oid",
       "visible": false
     },
     {
-      "title": "Son Güncelleme",
+      "label": "Son Güncelleme",
       "type": "string",
       "code": "lastUpdated",
       "tooltip": "Son Güncelleme",
       "visible": false
     },
     {
-      "title": "Fail Count",
+      "label": "Fail Count",
       "type": "number",
       "code": "failCount",
       "tooltip": "Fail Count",
@@ -26,21 +26,21 @@
       }
     },
     {
-      "title": "Son Login Zamanı",
+      "label": "Son Login Zamanı",
       "type": "date",
       "code": "lastLoginTime",
       "tooltip": "Son Login Zamanı",
       "visible": false
     },
     {
-      "title": "Son Çıkış Zamanı",
+      "label": "Son Çıkış Zamanı",
       "type": "date",
       "code": "lastLogoutTime",
       "tooltip": "Son Çıkış Zamanı",
       "visible": false
     },
     {
-      "title": "Ad   ",
+      "label": "Ad   ",
       "type": "string",
       "code": "name",
       "tooltip": "Adı",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "title": "Soyad",
+      "label": "Soyad",
       "type": "string",
       "code": "surname",
       "tooltip": "Soyadı",
@@ -88,7 +88,7 @@
       }
     },
     {
-      "title": "E-Posta",
+      "label": "E-Posta",
       "type": "string",
       "code": "email",
       "tooltip": "Email",
@@ -116,7 +116,7 @@
       ]
     },
     {
-      "title": "Şifre",
+      "label": "Şifre",
       "type": "password",
       "code": "password",
       "tooltip": "Şifre",
@@ -132,7 +132,7 @@
       }
     },
     {
-      "title": "Rol",
+      "label": "Rol",
       "type": "list",
       "code": "roleOid",
       "tooltip": "Rol",
@@ -155,7 +155,7 @@
       }
     },
     {
-      "title": "Aktif",
+      "label": "Aktif",
       "type": "bool",
       "code": "active",
       "tooltip": "Aktif"

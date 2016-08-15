@@ -2759,5 +2759,97 @@
       "description": "asd",
       "parentId": 2
     }
+  ],
+  "menulist": [
+    {
+      "id": 1,
+      "lastUpdated": 0,
+      "text": "Sistem Bilgileri",
+      "path": "app/dashboard/DashBoard",
+      "index": 0,
+      "parentOid": null,
+      "module": "DashBoard",
+      "icon": "fa-tachometer"
+    },
+    {
+      "id": 2,
+      "lastUpdated": 0,
+      "text": "Mail Şablon Yönetimi",
+      "path": "app/mailtemplate/MailTemplate",
+      "index": 0,
+      "parentOid": null,
+      "module": "MailTemplate",
+      "icon": "fa-envelope"
+    },
+    {
+      "id": 3,
+      "lastUpdated": 0,
+      "text": "Sistem Parametre Yönetimi",
+      "path": "app/systemparameter/SystemParameter",
+      "index": 0,
+      "parentOid": null,
+      "module": "SystemParameter",
+      "icon": "fa-steam"
+    },
+    {
+      "id": 4,
+      "lastUpdated": 0,
+      "text": "İş Zamanlama Yönetimi",
+      "path": "app/quartz/Quartz",
+      "index": 0,
+      "parentOid": null,
+      "module": "QuartzJob",
+      "icon": "fa-bell"
+    },
+    {
+      "id": 5,
+      "lastUpdated": 0,
+      "text": "Kullanıcı Yönetimi",
+      "path": "app/user/User",
+      "index": 1,
+      "parentOid": null,
+      "module": "User",
+      "icon": "fa-users"
+    },
+    {
+      "id": 6,
+      "lastUpdated": 0,
+      "text": "Profil Bilgileri Yönetimi",
+      "path": "app/profile/Profile",
+      "index": 1,
+      "parentOid": null,
+      "module": "Profile",
+      "icon": "fa-user"
+    },
+    {
+      "id": 7,
+      "lastUpdated": 0,
+      "text": "Menü Yönetimi",
+      "path": "app/menu/Menu",
+      "index": 1,
+      "parentOid": null,
+      "module": "Menu",
+      "icon": "fa-tasks"
+    },
+    {
+      "id": 8,
+      "lastUpdated": 0,
+      "text": "Rol Yönetimi",
+      "path": "app/role/Role",
+      "index": 1,
+      "parentOid": null,
+      "module": "Role",
+      "icon": "fa-user-secret"
+    },
+    {
+      "id": 9,
+      "lastUpdated": 0,
+      "text": "İzin Yönetimi",
+      "path": "app/permission/Permission",
+      "index": 1,
+      "parentOid": null,
+      "module": "Permission",
+      "icon": "fa-check-square-o"
+    }
   ]
 }

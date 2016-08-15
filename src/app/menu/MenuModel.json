@@ -1,0 +1,33 @@
+{
+  "name": "MenuModel",
+  "fields": [
+    {
+      "label": "id",
+      "type": "string",
+      "code": "id",
+      "tooltip": "id",
+      "visible": false
+    },
+    {
+      "label": "Text",
+      "type": "string",
+      "code": "text",
+      "tooltip": "Text",
+      "visible": true
+    },
+    {
+      "label": "Path",
+      "type": "string",
+      "code": "path",
+      "tooltip": "path",
+      "visible": true
+    },
+    {
+      "label": "Module",
+      "type": "string",
+      "code": "module",
+      "tooltip": "Module",
+      "visible": true
+    }
+  ]
+}
