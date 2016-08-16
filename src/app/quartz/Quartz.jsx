@@ -36,13 +36,15 @@ export default class SystemParameter extends ShallowComponent {
     render(): Object {
         return (
             <Page description={"Select job for see triggers of job"} header={"QuartzJob Management "}>
+
                 <DataGrid
                     fields={QuartzModel.fields}
                     store={this.state.store}
+                    ref={"table"}
+                    toolbar={["create", "edit","delete"]}
                     pageable={false}
-                    onSelection={this.onSelection}
-                    editable={true}
-                    searchable={false}
+                    pagination={{ emptyText: "No data.", pageSize: 50 }}
+                    editable={false}
                 />
                 {this.renderTriggerGrid()}
             </Page>
