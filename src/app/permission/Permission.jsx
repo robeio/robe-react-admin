@@ -6,7 +6,6 @@ import Row from "react-bootstrap/lib/Row";
 import ButtonToolbar from "react-bootstrap/lib/ButtonToolbar";
 import Button from "react-bootstrap/lib/Button";
 import SelectInput from "robe-react-ui/lib/inputs/SelectInput";
-import CategoryTreeList from "robe-react-ui/lib/categorytreelist/CategoryTreeList";
 import NotificationManager from "react-notifications/lib/NotificationManager";
 import Arrays from "robe-react-commons/lib/utils/Arrays";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
@@ -53,7 +52,6 @@ class Permission extends ShallowComponent {
                                 <label className="control-label">
                                     <span>Sistemde Mevcut Olan İzin Grupları</span>
                                 </label>
-                                <CategoryTreeList/>
                             </Col>
                         </Row>
                         <Row>
