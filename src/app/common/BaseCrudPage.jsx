@@ -42,17 +42,20 @@ export default class BaseCrudPage extends ShallowComponent {
         return (
             <Page description={this.state.description} header={this.state.header}>
                 <DataGrid
-                    toolbar={["create", "edit","delete"]}
                     fields={this.state.fields}
                     store={this.state.store}
-                    ref="table"
+                    ref={"table"}
+                    toolbar={["create", "edit","delete"]}
                     onNewClick={this.__add}
                     onEditClick={this.__edit}
                     onDeleteClick={this.__remove}
                     exportButton={true}
                     pageable={true}
                     editable={true}
-                    pagination={{ pageSize: 50 }}
+                    pagination={{ emptyText: "No data.", pageSize: 50 }}
+                    modalConfirm={{ header: "Please do not delete me." }}
+                    refreshable={true}
+                    pageSizeButtons={["20", "50", "100"]}
                 />
                 <ModalDataForm
                     ref="detailModal"
