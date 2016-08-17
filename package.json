@@ -81,7 +81,7 @@
     "webpack-file-changer": "^1.0.0"
   },
   "dependencies": {
-    "robe-react-ui": "1.0.23",
+    "robe-react-ui": "1.0.26",
     "is-js": "0.1.1",
     "js-criteria": "0.0.6",
     "react": "15.3.0",

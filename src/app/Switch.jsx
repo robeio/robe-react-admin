@@ -1,8 +1,8 @@
 import React from "react";
-import {ShallowComponent, AjaxRequest} from "robe-react-commons";
+import { ShallowComponent, AjaxRequest } from "robe-react-commons";
 import cookie from "react-cookie";
 
-class Switch extends ShallowComponent {
+export default class Switch extends ShallowComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,16 +15,13 @@ class Switch extends ShallowComponent {
         if (this.state.hasAuth) {
             if (!this.state.menu) {
                 return (<span>Loading please wait</span>);
-            } else {
-                let HasAuthorization = require("app/HasAuthorization");
-                return (<HasAuthorization menu={this.state.menu}/>);
             }
-
-        } else {
-            let NoAuthorization = require("app/NoAuthorization");
-            return (<NoAuthorization/>);
+            let HasAuthorization = require("./HasAuthorization").default;
+            return (<HasAuthorization menu={this.state.menu} />);
         }
-    };
+        let NoAuthorization = require("./NoAuthorization").default;
+        return (<NoAuthorization />);
+    }
 
     componentDidMount = () => {
         if (this.state.hasAuth) {
@@ -33,11 +30,9 @@ class Switch extends ShallowComponent {
                 type: "GET"
             });
 
-            _readRequest.call(undefined, undefined, (response)=> {
-                this.setState({menu: response});
+            _readRequest.call(undefined, undefined, (response) => {
+                this.setState({ menu: response });
             });
         }
     };
 }
-
-module.exports = Switch;
