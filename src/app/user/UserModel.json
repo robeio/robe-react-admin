@@ -105,15 +105,7 @@
           "\\S+@\\S+\\.\\S+",
           "Bu alan mail formatında olmalıdır."
         ]
-      },
-      "nonDeleteValues": [
-        "admin@robe.io",
-        "system@robe.io"
-      ],
-      "disableValues": [
-        "admin@robe.io",
-        "system@robe.io"
-      ]
+      }
     },
     {
       "label": "Şifre",
@@ -156,7 +148,7 @@
     },
     {
       "label": "Aktif",
-      "type": "bool",
+      "type": "check",
       "code": "active",
       "tooltip": "Aktif"
     }

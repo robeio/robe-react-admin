@@ -19,15 +19,11 @@ export default class Page extends ShallowComponent {
         icon: "fa-info-circle"
     };
 
-    constructor(props) {
-        super(props);
-    };
-
-    render() {
+    render(): Object {
         return (
             <Col className="page-content">
-                <Panel style={{minHeight:500, paddingBottom:40}}>
-                    <Col style={{marginTop:0}} className="page-header">
+                <Panel style={{ minHeight: 500, paddingBottom: 40 }}>
+                    <Col style={{ marginTop: 0 }} className="page-header">
                         <h2>{this.props.header}</h2>
                     </Col>
                     {this.__renderPageInfo()}
@@ -35,16 +31,13 @@ export default class Page extends ShallowComponent {
                 </Panel>
             </Col>
         );
-    };
+    }
 
-    __renderPageInfo = ()=> {
-
-        let icon = <FaIcon code={this.props.icon} size={"fa-sm"}/>;
-
+    __renderPageInfo(): Object {
+        let icon = <FaIcon code={this.props.icon} size={"fa-sm"} />;
         if (this.props.bsStyle === "") {
             return (<Col>{icon}{this.props.description}</Col>);
-        } else {
-            return (<Alert bsStyle={this.props.bsStyle}><Col>{icon}{this.props.description}</Col></Alert>)
         }
+        return (<Alert bsStyle={this.props.bsStyle}><Col>{icon}{this.props.description}</Col></Alert>);
     }
 }

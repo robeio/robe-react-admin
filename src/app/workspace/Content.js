@@ -5,7 +5,7 @@ import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
 
 export default class Content extends ShallowComponent {
-    constructor(props) {
+    constructor(props: Object) {
         super(props);
         this.state = {
             toggled: false,
@@ -13,20 +13,20 @@ export default class Content extends ShallowComponent {
             || document.documentElement.clientHeight
             || document.body.clientHeight
         };
-    };
+    }
 
-    render() {
-        var toggled = this.state.toggled ? "toggled" : "toogled";
+    render(): Object {
+        let toggled = this.state.toggled ? "toggled" : "toogled";
         return (
             <Col>
-                <Header open={this.__onMenuOpenClick}/>
+                <Header open={this.__onMenuOpenClick} />
                 <Col id="wrapper" className={toggled}>
                     <Col id="sidebar-wrapper">
                         <Col className="SideMenu-wrapper">
-                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"} onChange={this.handleChange.bind(this)}/>
+                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"} onChange={this.handleChange} />
                         </Col>
                     </Col>
-                    <Col style={{height:this.state.windowHeight,overflowY:"auto"}}>
+                    <Col style={{ height: this.state.windowHeight, overflowY: "auto" }}>
                         <Col id="page-content-wrapper" onClick={this.__onPageClick}>
                             {this.props.content}
                         </Col>
@@ -34,69 +34,70 @@ export default class Content extends ShallowComponent {
                 </Col>
             </Col>
         );
-    };
+    }
 
-    handleChange = (item: Object) => {
+    handleChange(item: Object) {
         this.props.router.push(item.module);
-    };
+    }
 
-    __onPageClick = (ev)=> {
-
-        if (this.state.toggled)
+    __onPageClick(ev: Object) {
+        if (this.state.toggled) {
             this.setState({
                 toggled: false
             });
+        }
         ev.preventDefault();
-    };
-    __onMenuOpenClick = (ev)=> {
+    }
+    __onMenuOpenClick(ev: Object) {
         this.setState({
             toggled: !this.state.toggled
         });
         ev.preventDefault();
-    };
+    }
 
 
-    __mediaQueryChanged = () => {
+    __mediaQueryChanged() {
         if (!this.state.mql.matches) {
             this.setState({
                 toggled: false
             });
         }
-    };
-    handleResize = (e)=> {
+    }
+    handleResize() {
         this.setState({
             windowHeight: window.innerHeight
             || document.documentElement.clientHeight
             || document.body.clientHeight
         });
-    };
+    }
 
-    componentDidMount = ()=> {
-        window.addEventListener('resize', this.handleResize);
-    };
+    componentDidMount() {
+        window.addEventListener("resize", this.handleResize);
+    }
 
-    componentWillMount = () => {
+    __listen() {
+        if (this.state.mql) {
+            this.setState({
+                toggled: false
+            });
+        }
+    }
+
+    componentWillMount() {
         const mql = window.matchMedia("screen and (max-width: 768px)");
         mql.addListener(this.__mediaQueryChanged);
-        this.setState({mql: mql});
-        this.props.router.listen(function (location) {
-            if (this.state.mql) {
-                this.setState({
-                    toggled: false
-                });
-            }
-        }.bind(this));
+        this.setState({ mql: mql });
+        this.props.router.listen(this.__listen);
 
-        var initialSelection = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1);
+        let initialSelection = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1);
         if (initialSelection) {
             this.props.router.push(initialSelection);
         }
-    };
+    }
 
-    componentWillUnmount = () => {
+    componentWillUnmount() {
         this.state.mql.removeListener(this.__mediaQueryChanged);
         this.props.router.listen(null);
-        window.removeEventListener('resize', this.handleResize);
-    };
-
+        window.removeEventListener("resize", this.handleResize);
+    }
 }

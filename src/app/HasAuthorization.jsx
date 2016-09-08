@@ -2,6 +2,7 @@ import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Router from "react-router/lib/Router";
 import BrowserHistory from "react-router/lib/browserHistory";
+import Workspace from "./workspace/Workspace";
 
 export default class HasAuthorization extends ShallowComponent {
 
@@ -18,7 +19,7 @@ export default class HasAuthorization extends ShallowComponent {
         return (<Router key="root" history={BrowserHistory} onUpdate={this.__scrollTop} routes={routes} />);
     }
 
-    __wrap = (routes: Object) => {
+    __wrap(routes: Object): Object {
         const INDEX_ROUTE = {
             getComponent(location: string, cb: Function) {
                 require.ensure([], (require: Object) => {
@@ -37,20 +38,18 @@ export default class HasAuthorization extends ShallowComponent {
         };
         const items = routes[0].items;
         this.__getItems(items);
-
-
         this.ROUTES.push(NOT_FOUND_ROUTE);
 
         return ({
             menu: routes,
             path: window.applicationRootPath,
-            component: HasAuthorization.importComponent(require("./workspace/Workspace")),
+            component: Workspace,
             indexRoute: INDEX_ROUTE,
             childRoutes: this.ROUTES
         });
-    };
+    }
 
-    __getItems = (items: Array) => {
+    __getItems(items: Array) {
         for (let i = 0; i < items.length; i++) {
             let item = items[i];
             if (item.items && item.items.length > 0) {
@@ -68,17 +67,17 @@ export default class HasAuthorization extends ShallowComponent {
                 this.ROUTES.push(obj);
             }
         }
-    };
+    }
 
     /**
      * this function changing absolute path to relative path
      */
-    __normalizePath = (path: string) => {
+    __normalizePath(path: string): string {
         if (path) {
             return path.replace("app", ".");
         }
         return path;
-    };
+    }
 
     __scrollTop() {
         window.scrollTo(0, 0);

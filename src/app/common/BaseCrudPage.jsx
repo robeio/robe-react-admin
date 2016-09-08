@@ -1,6 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Page from "app/workspace/Page";
+import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
@@ -45,7 +45,7 @@ export default class BaseCrudPage extends ShallowComponent {
                     fields={this.state.fields}
                     store={this.state.store}
                     ref={"table"}
-                    toolbar={["create", "edit","delete"]}
+                    toolbar={["create", "edit", "delete"]}
                     onNewClick={this.__add}
                     onEditClick={this.__edit}
                     onDeleteClick={this.__remove}
@@ -70,33 +70,33 @@ export default class BaseCrudPage extends ShallowComponent {
         );
     }
 
-    __add = () => {
+    __add=() => {
         let empty = {};
         this.__showModal(empty);
-    };
+    }
 
-    __edit = () => {
+    __edit=() => {
         let selectedRows = this.refs.table.getSelectedRows();
         if (!selectedRows || !selectedRows[0]) {
             return;
         }
         this.__showModal(selectedRows[0]);
-    };
+    }
 
-    __onCancel = () => {
-        this.setState({showModal: false});
-    };
+    __onCancel=() => {
+        this.setState({ showModal: false });
+    }
 
-    __onSave = (newData, callback) => {
+    __onSave= (newData: Object, callback: Object) => {
         this.state.store.create(newData, callback(true));
-    };
+    }
 
-    __remove = () => {
+    __remove=() => {
         let selectedRows = this.refs.table.getSelectedRows();
         this.state.store.delete(selectedRows[0]);
-    };
+    }
 
-    __showModal = (newItem) => {
-        this.setState({showModal: true, item: newItem});
-    };
+    __showModal=(newItem: Object) => {
+        this.setState({ showModal: true, item: newItem });
+    }
 }

@@ -5,11 +5,7 @@ import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
 
 export default class WelcomePage extends ShallowComponent {
-    constructor(props) {
-        super(props);
-    };
-
-    render() {
+    render(): Object {
         return (
             <Grid fluid>
                 <Row>
@@ -20,5 +16,5 @@ export default class WelcomePage extends ShallowComponent {
                 </Row>
             </Grid>
         );
-    };
+    }
 }
