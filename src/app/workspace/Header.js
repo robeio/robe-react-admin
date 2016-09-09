@@ -7,6 +7,7 @@ import ButtonGroup from "react-bootstrap/lib/ButtonGroup";
 import Col from "react-bootstrap/lib/Col";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 import Link from "react-router/lib/Link";
+import cookie from "react-cookie";
 
 export default class Header extends ShallowComponent {
     constructor(props: Object) {
@@ -47,6 +48,9 @@ export default class Header extends ShallowComponent {
         );
     }
     __onExit() {
-        
+        cookie.remove("domain", { path: "/" });
+        cookie.remove("username", { path: "/" });
+        cookie.remove("password", { path: "/" });
+        location.reload();
     }
 }

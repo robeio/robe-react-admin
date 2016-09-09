@@ -18,6 +18,9 @@ class Login extends ShallowComponent {
             password: "",
             rememberme: false
         };
+
+        this.__usernameHandleChange = this.__handleChange.bind(undefined, "username");
+        this.__passwordHandleChange = this.__handleChange.bind(undefined, "password");
     }
 
     render(): Object {
@@ -34,7 +37,7 @@ class Login extends ShallowComponent {
                             <Col componentClass="span" className="input-group-addon">
                                 <Col componentClass="i" className="glyphicon glyphicon-user" />
                             </Col>
-                            <TextInput ref="username" type="email" placeholder="Username" value={this.state.username} onChange={this.__handleChange.bind(undefined,"username")} required autofocus />
+                            <TextInput ref="username" type="email" placeholder="Username" value={this.state.username} onChange={this.__usernameHandleChange} required autofocus />
                         </Col>
                     </Row>
                     <Row>
@@ -42,7 +45,7 @@ class Login extends ShallowComponent {
                             <Col componentClass="span" className="input-group-addon">
                                 <Col componentClass="i" className="glyphicon glyphicon-lock" />
                             </Col>
-                            <PasswordInput ref="password" className="form-control" value={this.state.password} onChange={this.__handleChange.bind(undefined,"password")} placeholder="Password" required />
+                            <PasswordInput ref="password" className="form-control" value={this.state.password} onChange={this.__passwordHandleChange} placeholder="Password" required />
                         </Col>
                     </Row>
                     <Row>
