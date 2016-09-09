@@ -35,10 +35,8 @@ export default class Header extends ShallowComponent {
                         <Col className="visible-xs">Robe</Col>
                     </Navbar.Brand>
                 </Link>
-                <ButtonToolbar className="pull-right buttongroups-header">
+                <ButtonToolbar className="pull-right buttongroups-header" style={{ marginTop: "7px", marginRight: "-20px" }}>
                     <ButtonGroup>
-                        <Button bsStyle="primary" className="btn-header-button btn-header"><FaIcon code="fa-question" size="fa-lg" />
-                            <Col componentClass="span" className="hidden-xs"> Help</Col></Button>
                         <Button bsStyle="primary" className="btn-header-button btn-header" onClick={this.__onExit}>
                             <FaIcon code="fa-sign-out" size="fa-lg" />
                             <Col componentClass="span" className="hidden-xs"> Logout</Col>
@@ -48,7 +46,7 @@ export default class Header extends ShallowComponent {
             </Navbar>
         );
     }
-
     __onExit() {
+        
     }
 }
