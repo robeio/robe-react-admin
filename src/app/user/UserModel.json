@@ -129,8 +129,9 @@
       "code": "roleOid",
       "tooltip": "Rol",
       "dataTextField": "name",
-      "dataValueField": "oid",
+      "dataValueField": "id",
       "optionLabel": "<Lütfen Seçiniz>",
+      "items":[],
       "validations": {
         "required": [
           true,

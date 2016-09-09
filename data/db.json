@@ -2735,8 +2735,21 @@
       "description": "Returns all TriggerEntity as a collection. (GET /triggers)"
     }
   ],
-  "mailtemplates": [],
-  "systemparameters": [],
+  "mailtemplates": [
+    {
+      "id": 1,
+      "language": "EN",
+      "code": "CODE",
+      "template": "<div>template1</div>"
+    }
+  ],
+  "systemparameters": [
+    {
+      "id": 1,
+      "key": "KEY",
+      "value": "VALUE2"
+    }
+  ],
   "profiles": [
     {
       "id": 1,

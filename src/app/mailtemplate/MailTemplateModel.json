@@ -10,7 +10,7 @@
     },
     {
       "label": "Language",
-      "code": "il",
+      "code": "language",
       "type": "select",
       "required": true,
       "items": [

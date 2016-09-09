@@ -34,11 +34,13 @@ export default class BaseCrudPage extends ShallowComponent {
             description: props.description,
             store: store,
             showModal: false,
-            item: {}
+            item: {},
+            propsOfFields: this.props.propsOfFields || {}
         };
     }
 
     render(): Object {
+        console.log("propsOfFields: ", this.state.propsOfFields);
         return (
             <Page description={this.state.description} header={this.state.header}>
                 <DataGrid
@@ -52,7 +54,7 @@ export default class BaseCrudPage extends ShallowComponent {
                     exportButton={true}
                     pageable={true}
                     editable={true}
-                    pagination={{ emptyText: "No data.", pageSize: 50 }}
+                    pagination={{ emptyText: "No data.", pageSize: 20 }}
                     modalConfirm={{ header: "Please do not delete me." }}
                     refreshable={true}
                     pageSizeButtons={["20", "50", "100"]}
@@ -65,6 +67,7 @@ export default class BaseCrudPage extends ShallowComponent {
                     onCancel={this.__onCancel}
                     item={this.state.item}
                     fields={this.state.fields}
+                    propsOfFields={this.state.propsOfFields}
                 />
             </Page>
         );
