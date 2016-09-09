@@ -81,7 +81,7 @@
     "webpack-file-changer": "^1.0.0"
   },
   "dependencies": {
-    "robe-react-ui": "1.0.26",
+    "robe-react-ui": "1.0.28",
     "is-js": "0.1.1",
     "js-criteria": "0.0.6",
     "react": "15.3.0",
@@ -102,6 +102,6 @@
     "react-select": "0.9.1",
     "react-star-rating": "1.4.2",
     "react-treebeard": "1.1.2",
-    "robe-react-commons": "1.0.42"
+    "robe-react-commons": "1.0.50"
   }
 }
