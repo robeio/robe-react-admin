@@ -4,8 +4,7 @@ import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
-import Page from "app/workspace/Page";
-
+import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
 
 export default class Profile extends ShallowComponent {
 
@@ -15,7 +14,7 @@ export default class Profile extends ShallowComponent {
             name: "",
             surname: "",
             email: ""
-        }
+        };
     }
 
     render(): Object {
@@ -23,9 +22,9 @@ export default class Profile extends ShallowComponent {
             <Page description={"Description of profile"} header={"Profile"}>
                 <Row>
                     <Col lg={12}>
-                        <TextInput label="Name" value={this.state.name} readOnly/>
-                        <TextInput label="Surname" value={this.state.surname} readOnly/>
-                        <TextInput label="Email" value={this.state.email} readOnly/>
+                        <TextInput label="Name" value={this.state.name} readOnly />
+                        <TextInput label="Surname" value={this.state.surname} readOnly />
+                        <TextInput label="Email" value={this.state.email} readOnly />
                     </Col>
                 </Row>
             </Page>
@@ -33,17 +32,17 @@ export default class Profile extends ShallowComponent {
     }
 
     componentDidMount() {
-        let _readRequest = new AjaxRequest({
+        let readRequest = new AjaxRequest({
             url: "http://localhost:3000/profiles/1",
             type: "GET"
         });
 
-        _readRequest.call(undefined, undefined, (response)=> {
+        readRequest.call(undefined, undefined, (response: Object) => {
             this.setState({
                 name: response.name,
                 surname: response.surname,
                 email: response.email,
-            })
+            });
         });
     }
 }

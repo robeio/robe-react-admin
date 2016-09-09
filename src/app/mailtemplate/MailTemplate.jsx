@@ -2,7 +2,7 @@ import BaseCrudPage from "../common/BaseCrudPage";
 import MailTemplateModel from "./MailTemplateModel.json";
 
 export default class MailTemplate extends BaseCrudPage {
-    constructor(props: Object) {
+    constructor() {
         let state = {};
         state.url = "http://localhost:3000/mailtemplates";
         state.idField = "id";

@@ -14,7 +14,7 @@ import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 
 class Permission extends ShallowComponent {
 
-    constructor(props) {
+    constructor(props: Object) {
         super(props);
 
         this.state = {
@@ -26,12 +26,12 @@ class Permission extends ShallowComponent {
         };
     }
 
-    render() {
-
+    render(): Object {
         return (
-            <Page header="İzin Yönetimi"
-                  description="İlk önce değişiklik yapacağınız rolü sonra işlem yapmak istediğiniz izin grubunu seçiniz. İzin grubu ile ilişkili menüler renk farklılığı ile belirtilecektir.">
-                <Row><br/></Row>
+            <Page header="İzin Yönetimi" description="İlk önce değişiklik yapacağınız rolü sonra işlem yapmak istediğiniz izin grubunu seçiniz. İzin grubu ile ilişkili menüler renk farklılığı ile belirtilecektir.">
+                <Row>
+                    <br />
+                </Row>
                 <Row>
                     <Col md={12}>
                         <SelectInput
@@ -41,14 +41,14 @@ class Permission extends ShallowComponent {
                             valueField={"id"}
                             textField={"name"}
                             onChange={this.__onRoleChange}
-                            required={[true,"Required" ]}/>
+                            required={[true, "Required"]}
+                        />
                     </Col>
                 </Row>
                 <Row>
                     <Col md={8}>
                         <Row>
                             <Col md={12}>
-
                                 <label className="control-label">
                                     <span>Sistemde Mevcut Olan İzin Grupları</span>
                                 </label>
@@ -59,7 +59,6 @@ class Permission extends ShallowComponent {
                                 <label className="control-label">
                                     <span>Seçili gruba ait servisler</span>
                                 </label>
-
                             </Col>
                         </Row>
                     </Col>
@@ -67,20 +66,14 @@ class Permission extends ShallowComponent {
                         <label className="control-label">
                             <span>İzinli Menüler</span>
                         </label>
-                        <Col>
-
-
-                        </Col>
                     </Col>
                 </Row>
 
                 <Row>
                     <Col xs={12}>
                         <ButtonToolbar className="pull-right">
-                            <Button onClick={this.__onClearClick}
-                                    disabled={this.state.role==null || this.state.role.length==0}>İptal</Button>
-                            <Button bsStyle="primary" onClick={this.__onSaveClick}
-                                    disabled={this.state.role==null || this.state.role.length==0}>Kaydet</Button>
+                            <Button onClick={this.__onClearClick} disabled={this.state.role === null || this.state.role.length === 0}>İptal</Button>
+                            <Button bsStyle="primary" onClick={this.__onSaveClick} disabled={this.state.role === null || this.state.role.length === 0}>Kaydet</Button>
                         </ButtonToolbar>
                     </Col>
                 </Row>
@@ -89,7 +82,7 @@ class Permission extends ShallowComponent {
         );
     }
 
-    __onRoleChange = (e)=> {
+    __onRoleChange(e: Object) {
         let role = e.target.parsedValue ? [e.target.parsedValue] : [];
 
         this.setState({
@@ -102,39 +95,34 @@ class Permission extends ShallowComponent {
             this.__readGroups(role);
             this.__readRolePermissions(role);
         }
-    };
-    __readRolePermissions = (id)=> {
+    }
+    __readRolePermissions() {
 
-    };
-    __readMenu = ()=> {
+    }
+    __readMenu() {
 
-    };
+    }
 
-    __readGroups = ()=> {
+    __readGroups() {
 
-    };
-    __onGroupsSelection = (value)=> {
-
+    }
+    __onGroupsSelection(value: string) {
         if (value && value.length > 0) {
             this.__readGroupMenuAndService(value);
         } else {
-
             this.setState({
                 servicesData: []
             });
         }
+    }
+    __readGroupMenuAndService() {
 
-    };
-    __readGroupMenuAndService = (value)=> {
+    }
 
-    };
-
-    __onGroupsCheck = (checkedList, item, checked)=> {
-
-        //Check related services.
-        var servicesChecked: Array<string> = this.refs.servicesCheckList.state.checkedItems;
-        var selectedMenu = this.refs.menuCheckTree.state.selected;
-        var checkedMenu = this.refs.menuCheckTree.state.checkedItems;
+    __onGroupsCheck(checkedList: Array, item: Object, checked: boolean) {
+        let servicesChecked: Array<string> = this.refs.servicesCheckList.state.checkedItems;
+        let selectedMenu = this.refs.menuCheckTree.state.selected;
+        let checkedMenu = this.refs.menuCheckTree.state.checkedItems;
         if (checked) {
             for (let i = 0; i < this.state.servicesData.length; i++) {
                 servicesChecked.push(this.state.servicesData[i].oid);
@@ -152,8 +140,7 @@ class Permission extends ShallowComponent {
         }
 
         this.__setComponentCheckStates(undefined, checkedMenu, servicesChecked);
-
-    };
+    }
 
     __onMenuCheck = (value, status)=> {
         let menuChecks = this.refs.menuCheckTree.state.checkedItems;

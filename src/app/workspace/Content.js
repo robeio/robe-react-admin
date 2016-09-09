@@ -1,6 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Header from "app/workspace/Header";
+import Header from "app/workspace/Header";// eslint-disable-line import/no-unresolved
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
 

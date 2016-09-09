@@ -2,7 +2,7 @@ import BaseCrudPage from "../common/BaseCrudPage";
 import RoleModel from "./RoleModel.json";
 
 export default class Role extends BaseCrudPage {
-    constructor(props: Object) {
+    constructor() {
         let state = {};
         state.url = "http://localhost:3000/roles";
         state.idField = "id";

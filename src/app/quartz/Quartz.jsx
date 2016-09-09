@@ -1,6 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Page from "app/workspace/Page";
+import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
@@ -36,12 +36,11 @@ export default class SystemParameter extends ShallowComponent {
     render(): Object {
         return (
             <Page description={"Select job for see triggers of job"} header={"QuartzJob Management "}>
-
                 <DataGrid
                     fields={QuartzModel.fields}
                     store={this.state.store}
                     ref={"table"}
-                    toolbar={["create", "edit","delete"]}
+                    toolbar={["create", "edit", "delete"]}
                     pageable={false}
                     pagination={{ emptyText: "No data.", pageSize: 50 }}
                     editable={false}
@@ -51,10 +50,9 @@ export default class SystemParameter extends ShallowComponent {
         );
     }
 
-    renderTriggerGrid() {
+    renderTriggerGrid(): Object {
         if (this.state.selection) {
-
-            let url = "http://localhost:3000/triggers?parentId=" + this.state.selection["id"];
+            let url = `http://localhost:3000/triggers?parentId="${this.state.selection.id}`;
 
             let store = new Store({
                 endPoint: new RemoteEndPoint({
@@ -89,17 +87,15 @@ export default class SystemParameter extends ShallowComponent {
                     item={this.state.item}
                     fields={TriggerModel.fields}
                 />]);
-
-        } else {
-            return null;
         }
+        return null;
     }
 
-    onSelection = (item) => {
+    onSelection(item: Object): Object {
         if (item) {
-            this.setState({selection: item});
+            this.setState({ selection: item });
         }
-    };
+    }
 
     __add = () => {
         let empty = {};
@@ -115,12 +111,11 @@ export default class SystemParameter extends ShallowComponent {
     };
 
     __onCancel = () => {
-        this.setState({showModal: false});
+        this.setState({ showModal: false });
     };
 
-    __onSave = (newData, callback) => {
-
-        newData["parentId"] = this.state.selection["id"];
+    __onSave = (newData: Object, callback: Object) => {
+        newData.parentId = this.state.selection.id;
 
         this.triggersStore.create(newData, callback(true));
     };
@@ -130,7 +125,7 @@ export default class SystemParameter extends ShallowComponent {
         this.triggersStore.delete(selectedRows[0]);
     };
 
-    __showModal = (newItem) => {
-        this.setState({showModal: true, item: newItem});
+    __showModal = (newItem: Object) => {
+        this.setState({ showModal: true, item: newItem });
     };
 }

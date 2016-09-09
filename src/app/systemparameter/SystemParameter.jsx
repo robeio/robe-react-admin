@@ -2,7 +2,7 @@ import BaseCrudPage from "../common/BaseCrudPage";
 import SystemParameterModel from "./SystemParameterModel.json";
 
 export default class SystemParameter extends BaseCrudPage {
-    constructor(props: Object) {
+    constructor() {
         let state = {};
         state.url = "http://localhost:3000/systemparameters";
         state.idField = "id";
