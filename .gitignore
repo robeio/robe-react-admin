@@ -49,3 +49,6 @@ docs
 
 # Site building directory
 sitebuild
+
+#yarn
+yarn.lock
