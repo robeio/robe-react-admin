@@ -1,0 +1,46 @@
+.card {
+    -webkit-box-shadow: 0 0 10px rgba(100, 100, 100, .1);
+    box-shadow: 0 0 10px rgba(100, 100, 100, .1);
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border-radius: 2px !important;
+}
+
+.card-header {
+    padding: 6px 6px 2px 15px;
+    margin: -7px -6px -7px -15px;
+    border-radius: 4px;
+    color: #777777;
+    border-bottom: 1px solid #B5D3E7;
+    background: #F6F6F6;
+}
+
+.card .row {
+    margin: 0;
+}
+
+.borderless {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.unfilled {
+    padding: 0;
+}
+
+.unfilled .panel-body {
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.unShadow {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
