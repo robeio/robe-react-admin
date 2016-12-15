@@ -45,7 +45,7 @@ export default class Card extends ShallowComponent {
                 sm={this.props.sm}
                 md={this.props.md}
                 lg={this.props.lg}
-                style={{padding:"0px 5px 0px 5px"}}>
+                style={{padding:"0px 5px"}}>
                 <Panel
                     className={className}
                     style={this.props.style}
@@ -58,20 +58,21 @@ export default class Card extends ShallowComponent {
 
 
     __renderHeader = ()=> {
-        if (this.props.header)
-            return (
-                <Col className="card-header">
-                    <Col className="pull-right"
-                         style={{paddingTop:8,fontSize:12}}>
-                        {this.props.actions}
-                    </Col>
-                    <h5>
-                        <b style={{color:"#337ab7",opacity:0.8}}>
-                            {this.props.header}
-                        </b>
-                    </h5>
+        if (!this.props.header)
+            return undefined;
+
+        return (
+            <Col className="card-header">
+                <Col className="pull-right"
+                     style={{paddingTop:8,fontSize:12}}>
+                    {this.props.actions}
                 </Col>
-            );
-        return undefined;
+                <h5>
+                    <b style={{color:"#337ab7",opacity:0.8}}>
+                        {this.props.header}
+                    </b>
+                </h5>
+            </Col>
+        );
     };
 }

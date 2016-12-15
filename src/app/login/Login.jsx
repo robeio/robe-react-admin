@@ -1,5 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
+import InputGroup from "react-bootstrap/lib/InputGroup";
 import Form from "react-bootstrap/lib/FormGroup";
 import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
@@ -26,44 +27,48 @@ class Login extends ShallowComponent {
 
     render():Object {
         return (
-            <Col className="center-block" style={{maxWidth:350}}>
+            <div className="center-block"
+                 style={{maxWidth:300}}>
                 <Card>
                     <Form>
                         <Row>
-                            <Col xs={8} xsOffset={2}>
-                                <Image src="./logo.png" responsive/>
-                            </Col>
+                            <Image src="./logo.png" responsive/>
                         </Row>
                         <Row>
-                            <Col className="input-group login-input">
-                                <Col componentClass="span" className="input-group-addon">
-                                    <Col componentClass="i" className="glyphicon glyphicon-user"/>
-                                </Col>
-                                <TextInput ref="username" type="email" placeholder="Username"
-                                           value={this.state.username}
-                                           onChange={this.__usernameHandleChange} required autofocus/>
-                            </Col>
+                            <TextInput
+                                ref="username"
+                                type="email"
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.__usernameHandleChange}
+                                inputGroupLeft={<InputGroup.Addon><Col componentClass="i" className="glyphicon glyphicon-user"/></InputGroup.Addon>}
+                                required
+                                autofocus/>
                         </Row>
                         <Row>
-                            <Col className="input-group login-input">
-                                <Col componentClass="span" className="input-group-addon">
-                                    <Col componentClass="i" className="glyphicon glyphicon-lock"/>
-                                </Col>
-                                <PasswordInput ref="password" className="form-control" value={this.state.password}
-                                               onChange={this.__passwordHandleChange} placeholder="Password" required/>
-                            </Col>
+                            <PasswordInput
+                                ref="password"
+                                className="form-control"
+                                value={this.state.password}
+                                onChange={this.__passwordHandleChange}
+                                inputGroupLeft={<InputGroup.Addon><Col componentClass="i" className="glyphicon glyphicon-lock"/></InputGroup.Addon>}
+                                placeholder="Password"
+                                required/>
                         </Row>
                         <Row>
                             <Col style={{ color: "red" }}> username: demo password:demo</Col>
                         </Row>
                         <Row>
-                            <Button className="btn btn-primary btn-login btn-block" type="submit" ref="submitBtn"
-                                    onClick={this.handleSubmit}>Login
+                            <Button
+                                className="btn btn-primary btn-login btn-block"
+                                type="submit"
+                                ref="submitBtn"
+                                onClick={this.handleSubmit}>Login
                             </Button>
                         </Row>
                     </Form>
                 </Card>
-            </Col>
+            </div>
         );
     }
 
