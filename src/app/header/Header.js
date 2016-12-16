@@ -10,6 +10,14 @@ import cookie from "react-cookie";
 import "./style.css";
 
 export default class Header extends ShallowComponent {
+    static propTypes = {
+        toggled: React.PropTypes.bool
+    };
+
+    static defaultProps = {
+        toggled: false
+    };
+
     constructor(props:Object) {
         super(props);
         this.state = {
@@ -35,7 +43,7 @@ export default class Header extends ShallowComponent {
     render():Object {
         return (
             <Navbar fluid inverse className="container-fluid">
-                <Button onClick={this.props.open} className="navbar-toggle pull-left">
+                <Button onClick={this.__onToggle} className="navbar-toggle pull-left">
                     <Col componentClass="span" className="sr-only">Toggle navigation</Col>
                     <Col componentClass="span" className="icon-bar"/>
                     <Col componentClass="span" className="icon-bar"/>
@@ -43,12 +51,13 @@ export default class Header extends ShallowComponent {
                 </Button>
                 <Link to={window.applicationRootPath}>
                     <Navbar.Brand>
-                        <Col style={{paddingTop:15}} className="hidden-xs">Robe Sample Application</Col>
+                        <Col style={{paddingTop:15,display:this.props.toggled?"none":"inherit"}}>Robe Sample
+                            Application</Col>
                     </Navbar.Brand>
                 </Link>
-                <Link className="content" to={window.applicationRootPath}>
+                <Link to={window.applicationRootPath}>
                     <Navbar.Brand>
-                        <Col style={{paddingTop:15}} className="visible-xs">Robe</Col>
+                        <Col style={{paddingTop:15,display:this.props.toggled?"inherit":"none"}}>Robe</Col>
                     </Navbar.Brand>
                 </Link>
                 <Col className="pull-right" style={Header.buttonGroupStyle}>
@@ -82,5 +91,10 @@ export default class Header extends ShallowComponent {
         cookie.remove("username", {path: "/"});
         cookie.remove("password", {path: "/"});
         location.reload();
+    };
+
+    __onToggle = ()=> {
+        if (this.props.onToggle)
+            this.props.onToggle();
     }
 }
