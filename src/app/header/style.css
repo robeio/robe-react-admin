@@ -1,5 +1,7 @@
 .navbar-inverse {
     border-radius: 0 !important;
+    background-color: #173646 !important;
+    border-color: #173646 !important;
 }
 
 .navbar {
