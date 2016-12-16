@@ -59,7 +59,7 @@ export default class Content extends ShallowComponent {
     __mediaQueryChanged = (mql)=> {
         this.setState({
             toggled: !mql.matches,
-            mql: mql
+            matches: mql.matches
         });
 
     };
