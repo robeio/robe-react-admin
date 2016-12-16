@@ -3,6 +3,7 @@ import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent
 import Header from "app/header/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
+import Card from "libs/card/Card";
 
 export default class Content extends ShallowComponent {
 
@@ -14,7 +15,7 @@ export default class Content extends ShallowComponent {
     }
 
     render():Object {
-        let toggled = this.state.toggled == false ? 0 : 250;
+        let toggled = this.state.toggled == false ? 0 : 290;
         return (
             <Col>
                 <Header toggled={this.state.matches}
@@ -22,15 +23,17 @@ export default class Content extends ShallowComponent {
                 <Col id="sideMenu"
                      style={{width:toggled}}
                      className="side-menu">
-                    <SideMenu
-                        items={this.props.menu[0]}
-                        selectedItem={"Dashboard"}
-                        onChange={this.__handleChange}/>
+                    <Card style={{marginLeft:0,marginRight:0}}>
+                        <SideMenu
+                            items={this.props.menu[0]}
+                            selectedItem={"Dashboard"}
+                            onChange={this.__handleChange}/>
+                    </Card>
                 </Col>
                 <Col
                     id="content"
                     className="content"
-                    style={{ height:window.innerHeight,marginLeft:toggled }}
+                    style={{ height:window.innerHeight,marginLeft:toggled,marginRight:-1*toggled }}
                     onClick={this.__closeMenu}>
                     {this.props.content}
                 </Col>

@@ -1,7 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Col from "react-bootstrap/lib/Col";
-import Panel from "react-bootstrap/lib/Panel";
 import "libs/card/style.css";
 
 export default class Card extends ShallowComponent {
@@ -33,45 +32,25 @@ export default class Card extends ShallowComponent {
 
     render() {
         var className = "card";
-        if (this.props.borderless)
-            className += " borderless";
-        if (this.props.unfilled)
-            className += " unfilled";
-        if (this.props.unShadow)
-            className += " unShadow";
+        if (this.props.className)
+            className += " " + this.props.className;
         return (
             <Col
                 xs={this.props.xs}
                 sm={this.props.sm}
                 md={this.props.md}
                 lg={this.props.lg}
-                className={this.props.className}
+                className={className}
                 style={this.props.style}>
-                <Panel
-                    className={className}
-                    header={this.__renderHeader()}>
-                    {this.props.children}
-                </Panel>
-            </Col>
-        );
-    };
-
-
-    __renderHeader = ()=> {
-        if (!this.props.header)
-            return undefined;
-
-        return (
-            <Col className="card-header">
-                <Col className="pull-right"
-                     style={{paddingTop:8,fontSize:12}}>
-                    {this.props.actions}
+                <Col className="card-header"
+                     style={{display:this.props.header?"inherit":"none"}}>
+                    <Col className="card-title">
+                        <h4>{this.props.header}</h4>
+                    </Col>
                 </Col>
-                <h5>
-                    <b style={{color:"#337ab7",opacity:0.8}}>
-                        {this.props.header}
-                    </b>
-                </h5>
+                <Col className="card-content">
+                    {this.props.children}
+                </Col>
             </Col>
         );
     };
