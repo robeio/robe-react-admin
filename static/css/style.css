@@ -3,7 +3,7 @@ body {
     color: #342E2B;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: #e7eaec;
+    background-color: #ffffff;
 }
 
 .side-menu {
@@ -30,7 +30,7 @@ body {
 
 .content {
     transition: .5s;
-    padding: 5px 0;
+    padding: 5px;
     margin-left: 250px;
     margin-right: 0;
     z-index: 0;
