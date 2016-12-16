@@ -1,11 +1,10 @@
 import React from "react";
-import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
+import { ShallowComponent, AjaxRequest } from "robe-react-commons";
 import Col from "react-bootstrap/lib/Col";
 import Panel from "react-bootstrap/lib/Panel";
 import ProgressBar from "react-bootstrap/lib/ProgressBar";
 import Badge from "react-bootstrap/lib/Badge";
 import Card from "libs/card/Card";
-import Metrics from "./metrics.json"; // eslint-disable-line import/no-unresolved
 
 class Dashboard extends ShallowComponent {
 
@@ -15,7 +14,7 @@ class Dashboard extends ShallowComponent {
         this.state = {
             notFound: false,
             isLoading: true,
-            jsonData: Metrics,
+            jsonData: {},
             logData: [],
             vmTotal: [],
             vmHeap: [],
@@ -29,7 +28,7 @@ class Dashboard extends ShallowComponent {
         }
         return (
             <Card header="Sistem Bilgileri"
-                  description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
+                description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
                 <br />
                 <Panel header="Log Detayları">
                     <Col xs={12} md={12}>
@@ -304,10 +303,18 @@ class Dashboard extends ShallowComponent {
     }
 
     componentDidMount() {
-        this.__vmNonHeap();
-        this.__appenderData();
-        this.__vmTotal();
-        this.__vmHeap();
+        let readRequest = new AjaxRequest({
+            url: "metrics",
+            type: "GET"
+        });
+
+        readRequest.call(undefined, undefined, (response: Object) => {
+            this.setState({ jsonData: response });
+            this.__vmNonHeap();
+            this.__appenderData();
+            this.__vmTotal();
+            this.__vmHeap();
+        }, undefined);
     }
 }
 module.exports = Dashboard;
