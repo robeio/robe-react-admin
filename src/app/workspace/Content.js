@@ -23,7 +23,7 @@ export default class Content extends ShallowComponent {
                 <Col id="sideMenu"
                      style={{width:toggled}}
                      className="side-menu">
-                    <Card style={{marginLeft:0}}>
+                    <Card style={{marginLeft:0,marginRight:0}}>
                         <SideMenu
                             items={this.props.menu[0]}
                             selectedItem={"Dashboard"}
