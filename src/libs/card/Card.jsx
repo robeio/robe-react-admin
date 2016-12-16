@@ -45,10 +45,10 @@ export default class Card extends ShallowComponent {
                 sm={this.props.sm}
                 md={this.props.md}
                 lg={this.props.lg}
-                style={{padding:"0px 5px"}}>
+                className={this.props.className}
+                style={this.props.style}>
                 <Panel
                     className={className}
-                    style={this.props.style}
                     header={this.__renderHeader()}>
                     {this.props.children}
                 </Panel>

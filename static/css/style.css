@@ -3,6 +3,7 @@ body {
     color: #342E2B;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: #e7eaec;
 }
 
 .side-menu {
@@ -16,7 +17,7 @@ body {
     border-right: 1px solid #eeeeee;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #153547;
     border-color: #152f3e;
     overflow-x: hidden;
@@ -29,7 +30,7 @@ body {
 
 .content {
     transition: .5s;
-    padding: 10px 0;
+    padding: 5px 0;
     margin-left: 250px;
     margin-right: 0;
     z-index: 0;
@@ -38,5 +39,5 @@ body {
 
 .SideMenu-wrapper {
     width: 249px;
-    margin-top: 0 !important;
+    margin-top: 12px !important;
 }

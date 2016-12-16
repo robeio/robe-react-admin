@@ -17,7 +17,8 @@ export default class Content extends ShallowComponent {
         let toggled = this.state.toggled == false ? 0 : 250;
         return (
             <Col>
-                <Header open={this.__changeMenu}/>
+                <Header toggled={this.state.matches}
+                        onToggle={this.__changeMenu}/>
                 <Col id="sideMenu"
                      style={{width:toggled}}
                      className="side-menu">
