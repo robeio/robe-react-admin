@@ -1,121 +1,31 @@
 body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #342E2B;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-.navbar-toggle {
-    float: left !important;
-}
-
-.navbar-brand {
-    padding: 5px 5px;
-}
-
-a:focus {
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-a {
-    color: #8bb8e8;
-}
-
-.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-    background-color: #8bb8e8;
-    border-color: #8bb8e8;
-}
-
-.pagination > li > a, .pagination > li > span {
-    color: #8bb8e8;
-}
-
-.breadcrumb {
-    margin-top: 7px;
-}
-
-.navbar-inverse {
-    background-color: #342E2B;
-    border-color: #080808;
-}
-
-#wrapper {
-    margin-top: 20px;
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    margin-top: 20px;
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
+.side-menu {
     height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    /*background: #342E2B;*/
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    border-right: 1px solid;
-}
-
-#wrapper.toggled #sidebar-wrapper {
     width: 250px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: width .5s;
+    z-index: 998;
+    float: left;
+    border-right: 1px solid #eeeeee;
 }
 
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 30px 15px 15px;
+.content {
+    transition: .5s;
+    padding: 10px 0;
+    margin-left: 250px;
+    margin-right: 0;
+    z-index: 0;
+    overflow-y: auto
 }
 
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-@media (min-width: 768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        width: 250px;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        padding-top: 30px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
-
-.header {
-    background-color: #342E2B;
-    color: white;
-    padding: 16px;
-    font-size: 1.5em;
+.SideMenu-wrapper {
+    width: 249px;
+    margin-top: 0 !important;
 }

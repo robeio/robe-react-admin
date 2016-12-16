@@ -25,7 +25,7 @@ export default class HasAuthorization extends ShallowComponent {
         const INDEX_ROUTE = {
             getComponent(location:string, cb:Function) {
                 require.ensure([], (require:Object) => {
-                    cb(null, HasAuthorization.importComponent(require("./workspace/WelcomePage")));
+                    cb(null, HasAuthorization.importComponent(require("app/welcome/Welcome")));
                 });
             }
         };

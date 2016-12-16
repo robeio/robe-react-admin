@@ -2,9 +2,10 @@ import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Header from "app/header/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
-import Col from "react-bootstrap/lib/Col";// eslint-disable-line import/no-unresolved
+import Col from "react-bootstrap/lib/Col";
 
 export default class Content extends ShallowComponent {
+
     constructor(props:Object) {
         super(props);
         this.state = {
@@ -13,70 +14,62 @@ export default class Content extends ShallowComponent {
     }
 
     render():Object {
-        let toggled = this.state.toggled ? "toggled" : "toogled";
+        let toggled = this.state.toggled == false ? 0 : 250;
         return (
             <Col>
-                <Header open={this.__onMenuOpenClick}/>
-                <Col id="wrapper" className={toggled}>
-                    <Col id="sidebar-wrapper">
-                        <Col className="SideMenu-wrapper">
-                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"}
-                                      onChange={this.handleChange}/>
-                        </Col>
-                    </Col>
-                    <Col style={{ height:window.innerHeight, overflowY: "auto",paddingTop:20 }}>
-                        <Col id="page-content-wrapper" onClick={this.__onPageClick}>
-                            {this.props.content}
-                        </Col>
-                    </Col>
+                <Header open={this.__changeMenu}/>
+                <Col id="sideMenu"
+                     style={{width:toggled}}
+                     className="side-menu">
+                    <SideMenu
+                        items={this.props.menu[0]}
+                        selectedItem={"Dashboard"}
+                        onChange={this.__handleChange}/>
+                </Col>
+                <Col
+                    id="content"
+                    className="content"
+                    style={{ height:window.innerHeight,marginLeft:toggled }}
+                    onClick={this.__closeMenu}>
+                    {this.props.content}
                 </Col>
             </Col>
         );
     }
 
-    handleChange(item:Object) {
+    __handleChange = (item:Object)=> {
         this.props.router.push(item.module);
-    }
+    };
 
-    __onPageClick(ev:Object) {
-        if (this.state.toggled) {
+    __closeMenu = ()=> {
+        if (this.state.matches == true) {
             this.setState({
                 toggled: false
             });
         }
-        ev.preventDefault();
-    }
+    };
+    __changeMenu = ()=> {
+        if (this.state.matches == true) {
+            this.setState({
+                toggled: !this.state.toggled
+            });
+        }
+    };
 
-    __onMenuOpenClick(ev:Object) {
+    __mediaQueryChanged = (mql)=> {
         this.setState({
-            toggled: !this.state.toggled
+            toggled: !mql.matches,
+            mql: mql
         });
-        ev.preventDefault();
-    }
 
-
-    __mediaQueryChanged() {
-        if (!this.state.mql.matches) {
-            this.setState({
-                toggled: false
-            });
-        }
-    }
-
-
-    __listen() {
-        if (this.state.mql) {
-            this.setState({
-                toggled: false
-            });
-        }
-    }
+    };
 
     componentWillMount() {
         const mql = window.matchMedia("screen and (max-width: 768px)");
         mql.addListener(this.__mediaQueryChanged);
-        this.setState({mql: mql});
-        this.props.router.listen(this.__listen);
+        this.setState({matches: mql.matches, toggled: !mql.matches});
+
+        this.props.router.listen(this.__closeMenu);
 
         let initialSelection = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1);
         if (initialSelection) {
