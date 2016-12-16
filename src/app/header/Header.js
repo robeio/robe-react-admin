@@ -7,6 +7,7 @@ import Badge from "react-bootstrap/lib/Badge";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 import Link from "react-router/lib/Link";
 import cookie from "react-cookie";
+import "./style.css";
 
 export default class Header extends ShallowComponent {
     constructor(props:Object) {
@@ -33,7 +34,7 @@ export default class Header extends ShallowComponent {
 
     render():Object {
         return (
-            <Navbar fluid fixedTop inverse className="container-fluid">
+            <Navbar fluid inverse className="container-fluid">
                 <Button onClick={this.props.open} className="navbar-toggle pull-left">
                     <Col componentClass="span" className="sr-only">Toggle navigation</Col>
                     <Col componentClass="span" className="icon-bar"/>

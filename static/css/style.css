@@ -1,76 +1,14 @@
 body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     color: #342E2B;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
-.navbar-toggle {
-    float: left !important;
-}
-
-.navbar-brand {
-    padding: 5px 5px;
-}
-
-a:focus {
-    outline: thin dotted;
-    outline: 0px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-a {
-    color: #8bb8e8;
-}
-
-.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
-    background-color: #8bb8e8;
-    border-color: #8bb8e8;
-}
-
-.pagination > li > a, .pagination > li > span {
-    color: #8bb8e8;
-}
-
-.breadcrumb {
-    margin-top: 7px;
-}
-
-.navbar-inverse {
-    background-color: #342E2B;
-    border-color: #080808;
-}
-
-#wrapper {
-    margin-top: 20px;
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    margin-top: 20px;
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
+.side-menu {
     height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    /*background: #342E2B;*/
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    border-right: 1px solid;
-}
-
-#wrapper.toggled #sidebar-wrapper {
     width: 250px;
+<<<<<<< HEAD
 }
 
 #page-content-wrapper {
@@ -124,4 +62,24 @@ a {
 .btn-primary{
     background-color: #153547;
     border-color: #152f3e;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: width .5s;
+    z-index: 998;
+    float: left;
+    border-right: 1px solid #eeeeee;
+}
+
+.content {
+    transition: .5s;
+    padding: 10px 0;
+    margin-left: 250px;
+    margin-right: 0;
+    z-index: 0;
+    overflow-y: auto
+}
+
+.SideMenu-wrapper {
+    width: 249px;
+    margin-top: 0 !important;
 }
