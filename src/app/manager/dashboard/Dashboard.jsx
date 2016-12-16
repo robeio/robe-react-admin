@@ -14,7 +14,7 @@ class Dashboard extends ShallowComponent {
         this.state = {
             notFound: false,
             isLoading: true,
-            jsonData: {},
+            jsonData: undefined,
             logData: [],
             vmTotal: [],
             vmHeap: [],
