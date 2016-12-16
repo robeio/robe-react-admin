@@ -1,4 +1,4 @@
-import BaseCrudPage from "../common/BaseCrudPage";
+import BaseCrudPage from "app/common/BaseCrudPage";
 import MenuModel from "./MenuModel.json";
 
 export default class Menu extends BaseCrudPage {

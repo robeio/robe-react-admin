@@ -1,4 +1,4 @@
-import BaseCrudPage from "../common/BaseCrudPage";
+import BaseCrudPage from "app/common/BaseCrudPage";
 import RoleModel from "./RoleModel.json";
 
 export default class Role extends BaseCrudPage {

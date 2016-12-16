@@ -1,19 +1,19 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
+import Card from "libs/card/Card";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
 import Store from "robe-react-commons/lib/stores/Store";
 import QuartzModel from "./QuartzModel.json";
-import TriggerModel from "./TriggerModel.json";
+import TriggerModel from "./TriggerModel.json";// eslint-disable-line import/no-unresolved
 
 export default class SystemParameter extends ShallowComponent {
 
 
-    triggersStore: undefined;
+    triggersStore:undefined;
 
-    constructor(props: Object) {
+    constructor(props:Object) {
         super(props);
 
         let store = new Store({
@@ -33,9 +33,9 @@ export default class SystemParameter extends ShallowComponent {
         };
     }
 
-    render(): Object {
+    render():Object {
         return (
-            <Page description={"Select job for see triggers of job"} header={"QuartzJob Management "}>
+            <Card description={"Select job for see triggers of job"} header={"QuartzJob Management "}>
                 <DataGrid
                     fields={QuartzModel.fields}
                     store={this.state.store}
@@ -46,11 +46,11 @@ export default class SystemParameter extends ShallowComponent {
                     editable={false}
                 />
                 {this.renderTriggerGrid()}
-            </Page>
+            </Card>
         );
     }
 
-    renderTriggerGrid(): Object {
+    renderTriggerGrid():Object {
         if (this.state.selection) {
             let url = `http://localhost:3000/triggers?parentId="${this.state.selection.id}`;
 
@@ -91,9 +91,9 @@ export default class SystemParameter extends ShallowComponent {
         return null;
     }
 
-    onSelection(item: Object): Object {
+    onSelection(item:Object):Object {
         if (item) {
-            this.setState({ selection: item });
+            this.setState({selection: item});
         }
     }
 
@@ -111,10 +111,10 @@ export default class SystemParameter extends ShallowComponent {
     };
 
     __onCancel = () => {
-        this.setState({ showModal: false });
+        this.setState({showModal: false});
     };
 
-    __onSave = (newData: Object, callback: Object) => {
+    __onSave = (newData:Object, callback:Object) => {
         newData.parentId = this.state.selection.id;
 
         this.triggersStore.create(newData, callback(true));
@@ -125,7 +125,7 @@ export default class SystemParameter extends ShallowComponent {
         this.triggersStore.delete(selectedRows[0]);
     };
 
-    __showModal = (newItem: Object) => {
-        this.setState({ showModal: true, item: newItem });
+    __showModal = (newItem:Object) => {
+        this.setState({showModal: true, item: newItem});
     };
 }

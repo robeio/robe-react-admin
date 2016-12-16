@@ -4,6 +4,7 @@ import InputGroup from "react-bootstrap/lib/InputGroup";
 import Form from "react-bootstrap/lib/FormGroup";
 import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
+import Alert from "react-bootstrap/lib/Alert";
 import Image from "react-bootstrap/lib/Image";
 import Button from "react-bootstrap/lib/Button";
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
@@ -25,6 +26,12 @@ class Login extends ShallowComponent {
         this.__passwordHandleChange = this.__handleChange.bind(undefined, "password");
     }
 
+    validation = {
+        required: {
+            message: "This field is required."
+        }
+    };
+
     render():Object {
         return (
             <div className="center-block"
@@ -42,8 +49,7 @@ class Login extends ShallowComponent {
                                 value={this.state.username}
                                 onChange={this.__usernameHandleChange}
                                 inputGroupLeft={<InputGroup.Addon><Col componentClass="i" className="glyphicon glyphicon-user"/></InputGroup.Addon>}
-                                required
-                                autofocus/>
+                                validationDisplay="overlay"/>
                         </Row>
                         <Row>
                             <PasswordInput
@@ -52,11 +58,7 @@ class Login extends ShallowComponent {
                                 value={this.state.password}
                                 onChange={this.__passwordHandleChange}
                                 inputGroupLeft={<InputGroup.Addon><Col componentClass="i" className="glyphicon glyphicon-lock"/></InputGroup.Addon>}
-                                placeholder="Password"
-                                required/>
-                        </Row>
-                        <Row>
-                            <Col style={{ color: "red" }}> username: demo password:demo</Col>
+                                placeholder="Password"/>
                         </Row>
                         <Row>
                             <Button
@@ -65,6 +67,13 @@ class Login extends ShallowComponent {
                                 ref="submitBtn"
                                 onClick={this.handleSubmit}>Login
                             </Button>
+                        </Row>
+                        <br/>
+                        <Row>
+                            <Alert bsStyle="info">
+                                <p>Username :<b> demo</b></p>
+                                <p>Password :<b> demo</b></p>
+                            </Alert>
                         </Row>
                     </Form>
                 </Card>

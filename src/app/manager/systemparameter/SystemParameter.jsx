@@ -1,4 +1,4 @@
-import BaseCrudPage from "../common/BaseCrudPage";
+import BaseCrudPage from "app/common/BaseCrudPage";
 import SystemParameterModel from "./SystemParameterModel.json";
 
 export default class SystemParameter extends BaseCrudPage {

@@ -1,32 +1,30 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Header from "app/workspace/Header";// eslint-disable-line import/no-unresolved
+import Header from "app/header/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
-import Col from "react-bootstrap/lib/Col";
+import Col from "react-bootstrap/lib/Col";// eslint-disable-line import/no-unresolved
 
 export default class Content extends ShallowComponent {
-    constructor(props: Object) {
+    constructor(props:Object) {
         super(props);
         this.state = {
-            toggled: false,
-            windowHeight: window.innerHeight
-            || document.documentElement.clientHeight
-            || document.body.clientHeight
+            toggled: false
         };
     }
 
-    render(): Object {
+    render():Object {
         let toggled = this.state.toggled ? "toggled" : "toogled";
         return (
             <Col>
-                <Header open={this.__onMenuOpenClick} />
+                <Header open={this.__onMenuOpenClick}/>
                 <Col id="wrapper" className={toggled}>
                     <Col id="sidebar-wrapper">
                         <Col className="SideMenu-wrapper">
-                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"} onChange={this.handleChange} />
+                            <SideMenu items={this.props.menu[0]} selectedItem={"Dashboard"}
+                                      onChange={this.handleChange}/>
                         </Col>
                     </Col>
-                    <Col style={{ height: this.state.windowHeight, overflowY: "auto" }}>
+                    <Col style={{ height:window.innerHeight, overflowY: "auto",paddingTop:20 }}>
                         <Col id="page-content-wrapper" onClick={this.__onPageClick}>
                             {this.props.content}
                         </Col>
@@ -36,11 +34,11 @@ export default class Content extends ShallowComponent {
         );
     }
 
-    handleChange(item: Object) {
+    handleChange(item:Object) {
         this.props.router.push(item.module);
     }
 
-    __onPageClick(ev: Object) {
+    __onPageClick(ev:Object) {
         if (this.state.toggled) {
             this.setState({
                 toggled: false
@@ -48,7 +46,8 @@ export default class Content extends ShallowComponent {
         }
         ev.preventDefault();
     }
-    __onMenuOpenClick(ev: Object) {
+
+    __onMenuOpenClick(ev:Object) {
         this.setState({
             toggled: !this.state.toggled
         });
@@ -63,17 +62,7 @@ export default class Content extends ShallowComponent {
             });
         }
     }
-    handleResize() {
-        this.setState({
-            windowHeight: window.innerHeight
-            || document.documentElement.clientHeight
-            || document.body.clientHeight
-        });
-    }
 
-    componentDidMount() {
-        window.addEventListener("resize", this.handleResize);
-    }
 
     __listen() {
         if (this.state.mql) {
@@ -86,7 +75,7 @@ export default class Content extends ShallowComponent {
     componentWillMount() {
         const mql = window.matchMedia("screen and (max-width: 768px)");
         mql.addListener(this.__mediaQueryChanged);
-        this.setState({ mql: mql });
+        this.setState({mql: mql});
         this.props.router.listen(this.__listen);
 
         let initialSelection = window.location.pathname.slice(window.location.pathname.lastIndexOf("/") + 1);
@@ -98,6 +87,5 @@ export default class Content extends ShallowComponent {
     componentWillUnmount() {
         this.state.mql.removeListener(this.__mediaQueryChanged);
         this.props.router.listen(null);
-        window.removeEventListener("resize", this.handleResize);
     }
 }

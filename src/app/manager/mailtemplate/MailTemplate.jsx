@@ -1,4 +1,4 @@
-import BaseCrudPage from "../common/BaseCrudPage";
+import BaseCrudPage from "app/common/BaseCrudPage";
 import MailTemplateModel from "./MailTemplateModel.json";
 
 export default class MailTemplate extends BaseCrudPage {

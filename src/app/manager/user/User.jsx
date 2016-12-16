@@ -1,4 +1,4 @@
-import BaseCrudPage from "../common/BaseCrudPage";
+import BaseCrudPage from "app/common/BaseCrudPage";
 import UserModel from "./UserModel.json";
 import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 
@@ -19,10 +19,10 @@ export default class User extends BaseCrudPage {
             url: "http://localhost:3000/roles",
             type: "GET"
         });
-        readRequest.call(undefined, undefined, (response: Object) => {
+        readRequest.call(undefined, undefined, (response:Object) => {
             let propsOfFields = this.state.propsOfFields;
-            propsOfFields.roleOid = { items: response };
-            this.setState({ propsOfFields: propsOfFields });
+            propsOfFields.roleOid = {items: response};
+            this.setState({propsOfFields: propsOfFields});
             this.forceUpdate();
         });
     }

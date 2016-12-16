@@ -4,8 +4,8 @@ import Col from "react-bootstrap/lib/Col";
 import Panel from "react-bootstrap/lib/Panel";
 import ProgressBar from "react-bootstrap/lib/ProgressBar";
 import Badge from "react-bootstrap/lib/Badge";
-import Page from "app/workspace/Page"; // eslint-disable-line import/no-unresolved
-import Metrics from "./metrics.json";
+import Card from "libs/card/Card";
+import Metrics from "./metrics.json"; // eslint-disable-line import/no-unresolved
 
 class DashBoard extends ShallowComponent {
 
@@ -28,7 +28,8 @@ class DashBoard extends ShallowComponent {
             return (<span>Yükleniyor...</span>);
         }
         return (
-            <Page header="Sistem Bilgileri" description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
+            <Card header="Sistem Bilgileri"
+                  description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
                 <br />
                 <Panel header="Log Detayları">
                     <Col xs={12} md={12}>
@@ -151,7 +152,7 @@ class DashBoard extends ShallowComponent {
                         </Panel>
                     </Col>
                 </Panel>
-            </Page>
+            </Card>
 
         );
     }

@@ -1,5 +1,5 @@
 import React from "react";
-import Page from "app/workspace/Page";
+import Card from "libs/card/Card";
 import jajax from "robe-ajax";
 import Col from "react-bootstrap/lib/Col";
 import Row from "react-bootstrap/lib/Row";
@@ -28,7 +28,8 @@ class Permission extends ShallowComponent {
 
     render(): Object {
         return (
-            <Page header="İzin Yönetimi" description="İlk önce değişiklik yapacağınız rolü sonra işlem yapmak istediğiniz izin grubunu seçiniz. İzin grubu ile ilişkili menüler renk farklılığı ile belirtilecektir.">
+            <Card header="İzin Yönetimi"
+                  description="İlk önce değişiklik yapacağınız rolü sonra işlem yapmak istediğiniz izin grubunu seçiniz. İzin grubu ile ilişkili menüler renk farklılığı ile belirtilecektir.">
                 <Row>
                     <br />
                 </Row>
@@ -78,7 +79,7 @@ class Permission extends ShallowComponent {
                     </Col>
                 </Row>
 
-            </Page>
+            </Card>
         );
     }
 

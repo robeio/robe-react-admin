@@ -4,7 +4,7 @@ import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
-import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
+import Card from "libs/card/Card";// eslint-disable-line import/no-unresolved
 
 export default class Profile extends ShallowComponent {
 
@@ -19,7 +19,7 @@ export default class Profile extends ShallowComponent {
 
     render(): Object {
         return (
-            <Page description={"Description of profile"} header={"Profile"}>
+            <Card description={"Description of profile"} header={"Profile"}>
                 <Row>
                     <Col lg={12}>
                         <TextInput label="Name" value={this.state.name} readOnly />
@@ -27,7 +27,7 @@ export default class Profile extends ShallowComponent {
                         <TextInput label="Email" value={this.state.email} readOnly />
                     </Col>
                 </Row>
-            </Page>
+            </Card>
         );
     }
 

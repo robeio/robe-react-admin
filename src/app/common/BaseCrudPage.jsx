@@ -1,10 +1,10 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Page from "app/workspace/Page";// eslint-disable-line import/no-unresolved
+import Card from "libs/card/Card";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
-import Store from "robe-react-commons/lib/stores/Store";
+import Store from "robe-react-commons/lib/stores/Store";// eslint-disable-line import/no-unresolved
 
 
 export default class BaseCrudPage extends ShallowComponent {
@@ -42,7 +42,7 @@ export default class BaseCrudPage extends ShallowComponent {
     render(): Object {
         console.log("propsOfFields: ", this.state.propsOfFields);
         return (
-            <Page description={this.state.description} header={this.state.header}>
+            <Card description={this.state.description} header={this.state.header}>
                 <DataGrid
                     fields={this.state.fields}
                     store={this.state.store}
@@ -69,7 +69,7 @@ export default class BaseCrudPage extends ShallowComponent {
                     fields={this.state.fields}
                     propsOfFields={this.state.propsOfFields}
                 />
-            </Page>
+            </Card>
         );
     }
 
