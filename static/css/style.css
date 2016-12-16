@@ -3,18 +3,27 @@ body {
     color: #342E2B;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: #ffffff;
+    background-color: #fcfcfd;
 }
 
 .side-menu {
     height: 100%;
-    width: 250px;
+    width: 290px;
+    padding-top: 5px;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: width .5s;
     z-index: 998;
     float: left;
-    border-right: 1px solid #eeeeee;
+}
+
+.content {
+    transition: .5s;
+    padding-top: 5px;
+    margin-left: 290px;
+    margin-right: 0;
+    z-index: 0;
+    overflow-y: auto
 }
 
 .btn-primary {
@@ -28,16 +37,7 @@ body {
     border-right: 1px solid #eeeeee;
 }
 
-.content {
-    transition: .5s;
-    padding: 5px;
-    margin-left: 250px;
-    margin-right: 0;
-    z-index: 0;
-    overflow-y: auto
-}
-
 .SideMenu-wrapper {
-    width: 249px;
-    margin-top: 12px !important;
+    width: 250px;
+    margin-top: 0 !important;
 }
