@@ -7,7 +7,7 @@ import Badge from "react-bootstrap/lib/Badge";
 import Card from "libs/card/Card";
 import Metrics from "./metrics.json"; // eslint-disable-line import/no-unresolved
 
-class DashBoard extends ShallowComponent {
+class Dashboard extends ShallowComponent {
 
     constructor(props: Object) {
         super(props);
@@ -310,4 +310,4 @@ class DashBoard extends ShallowComponent {
         this.__vmHeap();
     }
 }
-module.exports = DashBoard;
+module.exports = Dashboard;

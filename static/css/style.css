@@ -41,3 +41,12 @@ body {
     width: 249px;
     margin-top: 12px !important;
 }
+
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0px;
+    outline-offset: -2px;
+}
