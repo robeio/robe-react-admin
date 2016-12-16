@@ -7,17 +7,18 @@ import Workspace from "app/workspace/Workspace";
 export default class HasAuthorization extends ShallowComponent {
 
     static ROUTES = [];
+    static ROUTER;
 
     constructor(props: Object) {
         super(props);
-        this.__createRoutes(this.props.menu);
+        HasAuthorization.ROUTER = HasAuthorization.createRoutes(this.props.menu);
     }
 
     render(): Object {
-        return (<Router key="root" history={BrowserHistory} onUpdate={HasAuthorization.scrollTop} routes={HasAuthorization.ROUTES} />);
+        return (<Router key="root" history={BrowserHistory} onUpdate={HasAuthorization.scrollTop} routes={HasAuthorization.ROUTER} />);
     }
 
-    __createRoutes(menu: Object): Object {
+    static createRoutes(menu: Object): Object {
         const INDEX_ROUTE = {
             getComponent(location: string, cb: Function) {
                 require.ensure([], (require: Object) => {
@@ -35,7 +36,7 @@ export default class HasAuthorization extends ShallowComponent {
             }
         };
         const items = menu[0].items;
-        this.__importMenu(items);
+        HasAuthorization.importMenu(items);
         HasAuthorization.ROUTES.push(NOT_FOUND_ROUTE);
 
         return ({
@@ -47,11 +48,11 @@ export default class HasAuthorization extends ShallowComponent {
         });
     }
 
-    __importMenu(items: Array) {
+    static importMenu(items: Array) {
         for (let i = 0; i < items.length; i++) {
             let item = items[i];
             if (item.items && item.items.length > 0) {
-                this.__importMenu(item.items);
+                HasAuthorization.importMenu(item.items);
             } else {
                 const path = HasAuthorization.normalizePath(item.path);
 
