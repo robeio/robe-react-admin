@@ -3,27 +3,18 @@ body {
     color: #342E2B;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-color: #fcfcfd;
+    background-color: #ffffff;
 }
 
 .side-menu {
     height: 100%;
-    width: 290px;
-    padding-top: 5px;
+    width: 250px;
     overflow-x: hidden;
     overflow-y: hidden;
     transition: width .5s;
     z-index: 998;
     float: left;
-}
-
-.content {
-    transition: .5s;
-    padding-top: 5px;
-    margin-left: 290px;
-    margin-right: 0;
-    z-index: 0;
-    overflow-y: auto
+    border-right: 1px solid #eeeeee;
 }
 
 .btn-primary {
@@ -37,7 +28,25 @@ body {
     border-right: 1px solid #eeeeee;
 }
 
+.content {
+    transition: .5s;
+    padding: 5px;
+    margin-left: 250px;
+    margin-right: 0;
+    z-index: 0;
+    overflow-y: auto
+}
+
 .SideMenu-wrapper {
-    width: 250px;
-    margin-top: 0 !important;
+    width: 249px;
+    margin-top: 12px !important;
+}
+
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0px;
+    outline-offset: -2px;
 }

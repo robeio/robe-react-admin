@@ -1,6 +1,5 @@
 import React from "react";
 import { ShallowComponent, AjaxRequest } from "robe-react-commons";
-import cookie from "react-cookie";
 import HasAuthorization from "./HasAuthorization";
 import NoAuthorization from "./NoAuthorization";
 
@@ -20,7 +19,6 @@ export default class Switch extends ShallowComponent {
             }
             return (<HasAuthorization menu={this.state.menu} />);
         }
-        console.log("no auth");
         return (<NoAuthorization />);
     }
 
@@ -32,10 +30,8 @@ export default class Switch extends ShallowComponent {
 
         readRequest.call(undefined, undefined, (response: Object) => {
             this.setState({ menu: response, hasAuth: true });
-        }, (error) => {
+        }, (error: Object) => {
             this.setState({ menu: undefined, hasAuth: false });
-
         });
-
     }
 }
