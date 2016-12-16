@@ -8,7 +8,7 @@ export default class Switch extends ShallowComponent {
     constructor(props:Object) {
         super(props);
         this.state = {
-            hasAuth: (cookie.load("username") === "demo" && cookie.load("password") === "demo"),
+            hasAuth: false,
             menu: undefined
         };
     }
@@ -26,7 +26,7 @@ export default class Switch extends ShallowComponent {
     componentDidMount = () => {
         if (this.state.hasAuth) {
             let readRequest = new AjaxRequest({
-                url: "http://localhost:3000/menus",
+                url: "http://127.0.0.1:8081/robe/menus",
                 type: "GET"
             });
 

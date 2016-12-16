@@ -119,3 +119,9 @@ a {
     padding: 16px;
     font-size: 1.5em;
 }
+
+
+.btn-primary{
+    background-color: #153547;
+    border-color: #152f3e;
+}
