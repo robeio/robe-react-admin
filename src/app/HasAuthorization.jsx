@@ -21,7 +21,8 @@ export default class HasAuthorization extends ShallowComponent {
         return (<Router key="root" history={BrowserHistory} onUpdate={this.__scrollTop} routes={routes}/>);
     }
 
-    __wrap(routes:Object):Object {
+    __wrap(routes: Object): Object {
+        console.log("wrap");
         const INDEX_ROUTE = {
             getComponent(location:string, cb:Function) {
                 require.ensure([], (require:Object) => {
@@ -30,6 +31,7 @@ export default class HasAuthorization extends ShallowComponent {
             }
         };
 
+        console.log("wrap2");
         const NOT_FOUND_ROUTE = {
             path: "*",
             getComponent(location:string, cb:Function) {
@@ -38,6 +40,7 @@ export default class HasAuthorization extends ShallowComponent {
                 });
             }
         };
+        console.log("wrap3",routes);
         const items = routes[0].items;
         this.__getItems(items);
         this.ROUTES.push(NOT_FOUND_ROUTE);
@@ -51,7 +54,8 @@ export default class HasAuthorization extends ShallowComponent {
         });
     }
 
-    __getItems(items:Array) {
+    __getItems(items: Array) {
+        
         for (let i = 0; i < items.length; i++) {
             let item = items[i];
             if (item.items && item.items.length > 0) {
