@@ -1,14 +1,14 @@
 import React from "react";
-import { ShallowComponent, AjaxRequest } from "robe-react-commons";
+import {ShallowComponent, AjaxRequest} from "robe-react-commons";
 import Col from "react-bootstrap/lib/Col";
 import Panel from "react-bootstrap/lib/Panel";
 import ProgressBar from "react-bootstrap/lib/ProgressBar";
 import Badge from "react-bootstrap/lib/Badge";
 import Card from "libs/card/Card";
 
-class Dashboard extends ShallowComponent {
+export default class Dashboard extends ShallowComponent {
 
-    constructor(props: Object) {
+    constructor(props:Object) {
         super(props);
 
         this.state = {
@@ -22,24 +22,24 @@ class Dashboard extends ShallowComponent {
         };
     }
 
-    render(): Object {
+    render():Object {
         if (this.state.jsonData === undefined) {
             return (<span>Yükleniyor...</span>);
         }
         return (
             <Card header="Sistem Bilgileri"
-                description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
+                  description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
                 <br />
                 <Panel header="Log Detayları">
                     <Col xs={12} md={12}>
                         <Col componentClass="label">Debug <Badge>{this.state.logData.debugCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="success" now={this.state.logData.debug} />
+                        <ProgressBar striped bsStyle="success" now={this.state.logData.debug}/>
                         <Col componentClass="label">Info <Badge>{this.state.logData.infoCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="info" now={this.state.logData.info} />
+                        <ProgressBar striped bsStyle="info" now={this.state.logData.info}/>
                         <Col componentClass="label">Warn <Badge>{this.state.logData.warnCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="warning" now={this.state.logData.warn} />
+                        <ProgressBar striped bsStyle="warning" now={this.state.logData.warn}/>
                         <Col componentClass="label">Error <Badge>{this.state.logData.errorCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="danger" now={this.state.logData.error} />
+                        <ProgressBar striped bsStyle="danger" now={this.state.logData.error}/>
                     </Col>
                 </Panel>
 
@@ -48,43 +48,48 @@ class Dashboard extends ShallowComponent {
                         <Panel header="Total (MB)">
                             <Col componentClass="label">Used <Badge>{this.state.vmTotal.totalDataCount}</Badge>
                             </Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmTotal.totalData} />
+                            <ProgressBar striped bsStyle="danger" now={this.state.vmTotal.totalData}/>
                             <Col componentClass="label">Free
                                 <Badge>{this.state.vmTotal.unusedTotalCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmTotal.unusedTotal} />
+                            <ProgressBar striped bsStyle="success" now={this.state.vmTotal.unusedTotal}/>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="Heap (MB)">
                             <Col componentClass="label">Used <Badge>{this.state.vmHeap.usedHeapCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmHeap.usedHeap} />
+                            <ProgressBar striped bsStyle="danger" now={this.state.vmHeap.usedHeap}/>
                             <Col componentClass="label">Free <Badge>{this.state.vmHeap.unusedHeapCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmHeap.unusedHeap} />
+                            <ProgressBar striped bsStyle="success" now={this.state.vmHeap.unusedHeap}/>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="Non-Heap (MB)">
                             <Col componentClass="label">Used <Badge>{this.state.vmNonHeap.usedCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmNonHeap.used} />
+                            <ProgressBar striped bsStyle="danger" now={this.state.vmNonHeap.used}/>
                             <Col componentClass="label">Free <Badge>{this.state.vmNonHeap.freeCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmNonHeap.free} />
+                            <ProgressBar striped bsStyle="success" now={this.state.vmNonHeap.free}/>
                         </Panel>
                     </Col>
                     <Col xs={12} md={6}>
                         <Panel header="Pool Status (%)">
                             <Col componentClass="label">Eden <Badge>{this.__poolData("PS-Eden-Space")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Eden-Space")} label="%(percent)s%" />
+                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Eden-Space")}
+                                         label="%(percent)s%"/>
                             <Col componentClass="label">Old <Badge>{this.__poolData("PS-Old-Gen")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Old-Gen")} label="%(percent)s%" />
+                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Old-Gen")}
+                                         label="%(percent)s%"/>
                             <Col componentClass="label">Perm <Badge>{this.__poolData("PS-Perm-Gen")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Perm-Gen")} />
-                            <Col componentClass="label">Survior <Badge>{this.__poolData("PS-Survivor-Space")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Survivor-Space")} label="%(percent)s%" />
+                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Perm-Gen")}/>
+                            <Col componentClass="label">Survior
+                                <Badge>{this.__poolData("PS-Survivor-Space")}</Badge></Col>
+                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Survivor-Space")}
+                                         label="%(percent)s%"/>
                         </Panel>
                     </Col>
                     <Col xs={12} md={6}>
                         <Panel header="Threads (count)">
-                            <Col >Runnable <Col className="pull-right"> <Badge>{this.__jvm("runnable")}</Badge></Col></Col>
+                            <Col >Runnable <Col className="pull-right">
+                                <Badge>{this.__jvm("runnable")}</Badge></Col></Col>
                             <Col >New <Col className="pull-right"><Badge>{this.__jvm("new")}</Badge></Col></Col>
                             <Col >Timed-W <Col className="pull-right"><Badge>{this.__jvm("timed")}</Badge></Col></Col>
                             <Col >Waiting <Col className="pull-right"><Badge>{this.__jvm("waiting")}</Badge></Col></Col>
@@ -98,55 +103,70 @@ class Dashboard extends ShallowComponent {
                         <Panel header="Toplam">
                             <Col xs={12} md={3} componentClass="label">2xx
                                 <Badge>{this.__totalRequests("2xx")}</Badge>
-                                <ProgressBar striped bsStyle="success" now={this.__totalRequests("2xx")} /></Col>
+                                <ProgressBar striped bsStyle="success" now={this.__totalRequests("2xx")}/></Col>
                             <Col xs={12} md={3} componentClass="label">3xx
                                 <Badge>{this.__totalRequests("3xx")}</Badge>
-                                <ProgressBar striped bsStyle="info" now={this.__totalRequests("3xx")} /></Col>
+                                <ProgressBar striped bsStyle="info" now={this.__totalRequests("3xx")}/></Col>
                             <Col xs={12} md={3} componentClass="label">4xx
                                 <Badge>{this.__totalRequests("4xx")}</Badge>
-                                <ProgressBar striped bsStyle="warning" now={this.__totalRequests("4xx")} /></Col>
+                                <ProgressBar striped bsStyle="warning" now={this.__totalRequests("4xx")}/></Col>
                             <Col xs={12} md={3} componentClass="label">5xx
                                 <Badge>{this.__totalRequests("5xx")}</Badge>
-                                <ProgressBar striped bsStyle="danger" now={this.__totalRequests("5xx")} /></Col>
+                                <ProgressBar striped bsStyle="danger" now={this.__totalRequests("5xx")}/></Col>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="2xx-response (events/second)">
-                            <Col >1 min <Col className="pull-right"><Badge>{this.__httpResponse("2xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col className="pull-right"><Badge>{this.__httpResponse("2xx", "m5")}</Badge></Col></Col>
+                            <Col >1 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("2xx", "m1")}</Badge></Col></Col>
+                            <Col >5 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("2xx", "m5")}</Badge></Col></Col>
                             <Col >15 min <Col className="pull-right"><Badge>{this.__httpResponse("2xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col className="pull-right"><Badge>{this.__httpResponse("2xx", "mean")}</Badge></Col></Col>
+                            <Col >Mean <Col
+                                className="pull-right"><Badge>{this.__httpResponse("2xx", "mean")}</Badge></Col></Col>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="4xx-response (events/second)">
-                            <Col >1 min <Col className="pull-right"><Badge>{this.__httpResponse("4xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col className="pull-right"><Badge>{this.__httpResponse("4xx", "m5")}</Badge></Col></Col>
+                            <Col >1 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("4xx", "m1")}</Badge></Col></Col>
+                            <Col >5 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("4xx", "m5")}</Badge></Col></Col>
                             <Col >15 min <Col className="pull-right"><Badge>{this.__httpResponse("4xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col className="pull-right"><Badge>{this.__httpResponse("4xx", "mean")}</Badge></Col></Col>
+                            <Col >Mean <Col
+                                className="pull-right"><Badge>{this.__httpResponse("4xx", "mean")}</Badge></Col></Col>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="5xx-response (events/second)">
-                            <Col >1 min <Col className="pull-right"><Badge>{this.__httpResponse("5xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col className="pull-right"><Badge>{this.__httpResponse("5xx", "m5")}</Badge></Col></Col>
-                            <Col >15 min<Col className="pull-right"><Badge>{this.__httpResponse("5xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col className="pull-right"><Badge>{this.__httpResponse("5xx", "mean")}</Badge></Col></Col>
+                            <Col >1 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m1")}</Badge></Col></Col>
+                            <Col >5 min <Col
+                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m5")}</Badge></Col></Col>
+                            <Col >15 min<Col
+                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m15")}</Badge></Col></Col>
+                            <Col >Mean <Col
+                                className="pull-right"><Badge>{this.__httpResponse("5xx", "mean")}</Badge></Col></Col>
                         </Panel>
                     </Col>
                 </Panel>
                 <Panel header="Servis Detayları">
                     <Col xs={12} md={4}>
                         <Panel header="AuthResource.login (Sec)">
-                            <Col >Max <Col className="pull-right"><Badge>{this.__serviceList("login", "max")}</Badge></Col></Col>
-                            <Col >Min <Col className="pull-right"><Badge>{this.__serviceList("login", "min")}</Badge></Col></Col>
-                            <Col >Mean<Col className="pull-right"><Badge>{this.__serviceList("login", "mean")}</Badge></Col></Col>
+                            <Col >Max <Col
+                                className="pull-right"><Badge>{this.__serviceList("login", "max")}</Badge></Col></Col>
+                            <Col >Min <Col
+                                className="pull-right"><Badge>{this.__serviceList("login", "min")}</Badge></Col></Col>
+                            <Col >Mean<Col
+                                className="pull-right"><Badge>{this.__serviceList("login", "mean")}</Badge></Col></Col>
                         </Panel>
                     </Col>
                     <Col xs={12} md={4}>
                         <Panel header="AuthResource.logout (Sec)">
-                            <Col >Max <Col className="pull-right"><Badge>{this.__serviceList("logout", "max")}</Badge></Col></Col>
-                            <Col >Min <Col className="pull-right"><Badge>{this.__serviceList("logout", "min")}</Badge></Col></Col>
+                            <Col >Max <Col
+                                className="pull-right"><Badge>{this.__serviceList("logout", "max")}</Badge></Col></Col>
+                            <Col >Min <Col
+                                className="pull-right"><Badge>{this.__serviceList("logout", "min")}</Badge></Col></Col>
                             <Col >Mean<Col className="pull-right"><Badge>{this.__serviceList("logout", "mean")}</Badge></Col></Col>
                         </Panel>
                     </Col>
@@ -183,7 +203,7 @@ class Dashboard extends ShallowComponent {
             warnCount: wc,
             errorCount: ec
         };
-        this.setState({ logData: log });
+        this.setState({logData: log});
     }
 
     __vmTotal() {
@@ -207,7 +227,7 @@ class Dashboard extends ShallowComponent {
             totalDataCount: uc,
             unusedTotalCount: fc
         };
-        this.setState({ vmTotal: total });
+        this.setState({vmTotal: total});
     }
 
     __vmHeap() {
@@ -231,7 +251,7 @@ class Dashboard extends ShallowComponent {
             usedHeapCount: uc,
             unusedHeapCount: fc
         };
-        this.setState({ vmHeap: heap });
+        this.setState({vmHeap: heap});
     }
 
     __vmNonHeap() {
@@ -258,10 +278,10 @@ class Dashboard extends ShallowComponent {
             usedCount: uc,
             freeCount: fc
         };
-        this.setState({ vmNonHeap: nonHeap });
+        this.setState({vmNonHeap: nonHeap});
     }
 
-    __poolData(pool: string): number {
+    __poolData(pool:string):number {
         try {
             return parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.${pool}.usage`].value).toFixed(4));
         } catch (e) {
@@ -269,7 +289,7 @@ class Dashboard extends ShallowComponent {
         }
     }
 
-    __jvm(jjvm: string): number {
+    __jvm(jjvm:string):number {
         try {
             return parseFloat((this.state.jsonData.gauges[`jvm.threads.${jjvm}.count`].value).toFixed(4));
         } catch (e) {
@@ -277,7 +297,7 @@ class Dashboard extends ShallowComponent {
         }
     }
 
-    __serviceList(state: string, value: string): number {
+    __serviceList(state:string, value:string):number {
         try {
             return parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.${state}`][value]).toFixed(4));
         } catch (e) {
@@ -285,7 +305,7 @@ class Dashboard extends ShallowComponent {
         }
     }
 
-    __totalRequests(type: string): number {
+    __totalRequests(type:string):number {
         try {
             return parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.${type}-responses`].count).toFixed(4));
         } catch (e) {
@@ -293,7 +313,7 @@ class Dashboard extends ShallowComponent {
         }
     }
 
-    __httpResponse(type: string, key: string): number {
+    __httpResponse(type:string, key:string):number {
         try {
             key = `${key}_rate`;
             return parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.${type}-responses`][key]).toFixed(4));
@@ -308,8 +328,8 @@ class Dashboard extends ShallowComponent {
             type: "GET"
         });
 
-        readRequest.call(undefined, undefined, (response: Object) => {
-            this.setState({ jsonData: response });
+        readRequest.call(undefined, undefined, (response:Object) => {
+            this.setState({jsonData: response});
             this.__vmNonHeap();
             this.__appenderData();
             this.__vmTotal();
@@ -317,4 +337,3 @@ class Dashboard extends ShallowComponent {
         }, undefined);
     }
 }
-module.exports = Dashboard;

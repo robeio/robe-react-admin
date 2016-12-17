@@ -8,7 +8,7 @@ import Store from "robe-react-commons/lib/stores/Store";
 import QuartzModel from "./QuartzModel.json";
 import TriggerModel from "./TriggerModel.json";// eslint-disable-line import/no-unresolved
 
-export default class SystemParameter extends ShallowComponent {
+export default class QuartzJob extends ShallowComponent {
 
 
     triggersStore:undefined;

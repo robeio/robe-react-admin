@@ -26,55 +26,57 @@ class Login extends ShallowComponent {
 
     render():Object {
         return (
-            <Card className="center-block"
-                  style={{ maxWidth: 300 }}>
-                <Form>
-                    <Row style={{ textAlign: "center", marginBottom: "30px" }}>
-                        <Image src="./logo.png" circle width="150"/>
-                    </Row>
-                    <Row>
-                        <TextInput
-                            ref="username"
-                            type="email"
-                            name="username"
-                            placeholder="Username"
-                            value={this.state.username}
-                            onChange={this.__handleChange}
-                            inputGroupLeft={<InputGroup.Addon><FaIcon code="fa-user" /></InputGroup.Addon>}
-                            validationDisplay="overlay"
-                            onKeyPress={this.__onKeyPress}
-                        />
-                    </Row>
-                    <Row>
-                        <PasswordInput
-                            ref="password"
-                            name="password"
-                            className="form-control"
-                            value={this.state.password}
-                            onChange={this.__handleChange}
-                            inputGroupLeft={<InputGroup.Addon><FaIcon code="fa-lock" /></InputGroup.Addon>}
-                            placeholder="Password"
-                            onKeyPress={this.__onKeyPress}
-                        />
-                    </Row>
-                    <Row>
-                        <Button
-                            className="btn btn-primary btn-login btn-block"
-                            ref="submitBtn"
-                            onClick={this.__handleSubmit}
-                        >
-                            Login
-                        </Button>
-                    </Row>
-                    <br />
-                    <Row>
-                        <Alert bsStyle="info">
-                            <p>Username :<b> admin@robe.io</b></p>
-                            <p>Password :<b> 123123</b></p>
-                        </Alert>
-                    </Row>
-                </Form>
-            </Card>
+            <div className="center-block"
+                 style={{ maxWidth: 300 }}>
+                <Card style={{marginTop:0}}>
+                    <Form>
+                        <Row style={{ textAlign: "center", marginBottom: "30px" }}>
+                            <Image src="./logo.png" circle width="150"/>
+                        </Row>
+                        <Row>
+                            <TextInput
+                                ref="username"
+                                type="email"
+                                name="username"
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.__handleChange}
+                                inputGroupLeft={<InputGroup.Addon><FaIcon code="fa-user" /></InputGroup.Addon>}
+                                validationDisplay="overlay"
+                                onKeyPress={this.__onKeyPress}
+                            />
+                        </Row>
+                        <Row>
+                            <PasswordInput
+                                ref="password"
+                                name="password"
+                                className="form-control"
+                                value={this.state.password}
+                                onChange={this.__handleChange}
+                                inputGroupLeft={<InputGroup.Addon><FaIcon code="fa-lock" /></InputGroup.Addon>}
+                                placeholder="Password"
+                                onKeyPress={this.__onKeyPress}
+                            />
+                        </Row>
+                        <Row>
+                            <Button
+                                className="btn btn-primary btn-login btn-block"
+                                ref="submitBtn"
+                                onClick={this.__handleSubmit}
+                            >
+                                Login
+                            </Button>
+                        </Row>
+                        <br />
+                        <Row>
+                            <Alert bsStyle="info">
+                                <p>Username :<b> admin@robe.io</b></p>
+                                <p>Password :<b> 123123</b></p>
+                            </Alert>
+                        </Row>
+                    </Form>
+                </Card>
+            </div>
         );
     }
 

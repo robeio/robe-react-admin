@@ -18,12 +18,14 @@ export default class Content extends ShallowComponent {
         let toggled = this.state.toggled == false ? 0 : 290;
         return (
             <Col>
-                <Header toggled={this.state.matches}
-                        onToggle={this.__changeMenu}/>
-                <Col id="sideMenu"
-                     style={{width:toggled}}
-                     className="side-menu">
-                    <Card style={{marginLeft:0,marginRight:0}}>
+                <Header
+                    toggled={this.state.matches}
+                    onToggle={this.__changeMenu}/>
+                <Col
+                    id="sideMenu"
+                    style={{width:toggled}}
+                    className="side-menu">
+                    <Card style={{marginLeft:0}}>
                         <SideMenu
                             items={this.props.menu[0]}
                             selectedItem={"Dashboard"}
@@ -33,7 +35,7 @@ export default class Content extends ShallowComponent {
                 <Col
                     id="content"
                     className="content"
-                    style={{ height:window.innerHeight,marginLeft:toggled,marginRight:-1*toggled }}
+                    style={{ height:window.innerHeight-100,marginLeft:toggled}}
                     onClick={this.__closeMenu}>
                     {this.props.content}
                 </Col>

@@ -1,9 +1,44 @@
-.navbar-inverse {
-    border-radius: 0 !important;
-    background-color: #173646 !important;
-    border-color: #173646 !important;
+.robe-navbar {
+    width: 100%;
+    height: 80px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    -webkit-box-shadow: 0 0 10px rgba(100, 100, 100, .1);
+    box-shadow: 0 0 10px rgba(100, 100, 100, .1);
+    padding: 15px;
+    z-index: 9999;
+    top: 0;
 }
 
-.navbar {
-    margin-bottom: 0 !important;
+.robe-navbar-content {
+    height: 50px;
+    line-height: 50px;
+}
+
+.robe-navbar-content a {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: large;
+    color: #173646;
+}
+
+.robe-navbar-content a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.robe-navbar-button {
+    padding: 4px;
+    background: transparent;
+    border: 0;
+    color: #173646;
+    transition: .5s;
+    opacity: 1;
+    font-size: large
+}
+
+.robe-navbar-button:hover {
+    opacity: 0.9;
+    color: #ffffff;
+    background: #b9c2c7;
 }
