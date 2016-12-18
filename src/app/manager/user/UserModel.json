@@ -2,156 +2,163 @@
   "name": "UserModel",
   "fields": [
     {
-      "label": "Oid",
-      "type": "string",
-      "code": "oid",
-      "tooltip": "Oid",
-      "visible": false
-    },
-    {
-      "label": "Son Güncelleme",
-      "type": "string",
-      "code": "lastUpdated",
-      "tooltip": "Son Güncelleme",
-      "visible": false
-    },
-    {
-      "label": "Fail Count",
-      "type": "number",
-      "code": "failCount",
-      "tooltip": "Fail Count",
-      "visible": false,
-      "validations": {
-        "required": [true,"Bu alan zorunludur."]
-      }
-    },
-    {
-      "label": "Son Login Zamanı",
-      "type": "date",
-      "code": "lastLoginTime",
-      "tooltip": "Son Login Zamanı",
-      "visible": false
-    },
-    {
-      "label": "Son Çıkış Zamanı",
-      "type": "date",
-      "code": "lastLogoutTime",
-      "tooltip": "Son Çıkış Zamanı",
-      "visible": false
-    },
-    {
       "label": "Ad   ",
       "type": "string",
-      "code": "name",
+      "name": "name",
       "tooltip": "Adı",
       "validations": {
-        "regex": [
-          "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$",
-          "Sadece harflerden oluşmalıdır."
-        ],
-        "required": [
-          true,
-          "Bu alan zorunludur."
-        ],
-        "max": [
-          50,
-          "Bu alan 50 karakterden fazla olamaz."
-        ],
-        "min": [
-          3,
-          "Bu alan 3 karakterden az olamaz."
-        ]
-      }
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            3
+          ],
+          "message": "Bu alan 3 karakterden az olamaz"
+        },
+        "maxLength": {
+          "args": [
+            50
+          ],
+          "message": "Bu alan 50 karakterden fazla olamaz"
+        },
+        "regex": {
+          "message": "Sadece harflerden oluşmalıdır",
+          "args": [
+            "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$"
+          ]
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
       "label": "Soyad",
       "type": "string",
-      "code": "surname",
+      "name": "surname",
       "tooltip": "Soyadı",
       "validations": {
-        "regex": [
-          "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$",
-          "Sadece harflerden oluşmalıdır."
-        ],
-        "required": [
-          true,
-          "Bu alan zorunludur."
-        ],
-        "max": [
-          50,
-          "Bu alan 50 karakterden fazla olamaz."
-        ],
-        "min": [
-          2,
-          "Bu alan 2 karakterden az olamaz."
-        ]
-      }
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            2
+          ],
+          "message": "Bu alan 2 karakterden az olamaz"
+        },
+        "maxLength": {
+          "args": [
+            50
+          ],
+          "message": "Bu alan 50 karakterden fazla olamaz"
+        },
+        "regex": {
+          "message": "Sadece harflerden oluşmalıdır",
+          "args": [
+            "^[a-zA-Z\\s\\ç\\Ç\\ö\\Ö\\ş\\Ş\\ı\\İ\\ğ\\Ğ\\ü\\Ü]+$"
+          ]
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
       "label": "E-Posta",
       "type": "string",
-      "code": "email",
+      "name": "email",
       "tooltip": "Email",
       "validations": {
-        "max": [
-          50,
-          "Bu alan 50 karakterden fazla olamaz."
-        ],
-        "min": [
-          5,
-          "Bu alan 5 karakterden az olamaz."
-        ],
-        "regex": [
-          "\\S+@\\S+\\.\\S+",
-          "Bu alan mail formatında olmalıdır."
-        ]
-      }
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            5
+          ],
+          "message": "Bu alan 5 karakterden az olamaz"
+        },
+        "maxLength": {
+          "args": [
+            50
+          ],
+          "message": "Bu alan 50 karakterden fazla olamaz"
+        },
+        "regex": {
+          "message": "Bu alan e-posta formatında olmalıdır",
+          "args": [
+            "\\S+@\\S+\\.\\S+"
+          ]
+        }
+      },
+      "filter": true,
+      "sort": "asc"
     },
     {
       "label": "Şifre",
       "type": "password",
-      "code": "password",
+      "name": "password",
       "tooltip": "Şifre",
       "validations": {
-        "required": [
-          true,
-          "Bu alan zorunludur."
-        ],
-        "min": [
-          6,
-          "Bu alan 6 karakterden az olamaz."
-        ]
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            6
+          ],
+          "message": "Bu alan 3 karakterden az olamaz"
+        }
       }
     },
     {
       "label": "Rol",
-      "type": "list",
-      "code": "roleOid",
+      "type": "select",
+      "name": "roleOid",
       "tooltip": "Rol",
-      "dataTextField": "name",
-      "dataValueField": "id",
-      "optionLabel": "<Lütfen Seçiniz>",
-      "items":[],
+      "placeHolder": "<Lütfen Seçiniz>",
       "validations": {
-        "required": [
-          true,
-          "Bu alan zorunludur."
-        ],
-        "max": [
-          32,
-          "Bu alan 32 karakterden fazla olamaz."
-        ],
-        "min": [
-          32,
-          "Bu alan 32 karakterden az olamaz."
-        ]
-      }
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            32
+          ],
+          "message": "Bu alan 32 karakterden az olamaz"
+        },
+        "maxLength": {
+          "args": [
+            32
+          ],
+          "message": "Bu alan 32 karakterden fazla olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
       "label": "Aktif",
       "type": "check",
-      "code": "active",
-      "tooltip": "Aktif"
+      "valueField": "value",
+      "textField": "text",
+      "item": [
+        {
+          "value": true,
+          "text": ""
+        }
+      ],
+      "name": "active",
+      "tooltip": "Aktif",
+      "sort": "",
+      "filter": true
+    },
+    {
+      "label": "Fail Count",
+      "type": "number",
+      "name": "failCount",
+      "tooltip": "Fail Count",
+      "visible": false
     }
   ]
 }

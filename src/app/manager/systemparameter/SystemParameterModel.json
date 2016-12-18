@@ -2,25 +2,40 @@
   "name": "SystemParameterModel",
   "fields": [
     {
-      "label": "id",
+      "label": "Anahtar Kelime",
+      "name": "key",
       "type": "string",
-      "code": "id",
-      "tooltip": "id",
-      "visible": false
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            3
+          ],
+          "message": "Bu alan 3 karakterden az olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
-      "label": "Key",
-      "code": "key",
+      "label": "Değer",
+      "name": "value",
       "type": "string",
-      "required": true,
-      "minLength": 3
-    },
-    {
-      "label": "Value",
-      "code": "value",
-      "type": "string",
-      "required": true,
-      "minLength": 3
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            1
+          ],
+          "message": "Bu alan 1 karakterden az olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     }
   ]
 }

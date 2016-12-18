@@ -2,25 +2,40 @@
   "name": "RoleModel",
   "fields": [
     {
-      "label": "id",
+      "label": "Ad",
+      "name": "name",
       "type": "string",
-      "code": "id",
-      "tooltip": "id",
-      "visible": false
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            3
+          ],
+          "message": "Bu alan 3 karakterden az olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
-      "label": "Name",
-      "code": "name",
+      "label": "Kod",
+      "name": "code",
       "type": "string",
-      "required": true,
-      "minLength": 3
-    },
-    {
-      "label": "Code",
-      "code": "code",
-      "type": "string",
-      "required": true,
-      "minLength": 3
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            3
+          ],
+          "message": "Bu alan 3 karakterden az olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     }
   ]
 }

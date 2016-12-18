@@ -2,32 +2,89 @@
   "name": "MenuModel",
   "fields": [
     {
-      "label": "id",
+      "label": "Adı",
       "type": "string",
-      "code": "id",
-      "tooltip": "id",
-      "visible": false
+      "name": "text",
+      "tooltip": "Adı",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        },
+        "minLength": {
+          "args": [
+            2
+          ],
+          "message": "Bu alan 2 karakterden az olamaz"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
-      "label": "Text",
+      "label": "Yolu",
       "type": "string",
-      "code": "text",
-      "tooltip": "Text",
-      "visible": true
+      "name": "path",
+      "tooltip": "Yolu",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
-      "label": "Path",
-      "type": "string",
-      "code": "path",
-      "tooltip": "path",
-      "visible": true
+      "label": "Üst Menü",
+      "type": "select",
+      "name": "parentOid",
+      "tooltip": "Üst Menü",
+      "placeHolder": "<Lütfen Seçiniz>",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        }
+      },
+      "sort": "",
+      "filter": true
     },
     {
-      "label": "Module",
+      "label": "Modülü",
       "type": "string",
-      "code": "module",
-      "tooltip": "Module",
-      "visible": true
+      "name": "module",
+      "tooltip": "Modülü",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        }
+      },
+      "sort": "",
+      "filter": true
+    },
+    {
+      "label": "İndeksi",
+      "type": "number",
+      "name": "index",
+      "tooltip": "İndeksi",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        }
+      },
+      "sort": "",
+      "filter": true
+    },
+    {
+      "label": "İkonu",
+      "type": "string",
+      "name": "icon",
+      "tooltip": "İkonu",
+      "validations": {
+        "required": {
+          "message": "Bu alan zorunludur"
+        }
+      },
+      "sort": "",
+      "filter": true
     }
   ]
 }

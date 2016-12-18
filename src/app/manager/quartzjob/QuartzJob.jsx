@@ -1,26 +1,27 @@
 import React from "react";
-import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Card from "libs/card/Card";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import RemoteEndPoint from "robe-react-commons/lib/endpoint/RemoteEndPoint";
+import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Store from "robe-react-commons/lib/stores/Store";
 import QuartzModel from "./QuartzModel.json";
-import TriggerModel from "./TriggerModel.json";// eslint-disable-line import/no-unresolved
+import TriggerModel from "./TriggerModel.json";
 
 export default class QuartzJob extends ShallowComponent {
 
 
+    static idField = "oid";
     triggersStore:undefined;
 
-    constructor(props:Object) {
+    constructor(props) {
         super(props);
 
         let store = new Store({
             endPoint: new RemoteEndPoint({
-                url: "http://localhost:3000/quartzjobs"
+                url: "quartzjobs"
             }),
-            idField: "id",
+            idField: QuartzJob.idField,
             autoLoad: true,
             _offset: "offset"
         });
@@ -33,99 +34,99 @@ export default class QuartzJob extends ShallowComponent {
         };
     }
 
-    render():Object {
+    render() {
         return (
-            <Card description={"Select job for see triggers of job"} header={"QuartzJob Management "}>
+            <Card header="İş Zamanlama Yönetimi">
                 <DataGrid
                     fields={QuartzModel.fields}
                     store={this.state.store}
-                    ref={"table"}
-                    toolbar={["create", "edit", "delete"]}
-                    pageable={false}
+                    ref={"quartzTable"}
+                    toolbar={[{name: "create", text: "Ekle"}, {name: "edit", text: "Düzenle"}, {name: "delete", text: "Sil"}]}
                     pagination={{ emptyText: "No data.", pageSize: 50 }}
                     editable={false}
+                    pageable={false}
                 />
                 {this.renderTriggerGrid()}
             </Card>
         );
     }
 
-    renderTriggerGrid():Object {
-        if (this.state.selection) {
-            let url = `http://localhost:3000/triggers?parentId="${this.state.selection.id}`;
+    renderTriggerGrid() {
+        if (!this.state.selection)
+            return null;
 
-            let store = new Store({
-                endPoint: new RemoteEndPoint({
-                    url: url,
-                }),
-                idField: "id",
-                autoLoad: true
-            });
+        let url = `triggers?parentId="${this.state.selection.id}`;
 
-            this.triggersStore = store;
-            return ([
-                <DataGrid
-                    toolbar={["create"]}
-                    fields={TriggerModel.fields}
-                    store={store}
-                    ref="table"
-                    onNewClick={this.__add}
-                    onEditClick={this.__edit}
-                    onDeleteClick={this.__remove}
-                    exportButton={true}
-                    pageable={false}
-                    onSelection={this.onSelection}
-                    editable={true}
-                    searchable={false}
-                />,
-                <ModalDataForm
-                    ref="detailModal"
-                    header="Trigger"
-                    show={this.state.showModal}
-                    onSubmit={this.__onSave}
-                    onCancel={this.__onCancel}
-                    item={this.state.item}
-                    fields={TriggerModel.fields}
-                />]);
-        }
-        return null;
+        let store = new Store({
+            endPoint: new RemoteEndPoint({
+                url: url
+            }),
+            idField: QuartzJob.idField,
+            autoLoad: true
+        });
+
+        this.triggersStore = store;
+
+        return ([
+            <DataGrid
+                toolbar={[{name: "create", text: "Ekle"}]}
+                fields={TriggerModel.fields}
+                store={store}
+                ref="triggerTable"
+                onNewClick={this.__add}
+                onEditClick={this.__edit}
+                onDeleteClick={this.__remove}
+                onSelection={this.__onSelection}
+                pageable={false}
+                editable={true}
+                searchable={false}
+            />,
+            <ModalDataForm
+                ref="detailModal"
+                header="Trigger"
+                show={this.state.showModal}
+                onSubmit={this.__onSave}
+                onCancel={this.__onCancel}
+                defaulValues={this.state.item}
+                fields={TriggerModel.fields}
+            />]);
     }
 
-    onSelection(item:Object):Object {
+    __onSelection(item) {
         if (item) {
             this.setState({selection: item});
         }
-    }
+    };
 
-    __add = () => {
+    __add() {
         let empty = {};
         this.__showModal(empty);
     };
 
-    __edit = () => {
-        let selectedRows = this.refs.table.getSelectedRows();
+    __edit() {
+        let selectedRows = this.refs.triggerTable.getSelectedRows();
         if (!selectedRows || !selectedRows[0]) {
             return;
         }
         this.__showModal(selectedRows[0]);
     };
 
-    __onCancel = () => {
+    __onCancel() {
         this.setState({showModal: false});
     };
 
-    __onSave = (newData:Object, callback:Object) => {
+    __onSave(newData, callback) {
         newData.parentId = this.state.selection.id;
 
         this.triggersStore.create(newData, callback(true));
     };
 
-    __remove = () => {
-        let selectedRows = this.refs.table.getSelectedRows();
+    __remove() {
+        let selectedRows = this.refs.triggerTable.getSelectedRows();
         this.triggersStore.delete(selectedRows[0]);
     };
 
-    __showModal = (newItem:Object) => {
+    __showModal(newItem) {
         this.setState({showModal: true, item: newItem});
     };
 }

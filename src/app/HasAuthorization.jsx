@@ -9,19 +9,22 @@ export default class HasAuthorization extends ShallowComponent {
     static ROUTES = [];
     static ROUTER;
 
-    constructor(props: Object) {
+    constructor(props:Object) {
         super(props);
         HasAuthorization.ROUTER = HasAuthorization.createRoutes(this.props.menu);
     }
 
-    render(): Object {
-        return (<Router key="root" history={BrowserHistory} onUpdate={HasAuthorization.scrollTop} routes={HasAuthorization.ROUTER} />);
+    render():Object {
+        return (<Router key="root"
+                        history={BrowserHistory}
+                        onUpdate={HasAuthorization.scrollTop}
+                        routes={HasAuthorization.ROUTER}/>);
     }
 
-    static createRoutes(menu: Object): Object {
+    static createRoutes(menu:Object):Object {
         const INDEX_ROUTE = {
-            getComponent(location: string, cb: Function) {
-                require.ensure([], (require: Object) => {
+            getComponent(location:string, cb:Function) {
+                require.ensure([], (require:Object) => {
                     cb(null, HasAuthorization.importComponent(require("./welcome/Welcome")));
                 });
             }
@@ -29,8 +32,8 @@ export default class HasAuthorization extends ShallowComponent {
 
         const NOT_FOUND_ROUTE = {
             path: "*",
-            getComponent(location: string, cb: Function) {
-                require.ensure([], (require: Object) => {
+            getComponent(location:string, cb:Function) {
+                require.ensure([], (require:Object) => {
                     cb(null, HasAuthorization.importComponent(require("./common/NotFound")));
                 });
             }
@@ -48,7 +51,7 @@ export default class HasAuthorization extends ShallowComponent {
         });
     }
 
-    static importMenu(items: Array) {
+    static importMenu(items:Array) {
         for (let i = 0; i < items.length; i++) {
             let item = items[i];
             if (item.items && item.items.length > 0) {
@@ -58,8 +61,8 @@ export default class HasAuthorization extends ShallowComponent {
 
                 let obj = {
                     path: item.module,
-                    getComponent(location: string, cb: Function) {
-                        require.ensure([], (require: Object) => {
+                    getComponent(location:string, cb:Function) {
+                        require.ensure([], (require:Object) => {
                             cb(null, HasAuthorization.importComponent(require(path)));
                         });
                     }
@@ -69,19 +72,22 @@ export default class HasAuthorization extends ShallowComponent {
         }
     }
 
-    static importComponent(component: Object): Object {
+    static importComponent(component:Object):Object {
         if (component.default) {
             return component.default;
         }
         return component;
     }
+
     /**
-    * this function changing absolute path to relative path
-    */
-    static normalizePath(path: string): string {
+     * this function changing absolute path to relative path
+     */
+    static normalizePath(path:string):string {
         console.log(path);
+        let temp;
         if (path) {
-            return path.replace("app", ".");
+            temp = path.replace("modules", "manager");
+            return temp.replace("app", ".");
         }
         return path;
     }

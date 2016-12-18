@@ -4,6 +4,7 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
     background-color: #fcfcfd;
+    word-wrap: break-word;
 }
 
 .side-menu {

@@ -2,43 +2,36 @@
   "name": "TriggerModel",
   "fields": [
     {
-      "label": "id",
-      "type": "string",
-      "code": "id",
-      "tooltip": "id",
-      "visible": false
-    },
-    {
-      "label": "Name",
-      "code": "name",
+      "label": "Ad",
+      "name": "name",
       "type": "string",
       "required": true,
       "minLength": 3
     },
     {
       "label": "Cron",
-      "code": "cron",
+      "name": "cron",
       "type": "string",
       "required": true,
       "minLength": 3
     },
     {
-      "label": "Start Date",
-      "code": "startDate",
+      "label": "Başlangıç Tarihi",
+      "name": "startDate",
       "type": "date",
       "required": true,
       "minLength": 3
     },
     {
-      "label": "End Date",
-      "code": "endDate",
+      "label": "Bitiş Tarihi",
+      "name": "endDate",
       "type": "date",
       "required": true,
       "minLength": 3
     },
     {
-      "label": "Repeat Count",
-      "code": "repeatCount",
+      "label": "Tekrarlanma Sayısı",
+      "name": "repeatCount",
       "type": "number"
     }
   ]

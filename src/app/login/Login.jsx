@@ -1,6 +1,6 @@
 import React from "react";
 import {ShallowComponent, AjaxRequest} from "robe-react-commons";
-import {Form, Row, Alert, Image, Button, InputGroup} from "react-bootstrap";
+import {Form, Row, Alert, Image, Button, InputGroup, Col} from "react-bootstrap";
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
 import PasswordInput from "robe-react-ui/lib/inputs/PasswordInput";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
@@ -33,7 +33,8 @@ class Login extends ShallowComponent {
                         <Row style={{ textAlign: "center", marginBottom: "30px" }}>
                             <Image src="./logo.png" circle width="150"/>
                         </Row>
-                        <Row>
+                        <Col>
+
                             <TextInput
                                 ref="username"
                                 type="email"
@@ -45,8 +46,8 @@ class Login extends ShallowComponent {
                                 validationDisplay="overlay"
                                 onKeyPress={this.__onKeyPress}
                             />
-                        </Row>
-                        <Row>
+                        </Col>
+                        <Col>
                             <PasswordInput
                                 ref="password"
                                 name="password"
@@ -57,23 +58,24 @@ class Login extends ShallowComponent {
                                 placeholder="Password"
                                 onKeyPress={this.__onKeyPress}
                             />
-                        </Row>
-                        <Row>
+                        </Col>
+                        <Col>
                             <Button
                                 className="btn btn-primary btn-login btn-block"
                                 ref="submitBtn"
-                                onClick={this.__handleSubmit}
-                            >
+                                onClick={this.__handleSubmit}>
                                 Login
                             </Button>
-                        </Row>
-                        <br />
-                        <Row>
+                        </Col>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <Col>
                             <Alert bsStyle="info">
                                 <p>Username :<b> admin@robe.io</b></p>
                                 <p>Password :<b> 123123</b></p>
                             </Alert>
-                        </Row>
+                        </Col>
                     </Form>
                 </Card>
             </div>

@@ -23,9 +23,10 @@ export default class Dashboard extends ShallowComponent {
     }
 
     render():Object {
-        if (this.state.jsonData === undefined) {
-            return (<span>Yükleniyor...</span>);
-        }
+        if (!this.state.jsonData)
+            return (
+                <Card header="Yükleniyor..." style={{minHeight:335}}/>);
+
         return (
             <Card header="Sistem Bilgileri"
                   description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">

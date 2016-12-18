@@ -35,7 +35,7 @@ export default class Content extends ShallowComponent {
                 <Col
                     id="content"
                     className="content"
-                    style={{ height:window.innerHeight-100,marginLeft:toggled}}
+                    style={{ height:window.innerHeight-80,marginLeft:toggled}}
                     onClick={this.__closeMenu}>
                     {this.props.content}
                 </Col>

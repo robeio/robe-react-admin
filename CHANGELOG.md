@@ -4,3 +4,4 @@
 * added Card in src/libs
 * Login css updated
 * updated design
+* deleted BuseCrudPage
