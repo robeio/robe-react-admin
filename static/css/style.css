@@ -60,3 +60,10 @@ fieldset[disabled] .form-control {
     border: 1px solid #e7eaec;
     opacity: 1;
 }
+
+a.list-group-item:focus,
+a.list-group-item:hover,
+button.list-group-item:focus,
+button.list-group-item:hover {
+    outline: whitesmoke;
+}

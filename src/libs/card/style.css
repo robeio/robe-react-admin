@@ -9,6 +9,7 @@
     border-radius: 2px !important;
     overflow-y: hidden;
     overflow-x: hidden;
+    min-height: 335px;
 }
 
 .card-header {
