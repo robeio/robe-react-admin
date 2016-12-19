@@ -84,10 +84,8 @@ export default class HasAuthorization extends ShallowComponent {
      */
     static normalizePath(path:string):string {
         console.log(path);
-        let temp;
         if (path) {
-            temp = path.replace("modules", "manager");
-            return temp.replace("app", ".");
+            return path.replace("app", ".");
         }
         return path;
     }

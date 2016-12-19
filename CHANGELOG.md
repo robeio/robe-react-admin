@@ -5,3 +5,4 @@
 * Login css updated
 * updated design
 * deleted BuseCrudPage
+* fix bug permission
