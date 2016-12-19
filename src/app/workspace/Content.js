@@ -19,7 +19,8 @@ export default class Content extends ShallowComponent {
         return (
             <Col>
                 <Header
-                    toggled={this.state.matches}
+                    matches={this.state.matches}
+                    toggled={this.state.toggled}
                     onToggle={this.__changeMenu}/>
                 <Col
                     id="sideMenu"

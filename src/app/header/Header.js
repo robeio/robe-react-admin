@@ -8,11 +8,13 @@ import "./style.css";
 
 export default class Header extends ShallowComponent {
     static propTypes = {
+        matches: React.PropTypes.bool,
         toggled: React.PropTypes.bool
     };
 
     static defaultProps = {
-        toggled: false
+        toggled: false,
+        matches: false
     };
 
     constructor(props:Object) {
@@ -22,37 +24,33 @@ export default class Header extends ShallowComponent {
         };
     }
 
-    static buttonStyle = {
-        padding: " 0 0px 0px 8px",
-        background: "transparent",
-        border: 0,
-        color: "#173646",
-        transition: ".6s",
-        opacity: "1",
-        fontSize: "large"
-    };
-
     render():Object {
         return (
             <Col className="robe-navbar">
                 <div className="robe-navbar-content">
                     <Col className="pull-left">
                         <Button onClick={this.__onToggle}
-                                className="navbar-toggle pull-left">
-                            <Col componentClass="span" className="icon-bar"/>
-                            <Col componentClass="span" className="icon-bar"/>
-                            <Col componentClass="span" className="icon-bar"/>
+                                style={{padding:10,display:this.props.toggled?"none":"inherit"}}
+                                className="navbar-toggle pull-left robe-navbar-button">
+                            <span className="icon-bar" style={{background:"#173646",height:3}}/>
+                            <span className="icon-bar" style={{background:"#173646",height:3}}/>
+                            <span className="icon-bar" style={{background:"#173646",height:3}}/>
+                        </Button>
+                        <Button onClick={this.__onToggle}
+                                style={{padding:5.5,display:this.props.matches&&this.props.toggled?"inherit":"none"}}
+                                className="navbar-toggle pull-left robe-navbar-button">
+                            <FaIcon code="fa-arrow-left" size="fa-lg"/>
                         </Button>
                         <Image src="./logo.png"
                                className="pull-left"
                                circle
                                width="50"/>
                         <Link to={window.applicationRootPath}>
-                            <Col style={{paddingTop:15,display:this.props.toggled?"none":"inherit"}}>Robe Sample
+                            <Col style={{paddingTop:15,display:this.props.matches?"none":"inherit"}}>Robe Sample
                                 Application</Col>
                         </Link>
                         <Link to={window.applicationRootPath}>
-                            <Col style={{paddingTop:15,display:this.props.toggled?"inherit":"none"}}>Robe</Col>
+                            <Col style={{paddingTop:15,display:this.props.matches?"inherit":"none"}}>Robe</Col>
                         </Link>
                     </Col>
                     <Col className="pull-right">
