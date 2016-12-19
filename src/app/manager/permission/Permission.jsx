@@ -240,7 +240,6 @@ export default class Permission extends ShallowComponent {
         });
 
         readRequest.call(undefined, undefined, function (res) {
-            console.log(res)
             this.setState({
                 menuData: res
             });

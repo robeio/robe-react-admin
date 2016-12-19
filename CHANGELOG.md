@@ -5,4 +5,5 @@
 * Login css updated
 * updated design
 * deleted BuseCrudPage
-* fix bug permission
+* Content moved to Workspace and Content removed
+
