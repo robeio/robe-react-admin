@@ -130,15 +130,15 @@ export default class Permission extends ShallowComponent {
         }
     };
 
-    __onMenuChange = (e, checkValue, checked)=> {
-        let value = this.state.selectedMenus;
-        if (checked) {
-            value.push(checkValue);
-        } else {
-            Arrays.remove(value, checkValue);
-        }
+    __onMenuChange = (e:Object)=> {
+        // let value = this.state.selectedMenus;
+        // if (checked) {
+        //     value.push(checkValue);
+        // } else {
+        //     Arrays.remove(value, checkValue);
+        // }
         this.setState({
-            selectedMenus: value
+            selectedMenus: this.refs.checkTree.getSelectedItems()
         });
     };
 

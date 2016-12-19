@@ -1,6 +1,5 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import ToastContainer from "robe-react-ui/lib/toast/ToastContainer";
 import Header from "app/header/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
@@ -24,7 +23,6 @@ export default class Workspace extends ShallowComponent {
         let toggled = this.state.toggled == false ? 0 : 290;
         return (
             <div>
-                <ToastContainer />
                 <Header
                     matches={this.state.matches}
                     toggled={this.state.toggled}

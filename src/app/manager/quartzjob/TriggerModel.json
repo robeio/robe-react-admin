@@ -2,6 +2,20 @@
   "name": "TriggerModel",
   "fields": [
     {
+      "label": "Id",
+      "type": "string",
+      "name": "oid",
+      "tooltip": "Id",
+      "visible": false
+    },
+    {
+      "label": "Last Updated",
+      "type": "string",
+      "name": "lastUpdated",
+      "tooltip": "Last Updated",
+      "visible": false
+    },
+    {
       "label": "Ad",
       "name": "name",
       "type": "string",
