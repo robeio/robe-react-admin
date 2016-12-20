@@ -70,12 +70,19 @@ export default class Permission extends ShallowComponent {
                             <Col md={12}>
                                 <span style={{fontWeight:"bold"}}>Seçili gruba ait servisler</span>
                                 <Col
-                                    style={{height:250,border:"1px solid #ddd",borderRadius:4,marginTop:4,overflowY:"auto"}}>
+                                    style={{
+                                        height:250,
+                                        border:"1px solid #ddd",
+                                        paddingLeft:10,
+                                        borderRadius:4,
+                                        marginTop:4,
+                                        overflowY:"auto"}}>
                                     <CheckInput
                                         items={this.state.serviceData}
                                         value={this.state.selectedServices}
                                         textField="description"
                                         valueField="oid"
+                                        formControl={false}
                                         style={{height:"240px",overflowY:"auto",overflowX:"hidden"}}
                                         onChange={this.__onServiceChange.bind(this, "selectedServices")}/>
                                 </Col>

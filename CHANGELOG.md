@@ -7,5 +7,7 @@
 * deleted BuseCrudPage
 * Content moved to Workspace and Content removed
 * Added library of robe-ajax and ajaxsetup settings
+* was update Permission style
+
 
 
