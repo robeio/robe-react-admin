@@ -1,6 +1,6 @@
 .robe-navbar {
     width: 100%;
-    height: 80px;
+    height: 70px;
     background: #ffffff;
     border-bottom: 1px solid #eeeeee;
     -webkit-box-shadow: 0 0 10px rgba(100, 100, 100, .1);
@@ -11,14 +11,14 @@
 }
 
 .robe-navbar-content {
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
 }
 
 .robe-navbar-content a {
     margin-left: 10px;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
     color: #173646;
 }
 

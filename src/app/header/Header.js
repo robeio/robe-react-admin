@@ -30,48 +30,49 @@ export default class Header extends ShallowComponent {
                 <div className="robe-navbar-content">
                     <Col className="pull-left">
                         <Button onClick={this.__onToggle}
-                                style={{padding:10,display:this.props.toggled?"none":"inherit"}}
+                                style={{margin:4,padding:10,display:this.props.toggled?"none":"inherit"}}
                                 className="navbar-toggle pull-left robe-navbar-button">
                             <span className="icon-bar" style={{background:"#173646",height:3}}/>
                             <span className="icon-bar" style={{background:"#173646",height:3}}/>
                             <span className="icon-bar" style={{background:"#173646",height:3}}/>
                         </Button>
                         <Button onClick={this.__onToggle}
-                                style={{padding:5.5,display:this.props.matches&&this.props.toggled?"inherit":"none"}}
+                                style={{margin:4.5,padding:5,display:this.props.matches&&this.props.toggled?"inherit":"none"}}
                                 className="navbar-toggle pull-left robe-navbar-button">
                             <FaIcon code="fa-arrow-left" size="fa-lg"/>
                         </Button>
                         <Image src="./logo.png"
                                className="pull-left"
+                               style={{marginLeft:5}}
                                circle
-                               width="50"/>
+                               width="40"/>
                         <Link to={window.applicationRootPath}>
-                            <Col style={{paddingTop:15,display:this.props.matches?"none":"inherit"}}>Robe Sample
+                            <Col style={{display:this.props.matches?"none":"inherit"}}>Robe Sample
                                 Application</Col>
                         </Link>
                         <Link to={window.applicationRootPath}>
-                            <Col style={{paddingTop:15,display:this.props.matches?"inherit":"none"}}>Robe</Col>
+                            <Col style={{display:this.props.matches?"inherit":"none"}}>Robe</Col>
                         </Link>
                     </Col>
                     <Col className="pull-right">
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-user" size="fa-lg"/>
+                            <FaIcon code="fa-user" size="fa-md"/>
                         </Button>
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-comments-o" size="fa-lg"/>
+                            <FaIcon code="fa-comments-o" size="fa-md"/>
                             <Badge>{this.state.messageCount}</Badge>
                         </Button>
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-bell" size="fa-lg"/>
+                            <FaIcon code="fa-bell" size="fa-md"/>
                             <Badge>{this.state.notificationCount}</Badge>
                         </Button>
                         <Button
                             className="robe-navbar-button"
                             onClick={this.__onExit.bind(undefined,"header-exit-icon")}>
-                            <FaIcon code="fa-sign-out" size="fa-lg"/>
+                            <FaIcon code="fa-sign-out" size="fa-md"/>
                         </Button>
                     </Col>
                 </div>
