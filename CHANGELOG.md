@@ -9,6 +9,7 @@
 * Added library of robe-ajax and ajaxsetup settings
 * was update Permission style
 * was update Header style
+* Added Charts to Dashboard
 
 
 

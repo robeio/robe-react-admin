@@ -1,14 +1,15 @@
 import React from "react";
-import { ShallowComponent, AjaxRequest } from "robe-react-commons";
+import {ShallowComponent, AjaxRequest} from "robe-react-commons";
 import Col from "react-bootstrap/lib/Col";
 import Panel from "react-bootstrap/lib/Panel";
-import ProgressBar from "react-bootstrap/lib/ProgressBar";
-import Badge from "react-bootstrap/lib/Badge";
 import Card from "libs/card/Card";
+import BarChart from "robe-react-ui/lib/chart/BarChart";
+import PieChart from "robe-react-ui/lib/chart/PieChart";
+import LineChart from "robe-react-ui/lib/chart/LineChart";
 
 export default class Dashboard extends ShallowComponent {
 
-    constructor(props: Object) {
+    constructor(props:Object) {
         super(props);
 
         this.state = {
@@ -22,305 +23,365 @@ export default class Dashboard extends ShallowComponent {
         };
     }
 
-    render(): Object {
+    render():Object {
         if (!this.state.jsonData)
             return (
-                <Card header="Yükleniyor..." />);
+                <Card header="Yükleniyor..."/>);
 
         return (
-            <Card header="Sistem Bilgileri"
-                description="Sistemle ilgili Log detayları, bellek kullanım detayları, HTTP yanıt detayları ve servis detayları gösterilmektedir.">
-                <br />
-                <Panel header="Log Detayları">
-                    <Col xs={12} md={12}>
-                        <Col componentClass="label">Debug <Badge>{this.state.logData.debugCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="success" now={this.state.logData.debug} />
-                        <Col componentClass="label">Info <Badge>{this.state.logData.infoCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="info" now={this.state.logData.info} />
-                        <Col componentClass="label">Warn <Badge>{this.state.logData.warnCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="warning" now={this.state.logData.warn} />
-                        <Col componentClass="label">Error <Badge>{this.state.logData.errorCount}</Badge></Col>
-                        <ProgressBar striped bsStyle="danger" now={this.state.logData.error} />
-                    </Col>
-                </Panel>
-
-                <Panel header="VM Detayları">
-                    <Col xs={12} md={4}>
-                        <Panel header="Total (MB)">
-                            <Col componentClass="label">Used <Badge>{this.state.vmTotal.totalDataCount}</Badge>
-                            </Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmTotal.totalData} />
-                            <Col componentClass="label">Free
-                                <Badge>{this.state.vmTotal.unusedTotalCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmTotal.unusedTotal} />
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="Heap (MB)">
-                            <Col componentClass="label">Used <Badge>{this.state.vmHeap.usedHeapCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmHeap.usedHeap} />
-                            <Col componentClass="label">Free <Badge>{this.state.vmHeap.unusedHeapCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmHeap.unusedHeap} />
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="Non-Heap (MB)">
-                            <Col componentClass="label">Used <Badge>{this.state.vmNonHeap.usedCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.state.vmNonHeap.used} />
-                            <Col componentClass="label">Free <Badge>{this.state.vmNonHeap.freeCount}</Badge></Col>
-                            <ProgressBar striped bsStyle="success" now={this.state.vmNonHeap.free} />
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <Panel header="Pool Status (%)">
-                            <Col componentClass="label">Eden <Badge>{this.__poolData("PS-Eden-Space")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Eden-Space")}
-                                label="%(percent)s%" />
-                            <Col componentClass="label">Old <Badge>{this.__poolData("PS-Old-Gen")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Old-Gen")}
-                                label="%(percent)s%" />
-                            <Col componentClass="label">Perm <Badge>{this.__poolData("PS-Perm-Gen")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Perm-Gen")} />
-                            <Col componentClass="label">Survior
-                                <Badge>{this.__poolData("PS-Survivor-Space")}</Badge></Col>
-                            <ProgressBar striped bsStyle="danger" now={this.__poolData("PS-Survivor-Space")}
-                                label="%(percent)s%" />
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <Panel header="Threads (count)">
-                            <Col >Runnable <Col className="pull-right">
-                                <Badge>{this.__jvm("runnable")}</Badge></Col></Col>
-                            <Col >New <Col className="pull-right"><Badge>{this.__jvm("new")}</Badge></Col></Col>
-                            <Col >Timed-W <Col className="pull-right"><Badge>{this.__jvm("timed")}</Badge></Col></Col>
-                            <Col >Waiting <Col className="pull-right"><Badge>{this.__jvm("waiting")}</Badge></Col></Col>
-                            <Col >Blocked <Col className="pull-right"><Badge>{this.__jvm("blocked")}</Badge></Col></Col>
-                            <Col >Terminated <Col className="pull-right"><Badge>{this.__jvm("terminated")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                </Panel>
-                <Panel header="HTTP Yanıt Detayları">
-                    <Col xs={12} md={12}>
-                        <Panel header="Toplam">
-                            <Col xs={12} md={3} componentClass="label">2xx
-                                <Badge>{this.__totalRequests("2xx")}</Badge>
-                                <ProgressBar striped bsStyle="success" now={this.__totalRequests("2xx")} /></Col>
-                            <Col xs={12} md={3} componentClass="label">3xx
-                                <Badge>{this.__totalRequests("3xx")}</Badge>
-                                <ProgressBar striped bsStyle="info" now={this.__totalRequests("3xx")} /></Col>
-                            <Col xs={12} md={3} componentClass="label">4xx
-                                <Badge>{this.__totalRequests("4xx")}</Badge>
-                                <ProgressBar striped bsStyle="warning" now={this.__totalRequests("4xx")} /></Col>
-                            <Col xs={12} md={3} componentClass="label">5xx
-                                <Badge>{this.__totalRequests("5xx")}</Badge>
-                                <ProgressBar striped bsStyle="danger" now={this.__totalRequests("5xx")} /></Col>
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="2xx-response (events/second)">
-                            <Col >1 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("2xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("2xx", "m5")}</Badge></Col></Col>
-                            <Col >15 min <Col className="pull-right"><Badge>{this.__httpResponse("2xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col
-                                className="pull-right"><Badge>{this.__httpResponse("2xx", "mean")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="4xx-response (events/second)">
-                            <Col >1 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("4xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("4xx", "m5")}</Badge></Col></Col>
-                            <Col >15 min <Col className="pull-right"><Badge>{this.__httpResponse("4xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col
-                                className="pull-right"><Badge>{this.__httpResponse("4xx", "mean")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="5xx-response (events/second)">
-                            <Col >1 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m1")}</Badge></Col></Col>
-                            <Col >5 min <Col
-                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m5")}</Badge></Col></Col>
-                            <Col >15 min<Col
-                                className="pull-right"><Badge>{this.__httpResponse("5xx", "m15")}</Badge></Col></Col>
-                            <Col >Mean <Col
-                                className="pull-right"><Badge>{this.__httpResponse("5xx", "mean")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                </Panel>
-                <Panel header="Servis Detayları">
-                    <Col xs={12} md={4}>
-                        <Panel header="AuthResource.login (Sec)">
-                            <Col >Max <Col
-                                className="pull-right"><Badge>{this.__serviceList("login", "max")}</Badge></Col></Col>
-                            <Col >Min <Col
-                                className="pull-right"><Badge>{this.__serviceList("login", "min")}</Badge></Col></Col>
-                            <Col >Mean<Col
-                                className="pull-right"><Badge>{this.__serviceList("login", "mean")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                    <Col xs={12} md={4}>
-                        <Panel header="AuthResource.logout (Sec)">
-                            <Col >Max <Col
-                                className="pull-right"><Badge>{this.__serviceList("logout", "max")}</Badge></Col></Col>
-                            <Col >Min <Col
-                                className="pull-right"><Badge>{this.__serviceList("logout", "min")}</Badge></Col></Col>
-                            <Col >Mean<Col className="pull-right"><Badge>{this.__serviceList("logout", "mean")}</Badge></Col></Col>
-                        </Panel>
-                    </Col>
-                </Panel>
+            <Card header="Sistem Bilgileri" style={{background:"#fff"}}>
+                <Col xs={12} style={{padding:0}}>
+                    <Panel header="VM Detayları">
+                        <Col xs={12} lg={6}>
+                            <h4>Memory (MB)</h4>
+                            <BarChart
+                                propsOfChart={{ width: 500, height: 300, data: this.__vmData() }}
+                                propsOfChildrens={[
+                        { dataKey: "used", fill: "#5cb85c",name:"Kullanılan",unit:" MB" },
+                        { dataKey: "free",fill: "#d9534f",name:"Boş",unit:" MB" }]}
+                                propsOfXAxis={{ dataKey: "name"}}
+                                propsOfYAxis
+                                propsOfToolTip
+                                propsOfCartesianGrid
+                                propsOfLegend
+                            />
+                        </Col>
+                        <Col xs={12} lg={6}>
+                            <div style={{float:"left"}}>
+                                <h4>Pool (%)</h4>
+                                <PieChart
+                                    propsOfChart={{ width: 300, height: 250}}
+                                    propsOfChildrens={[{  valueKey: "pool", cx:"50%", cy:"50%", outerRadius: 60, data: this.__poolData(), label: true}]}
+                                    propsOfToolTip
+                                    propsOfLegend={[
+                            {value: "Eden", id: "pool"},{value: "Old", id: "pool"},
+                            {value: "Perm", id: "pool"},{value: "Survior", id: "pool"}]}
+                                />
+                            </div>
+                            <div style={{float:"left"}}>
+                                <h4>Threads (count)</h4>
+                                <PieChart
+                                    propsOfChart={{ width: 300, height: 250}}
+                                    propsOfChildrens={[{  valueKey: "threads",  cx:"50%", cy:"50%", outerRadius: 60,  data: this.__jvm(), label: true}]}
+                                    propsOfToolTip
+                                    propsOfLegend={[
+                            {value: "Runnable", id:"threads"},
+                            {value: "New", id:"threads"},
+                            {value: "Timed-W ",  id:"threads"},
+                            {value: "Waiting",  id:"threads"},
+                            {value: "Blocked",  id:"threads"},
+                            {value: "Terminated",  id:"threads"}]}
+                                />
+                            </div>
+                        </Col>
+                    </Panel>
+                </Col>
+                <Col xs={12} style={{padding:0}}>
+                    <Panel header="HTTP Yanıt Detayları">
+                        <Col xs={12} lg={6}>
+                            <h4>Toplam</h4>
+                            <BarChart
+                                propsOfChart={{ width: 500, height: 300, data:this.__totalRequests() }}
+                                propsOfChildrens={[{ dataKey: "xx",name:"Response Sayısı" }]}
+                                propsOfXAxis={{ dataKey: "name" }}
+                                propsOfYAxis
+                                propsOfToolTip
+                                propsOfCartesianGrid
+                            />
+                        </Col>
+                        <Col xs={12} lg={6}>
+                            <h4>Response (events/second)</h4>
+                            <LineChart
+                                propsOfChart={{ width: 500, height: 300, data:this.__httpResponse() }}
+                                propsOfChildrens={[
+                        { dataKey: "xx2", stroke: "#5cb85c",name:"2xx",unit:" events/second" },
+                        { dataKey: "xx3", stroke: "#8dd1e1",name:"3xx",unit:" events/second" },
+                        { dataKey: "xx4", stroke: "#337ab7",name:"4xx",unit:" events/second" },
+                        { dataKey: "xx5", stroke: "#d9534f",name:"5xx",unit:" events/second" }]}
+                                propsOfXAxis={{ dataKey: "name" }}
+                                propsOfYAxis
+                                propsOfToolTip
+                                propsOfCartesianGrid
+                                propsOfLegend
+                            />
+                        </Col>
+                    </Panel>
+                </Col>
+                <Col xs={12} lg={6} style={{padding:0}}>
+                    <Panel header="Servis Detayları">
+                        <BarChart
+                            propsOfChart={{ width: 500, height: 300, data:this.__serviceList() }}
+                            propsOfChildrens={[
+                        { dataKey: "login", fill: "#5cb85c",name:"Login",unit:" Sec" },
+                        { dataKey: "logout", fill: "#d9534f",name:"Logout",unit:" Sec" }]}
+                            propsOfXAxis={{ dataKey: "name" }}
+                            propsOfYAxis
+                            propsOfToolTip
+                            propsOfCartesianGrid
+                            propsOfLegend
+                        />
+                    </Panel>
+                </Col>
+                <Col xs={12} lg={6} style={{padding:0}}>
+                    <Panel header="Log Detayları">
+                        <BarChart
+                            propsOfChart={{ width: 500, height: 300, data: this.__logData()}}
+                            propsOfChildrens={[{dataKey: "log",fill:"blue",name:"Debug" }]}
+                            propsOfXAxis={{ dataKey: "name" }}
+                            propsOfYAxis
+                            propsOfToolTip
+                            propsOfCartesianGrid
+                        />
+                    </Panel>
+                </Col>
             </Card>
 
         );
     }
 
-    __appenderData() {
+    __logData() {
         let debug = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.debug"].count.toFixed(4));
         let info = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.info"].count.toFixed(4));
         let warn = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.warn"].count.toFixed(4));
         let error = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.error"].count.toFixed(4));
 
-        let all = debug + info + warn + error;
-
-        let d = 100 * debug / all;
-        let i = 100 * info / all;
-        let w = 100 * warn / all;
-        let e = 100 * error / all;
-        let dc = `${debug} / ${all}`;
-        let ic = `${info}  / ${all}`;
-        let wc = `${warn}  / ${all}`;
-        let ec = `${error}  / ${all}`;
-
-        let log = {
-            debug: d,
-            info: i,
-            warn: w,
-            error: e,
-            debugCount: dc,
-            infoCount: ic,
-            warnCount: wc,
-            errorCount: ec
-        };
-        this.setState({ logData: log });
+        let log = [
+            {name: "Debug", log: debug, fill: "#5cb85c"},
+            {name: "Warn", log: warn, fill: "#8dd1e1"},
+            {name: "Info", log: info, fill: "#5bc0de"},
+            {name: "Error", log: error, fill: "#d9534f"}
+        ];
+        return log;
     }
 
-    __vmTotal() {
-        let all = parseInt(this.state.jsonData.gauges["jvm.memory.total.max"].value / (1024 * 1024), 10);
-        let totalData = parseInt(this.state.jsonData.gauges["jvm.memory.total.used"].value / (1024 * 1024), 10);
+    __vmData() {
+        let totalAll = parseInt(this.state.jsonData.gauges["jvm.memory.total.max"].value / (1024 * 1024), 10);
+        let usedTotal = parseInt(this.state.jsonData.gauges["jvm.memory.total.used"].value / (1024 * 1024), 10);
+        let freeTotal = totalAll - usedTotal;
 
-        let unusedTotal = all - totalData;
-
-        all = parseFloat(all.toFixed(4));
-        totalData = parseFloat(totalData.toFixed(4));
-        unusedTotal = parseFloat(unusedTotal.toFixed(4));
-
-        let u = 100 * totalData / all;
-        let f = 100 * unusedTotal / all;
-        let uc = `${totalData} MB / ${all} MB `;
-        let fc = `${unusedTotal} MB / ${all}   MB`;
-
-        let total = {
-            totalData: u,
-            unusedTotal: f,
-            totalDataCount: uc,
-            unusedTotalCount: fc
-        };
-        this.setState({ vmTotal: total });
-    }
-
-    __vmHeap() {
-        let all = parseInt(this.state.jsonData.gauges["jvm.memory.heap.max"].value / (1024 * 1024), 10);
+        let heapAll = parseInt(this.state.jsonData.gauges["jvm.memory.heap.max"].value / (1024 * 1024), 10);
         let usedHeap = parseInt(this.state.jsonData.gauges["jvm.memory.heap.used"].value / (1024 * 1024), 10);
+        let freeHeap = heapAll - usedHeap;
 
-        let unusedHeap = all - usedHeap;
-
-        all = parseFloat(all.toFixed(4));
-        usedHeap = parseFloat(usedHeap.toFixed(4));
-        unusedHeap = parseFloat(unusedHeap.toFixed(4));
-
-        let u = 100 * usedHeap / all;
-        let f = 100 * unusedHeap / all;
-        let uc = `${usedHeap} MB / ${all} MB `;
-        let fc = `${unusedHeap} MB / ${all} MB `;
-
-        let heap = {
-            usedHeap: u,
-            unusedHeap: f,
-            usedHeapCount: uc,
-            unusedHeapCount: fc
-        };
-        this.setState({ vmHeap: heap });
-    }
-
-    __vmNonHeap() {
-        let max = parseInt(this.state.jsonData.gauges["jvm.memory.non-heap.max"].value / (1024 * 1024), 10);
-        let used = parseInt(this.state.jsonData.gauges["jvm.memory.non-heap.used"].value / (1024 * 1024), 10);
-
-        if (max < 0) {
-            max = used;
+        let nonHeapTotal = parseInt(this.state.jsonData.gauges["jvm.memory.non-heap.max"].value / (1024 * 1024), 10);
+        let usedNonHeap = parseInt(this.state.jsonData.gauges["jvm.memory.non-heap.used"].value / (1024 * 1024), 10);
+        if (nonHeapTotal < 0) {
+            nonHeapTotal = usedNonHeap;
         }
-        let free = max - used;
+        let freeNonHeap = nonHeapTotal - usedNonHeap;
 
-        max = parseFloat(max.toFixed(4));
-        used = parseFloat(used.toFixed(4));
-        free = parseFloat(free.toFixed(4));
 
-        let u = 100 * used / max;
-        let f = 100 * free / max;
-        let uc = `${used} MB / ${max} MB `;
-        let fc = `${free} MB / ${max} MB `;
-
-        let nonHeap = {
-            used: u,
-            free: f,
-            usedCount: uc,
-            freeCount: fc
-        };
-        this.setState({ vmNonHeap: nonHeap });
+        let vm = [
+            {name: "Total", used: usedTotal, free: freeTotal},
+            {name: "Heap", used: usedHeap, free: freeHeap},
+            {name: "Non-Heap", used: usedNonHeap, free: freeNonHeap}
+        ];
+        return vm;
     }
 
-    __poolData(pool: string): number {
+    __poolData():array {
+        let eden = 0;
+        let old = 0;
+        let perm = 0;
+        let survior = 0;
+
         try {
-            return parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.${pool}.usage`].value).toFixed(4));
+            eden = parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.PS-Eden-Space.usage`].value).toFixed(4));
         } catch (e) {
-            return 0;
         }
+        try {
+            old = parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.PS-Old-Gen.usage`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            perm = parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.PS-Perm-Gen.usage`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            survior = parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.PS-Survivor-Space.usage`].value).toFixed(4));
+        } catch (e) {
+        }
+
+        let pool = [
+            {name: "Eden", pool: eden, fill: "#5cb85c", unit: " %"},
+            {name: "Old", pool: old, fill: "#5bc0de", unit: " %"},
+            {name: "Perm", pool: perm, fill: "#8dd1e1", unit: " %"},
+            {name: "Survior", pool: survior, fill: "#d9534f", unit: " %"}
+        ];
+
+        return pool;
     }
 
-    __jvm(jjvm: string): number {
+    __jvm():array {
+
+        let runnable = 0;
+        let news = 0;
+        let timed = 0;
+        let waiting = 0;
+        let blocked = 0;
+        let terminated = 0;
+
         try {
-            return parseFloat((this.state.jsonData.gauges[`jvm.threads.${jjvm}.count`].value).toFixed(4));
+            runnable = parseFloat((this.state.jsonData.gauges[`jvm.threads.runnable.count`].value).toFixed(4));
         } catch (e) {
-            return 0;
         }
+        try {
+            news = parseFloat((this.state.jsonData.gauges[`jvm.threads.new.count`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            timed = parseFloat((this.state.jsonData.gauges[`jvm.threads.timed.count`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            waiting = parseFloat((this.state.jsonData.gauges[`jvm.threads.waiting.count`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            blocked = parseFloat((this.state.jsonData.gauges[`jvm.threads.blocked.count`].value).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            terminated = parseFloat((this.state.jsonData.gauges[`jvm.threads.terminated.count`].value).toFixed(4));
+        } catch (e) {
+            terminated = 0;
+        }
+
+        let threads = [
+            {name: "Runnable", threads: runnable, fill: "#5cb85c"},
+            {name: "New", threads: news, fill: "#5bc0de"},
+            {name: "Timed-W ", threads: timed, fill: "#8dd1e1"},
+            {name: "Waiting", threads: waiting, fill: "#d9534f"},
+            {name: "Blocked", threads: blocked, fill: "#f0ad4e"},
+            {name: "Terminated", threads: terminated, fill: "#ddd"}
+        ];
+
+        return threads;
     }
 
-    __serviceList(state: string, value: string): number {
+    __totalRequests():array {
+        let xx2 = 0;
+        let xx3 = 0;
+        let xx4 = 0;
+        let xx5 = 0;
+
         try {
-            return parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.${state}`][value]).toFixed(4));
+            xx2 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.2xx-responses`].count).toFixed(4));
         } catch (e) {
-            return 0;
         }
+        try {
+            xx3 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.3xx-responses`].count).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            xx4 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.4xx-responses`].count).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            xx5 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.5xx-responses`].count).toFixed(4));
+        } catch (e) {
+        }
+
+        let xx = [
+            {name: "2xx", xx: xx2, fill: "#5cb85c", unit: " %"},
+            {name: "3xx", xx: xx3, fill: "#5bc0de", unit: " %"},
+            {name: "4xx", xx: xx4, fill: "#8dd1e1", unit: " %"},
+            {name: "5xx", xx: xx5, fill: "#d9534f", unit: " %"}
+        ];
+
+        return xx;
     }
 
-    __totalRequests(type: string): number {
+    __httpResponse():array {
+
+        let xx2m1 = 0;
+        let xx2m5 = 0;
+        let xx2m15 = 0;
+        let xx2mean = 0;
+        let xx3m1 = 0;
+        let xx3m5 = 0;
+        let xx3m15 = 0;
+        let xx3mean = 0;
+        let xx4m1 = 0;
+        let xx4m5 = 0;
+        let xx4m15 = 0;
+        let xx4mean = 0;
+        let xx5m1 = 0;
+        let xx5m5 = 0;
+        let xx5m15 = 0;
+        let xx5mean = 0;
+
         try {
-            return parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.${type}-responses`].count).toFixed(4));
+            xx2m1 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.2xx-responses`]["m1_rate"]).toFixed(4));
+            xx3m1 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.3xx-responses`]["m1_rate"]).toFixed(4));
+            xx4m1 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.4xx-responses`]["m1_rate"]).toFixed(4));
+            xx5m1 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.5xx-responses`]["m1_rate"]).toFixed(4));
         } catch (e) {
-            return 0;
         }
+        try {
+            xx2m5 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.2xx-responses`]["m5_rate"]).toFixed(4));
+            xx3m5 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.3xx-responses`]["m5_rate"]).toFixed(4));
+            xx4m5 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.4xx-responses`]["m5_rate"]).toFixed(4));
+            xx5m5 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.5xx-responses`]["m5_rate"]).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            xx2m15 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.2xx-responses`]["m15_rate"]).toFixed(4));
+            xx3m15 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.3xx-responses`]["m15_rate"]).toFixed(4));
+            xx4m15 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.4xx-responses`]["m15_rate"]).toFixed(4));
+            xx5m15 = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.5xx-responses`]["m15_rate"]).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            xx2mean = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.2xx-responses`]["mean_rate"]).toFixed(4));
+            xx3mean = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.3xx-responses`]["mean_rate"]).toFixed(4));
+            xx4mean = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.4xx-responses`]["mean_rate"]).toFixed(4));
+            xx5mean = parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.5xx-responses`]["mean_rate"]).toFixed(4));
+        } catch (e) {
+        }
+
+        let http = [
+            {name: "1 min", xx2: xx2m1, xx3: xx3m1, xx4: xx4m1, xx5: xx5m1},
+            {name: "5 min", xx2: xx2m5, xx3: xx3m5, xx4: xx4m5, xx5: xx5m5},
+            {name: "15 min", xx2: xx2m15, xx3: xx3m15, xx4: xx4m15, xx5: xx5m15},
+            {name: "Mean", xx2: xx2mean, xx3: xx3mean, xx4: xx4mean, xx5: xx5mean}
+        ];
+
+        return http;
     }
 
-    __httpResponse(type: string, key: string): number {
+    __serviceList():array {
+        let loginMax = 0;
+        let loginMin = 0;
+        let loginMean = 0;
+        let logoutMax = 0;
+        let logoutMin = 0;
+        let logoutMean = 0;
+
         try {
-            key = `${key}_rate`;
-            return parseFloat((this.state.jsonData.meters[`io.dropwizard.jetty.MutableServletContextHandler.${type}-responses`][key]).toFixed(4));
+            loginMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["max"]).toFixed(4));
+            logoutMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["max"]).toFixed(4));
         } catch (e) {
-            return 0;
         }
+        try {
+            loginMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["min"]).toFixed(4));
+            logoutMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["min"]).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            loginMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["mean"]).toFixed(4));
+            logoutMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["mean"]).toFixed(4));
+        } catch (e) {
+        }
+
+        let service = [
+            {name: "Min", login: loginMin, logout: logoutMin},
+            {name: "Max", login: loginMax, logout: logoutMax},
+            {name: "Mean", login: loginMean, logout: logoutMean}
+        ];
+
+        return service;
+
     }
 
     componentDidMount() {
@@ -329,12 +390,8 @@ export default class Dashboard extends ShallowComponent {
             type: "GET"
         });
 
-        readRequest.call(undefined, undefined, (response: Object) => {
-            this.setState({ jsonData: response });
-            this.__vmNonHeap();
-            this.__appenderData();
-            this.__vmTotal();
-            this.__vmHeap();
+        readRequest.call(undefined, undefined, (response:Object) => {
+            this.setState({jsonData: response});
         }, undefined);
     }
 }

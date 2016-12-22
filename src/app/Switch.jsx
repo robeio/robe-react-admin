@@ -25,7 +25,7 @@ export default class Switch extends ShallowComponent {
                         Toast.error("Yeki Hatası !");
                         break;
                     case 404 :
-                        Toast.error("Sayfa bulunamadı ! ");
+                        // Toast.error("Sayfa bulunamadı ! ");
                         break;
                         break;
                     case 422 :
