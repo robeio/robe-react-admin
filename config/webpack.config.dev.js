@@ -1,14 +1,7 @@
 const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CachePlugin = require("webpack/lib/CachePlugin");
-
-/**
- * Json Server
- * @type {config|exports|module.exports}
- */
-const JsonServer = require("./config/JsonServer");
-const server = new JsonServer(3000);
-server.route("data/db.json").start();
+const JsonServer = require("./server/JsonServer");
 
 const webPackConfig = require("./webpack.config.common.js")("/src", "/build", "__test__");
 
@@ -18,9 +11,6 @@ webPackConfig.devtool = "eval-source-map";
 webPackConfig.entry = {
     app: [webPackConfig.paths.app]
 };
-
-// webPackConfig.module.preLoaders.push({ test: /.jsx?$/, loader: "eslint", exclude: /node_modules/ });
-
 
 webPackConfig.devServer = {
     historyApiFallback: true,
@@ -57,5 +47,8 @@ webPackConfig.plugins.push(new CopyWebpackPlugin([
 
 webPackConfig.plugins.push(new CachePlugin({}));
 
+
+const server = new JsonServer(3000, "/application");
+server.route("config/data/db.json").upload("/files", "config/data/upload", "files").start();
 
 module.exports = webPackConfig;

@@ -3,6 +3,7 @@ import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent
 import Router from "react-router/lib/Router";
 import BrowserHistory from "react-router/lib/browserHistory";
 import Workspace from "app/workspace/Workspace";
+import loader from "../loader";
 
 export default class HasAuthorization extends ShallowComponent {
 
@@ -24,18 +25,14 @@ export default class HasAuthorization extends ShallowComponent {
     static createRoutes(menu:Object):Object {
         const INDEX_ROUTE = {
             getComponent(location:string, cb:Function) {
-                require.ensure([], (require:Object) => {
-                    cb(null, HasAuthorization.importComponent(require("./welcome/Welcome")));
-                });
+                loader("./app/welcome/Welcome", cb);
             }
         };
 
         const NOT_FOUND_ROUTE = {
             path: "*",
             getComponent(location:string, cb:Function) {
-                require.ensure([], (require:Object) => {
-                    cb(null, HasAuthorization.importComponent(require("./common/NotFound")));
-                });
+                loader("./app/common/NotFound", cb);
             }
         };
         const items = menu[0].items;
@@ -62,9 +59,7 @@ export default class HasAuthorization extends ShallowComponent {
                 let obj = {
                     path: item.module,
                     getComponent(location:string, cb:Function) {
-                        require.ensure([], (require:Object) => {
-                            cb(null, HasAuthorization.importComponent(require(path)));
-                        });
+                        loader(path, cb);
                     }
                 };
                 HasAuthorization.ROUTES.push(obj);
@@ -85,7 +80,7 @@ export default class HasAuthorization extends ShallowComponent {
     static normalizePath(path:string):string {
         console.log(path);
         if (path) {
-            return path.replace("app", ".");
+            return path.replace("app", "./app");
         }
         return path;
     }

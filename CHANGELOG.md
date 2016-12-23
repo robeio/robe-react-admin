@@ -1,6 +1,8 @@
 # Change Log
 
-## 1.0.1 Developing
+## 1.0.2 Developing
+
+## 1.0.1
 * added Card in src/libs
 * Login css updated
 * updated design
@@ -10,6 +12,9 @@
 * was update Permission style
 * was update Header style
 * Added Charts to Dashboard
+* `dev` and `prod` configurations changed. 
+* lazy module loading changed. Added loader.js file to root path.
+
 
 
 

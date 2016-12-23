@@ -1,15 +1,13 @@
 /**
  * import common webpack settings
  */
-const commonSettings = require("./webpack.config.common.js")("/site", "/build", "__test__", "/src");
+const commonSettings = require("./webpack.config.common.js")("/src", "/build", "__test__");
 
 /**
  * Json Server
  * @type {config|exports|module.exports}
  */
-const JsonServer = require("./config/JsonServer");
-const server = new JsonServer(3001);
-server.route("data/db.json").start();
+const JsonServer = require("./server/JsonServer");
 
 /**
  * @link https://webpack.github.io/docs/configuration.html#cache
@@ -24,7 +22,7 @@ commonSettings.cache = true;
  * Switch loaders to debug mode.
  * @type {boolean}
  */
-commonSettings.debug = true;
+commonSettings.debug = false;
 
 /**
  * @link https://webpack.github.io/docs/configuration.html#devtool
@@ -38,15 +36,13 @@ commonSettings.debug = true;
  * source-map - A SourceMap is emitted. See also output.sourceMapFilename.
  * @type {string}
  */
-commonSettings.devtool = "source-map";
+commonSettings.devtool = "eval";
 
-commonSettings.module.preLoaders.push({ test: /.jsx?$/, loader: "eslint", exclude: /node_modules/ });
 commonSettings.module.loaders.push({
-        test: /\.jsx?$/,
-        exclude: /(__test__|node_modules|bower_components)\//,
-        loader: "isparta"
-    }
-);
+    test: /\.jsx?$/,
+    exclude: /(__test__|node_modules|bower_components)\//,
+    loader: "isparta"
+});
 
 // *optional* isparta options: istanbul behind isparta will use it
 commonSettings.isparta = {
@@ -58,8 +54,19 @@ commonSettings.isparta = {
     }
 };
 
+commonSettings.externals = {
+    "cheerio": "window",
+    "react/addons": true, // important!!
+    "react/lib/ExecutionEnvironment": true,
+    "react/lib/ReactContext": true
+};
+
+const server = new JsonServer(3001, "/application");
+server.route("config/data/testdb.json").upload("/files", "config/data/upload", "files").start();
+
 module.exports = function configure(config) {
     config.set({
+        basePath: "../",
         captureTimeout: 3000,
         browserDisconnectTimeout: 3000,
         browserDisconnectTolerance: 1,
@@ -83,14 +90,33 @@ module.exports = function configure(config) {
             "karma-mocha-reporter"
         ],
         files: [
-            "__test__/index.js"
+            "__test__/**/*.spec.js"
         ],
         preprocessors: {
-            "__test__/index.js": ["webpack", "sourcemap"]
+            "__test__/**/*.spec.js": ["webpack"],
+            "src/**/*.js": ["webpack"]
         },
         webpack: commonSettings,
         webpackServer: {
-            noInfo: true
+            colors: true,
+            hash: false,
+            version: false,
+            timings: false,
+            assets: false,
+            chunks: false,
+            modules: false,
+            reasons: false,
+            children: false,
+            source: false,
+            errors: false,
+            errorDetails: false,
+            warnings: false,
+            publicPath: false
+        },
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            stats: "errors-only"
         },
         reporters: ["mocha", "coverage"],
         coverageReporter: {

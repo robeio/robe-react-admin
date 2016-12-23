@@ -1,8 +1,8 @@
-
 const webpack = require("webpack");
 const FileChanger = require("webpack-file-changer");
+const Utility = require("./util/Utility");
 const path = require("path");
-
+const package = require("../package.json");
 
 /**
  * import common webpack settings
@@ -10,7 +10,7 @@ const path = require("path");
 /**
  * import common webpack settings
  */
-const commonSettings = require("./webpack.config.common.js")("/src", "/sitebuild", "__test__");
+const commonSettings = require("./webpack.config.common.js")("/src", "/build", "__test__");
 
 
 /**
@@ -44,7 +44,7 @@ commonSettings.plugins.push(new webpack.optimize.MinChunkSizePlugin({ minChunkSi
  * @type {{root: *[]}}
  */
 commonSettings.entry = {
-    "site": "../site/index.js"
+    app: "../src/index.js"
 };
 
 /**
@@ -57,14 +57,23 @@ commonSettings.devtool = "source-map";
 
 commonSettings.output = {
     path: commonSettings.paths.build,
-    filename: "bundle.js",
+    filename: "bundle.[hash].js"
     // chunkFilename: "[id].bundle.js"
 };
 
 const fileChanger = new FileChanger({
     move: [{
-        from: path.resolve("./static"),
-        to: path.resolve("./build")
+        from: path.join(Utility.projectDir, "static"),
+        to: path.join(Utility.projectDir, "./build")
+    }
+    ],
+    change: [{
+        file: "./build/index.html",
+        parameters: {
+            "\\$VERSION": package.version,
+            "\\$BUILD_TIME": new Date(),
+            "bundle\\.js": "bundle.[hash].js"
+        }
     }
     ]
 });
