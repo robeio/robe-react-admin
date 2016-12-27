@@ -78,7 +78,6 @@ export default class HasAuthorization extends ShallowComponent {
      * this function changing absolute path to relative path
      */
     static normalizePath(path:string):string {
-        console.log(path);
         if (path) {
             return path.replace("app", "./app");
         }

@@ -1,5 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
+import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 import {Navbar, Col, Badge, Image, Button} from "react-bootstrap";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 import Link from "react-router/lib/Link";
@@ -16,6 +17,11 @@ export default class Header extends ShallowComponent {
         toggled: false,
         matches: false
     };
+
+    logoutPost = new AjaxRequest({
+        url: "authentication/logout",
+        type: "POST"
+    });
 
     constructor(props:Object) {
         super(props);
@@ -81,11 +87,21 @@ export default class Header extends ShallowComponent {
     }
 
     __onExit = ()=> {
+        this.logoutPost.call(undefined, undefined, this.__logoutSuccess, this.__logoutError);
+
+    };
+
+    __logoutSuccess(response) {
+        location.reload();
+
+    }
+
+    __logoutError(response, textStatus, xhr) {
         cookie.remove("domain", {path: "/"});
         cookie.remove("username", {path: "/"});
         cookie.remove("password", {path: "/"});
         location.reload();
-    };
+    }
 
     __onToggle = ()=> {
         if (this.props.onToggle)

@@ -4,6 +4,7 @@ import {Form, Row, Alert, Image, Button, InputGroup, Col} from "react-bootstrap"
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
 import PasswordInput from "robe-react-ui/lib/inputs/PasswordInput";
 import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
+import Toast from "robe-react-ui/lib/toast/Toast";
 import SHA256 from "crypto-js/sha256";
 import cookie from "react-cookie";
 import Card from "libs/card/Card";
@@ -107,7 +108,7 @@ class Login extends ShallowComponent {
         this.loginPost.call(data, undefined, this.__loginSuccess, this.__loginError);
     }
 
-    __loginSuccess(response, textStatus, xhr) {
+    __loginSuccess(response) {
 
         var domain = response.domain;
         var params = domain.split(';');
@@ -129,7 +130,7 @@ class Login extends ShallowComponent {
         location.reload();
     }
 
-    __loginError(response:Object) {
+    __loginError(response, textStatus, xhr) {
         var text = response.responseText;
         switch (response.status) {
             case 200:
@@ -150,7 +151,7 @@ class Login extends ShallowComponent {
                 text = "Lütfen daha sonra tekrar deneyiniz.";
                 break;
         }
-        NotificationManager.error(text);
+        Toast.error(text);
     }
 
     __onKeyPress(e) {

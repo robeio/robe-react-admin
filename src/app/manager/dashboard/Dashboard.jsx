@@ -5,7 +5,6 @@ import Panel from "react-bootstrap/lib/Panel";
 import Card from "libs/card/Card";
 import BarChart from "robe-react-ui/lib/chart/BarChart";
 import PieChart from "robe-react-ui/lib/chart/PieChart";
-import LineChart from "robe-react-ui/lib/chart/LineChart";
 
 export default class Dashboard extends ShallowComponent {
 
@@ -37,8 +36,8 @@ export default class Dashboard extends ShallowComponent {
                             <BarChart
                                 propsOfChart={{ width: 500, height: 300, data: this.__vmData() }}
                                 propsOfChildrens={[
-                        { dataKey: "used", fill: "#5cb85c",name:"Kullanılan",unit:" MB" },
-                        { dataKey: "free",fill: "#d9534f",name:"Boş",unit:" MB" }]}
+                                        { dataKey: "used", fill: "#5cb85c",name:"Kullanılan",unit:" MB" },
+                                        { dataKey: "free",fill: "#d9534f",name:"Boş",unit:" MB" }]}
                                 propsOfXAxis={{ dataKey: "name"}}
                                 propsOfYAxis
                                 propsOfToolTip
@@ -54,8 +53,10 @@ export default class Dashboard extends ShallowComponent {
                                     propsOfChildrens={[{  valueKey: "pool", cx:"50%", cy:"50%", outerRadius: 60, data: this.__poolData(), label: true}]}
                                     propsOfToolTip
                                     propsOfLegend={[
-                            {value: "Eden", id: "pool"},{value: "Old", id: "pool"},
-                            {value: "Perm", id: "pool"},{value: "Survior", id: "pool"}]}
+                                        {value: "Eden", id: "pool"},
+                                        {value: "Old", id: "pool"},
+                                        {value: "Perm", id: "pool"},
+                                        {value: "Survior", id: "pool"}]}
                                 />
                             </div>
                             <div style={{float:"left"}}>
@@ -65,12 +66,12 @@ export default class Dashboard extends ShallowComponent {
                                     propsOfChildrens={[{  valueKey: "threads",  cx:"50%", cy:"50%", outerRadius: 60,  data: this.__jvm(), label: true}]}
                                     propsOfToolTip
                                     propsOfLegend={[
-                            {value: "Runnable", id:"threads"},
-                            {value: "New", id:"threads"},
-                            {value: "Timed-W ",  id:"threads"},
-                            {value: "Waiting",  id:"threads"},
-                            {value: "Blocked",  id:"threads"},
-                            {value: "Terminated",  id:"threads"}]}
+                                        {value: "Runnable", id:"threads"},
+                                        {value: "New", id:"threads"},
+                                        {value: "Timed-W ",  id:"threads"},
+                                        {value: "Waiting",  id:"threads"},
+                                        {value: "Blocked",  id:"threads"},
+                                        {value: "Terminated",  id:"threads"}]}
                                 />
                             </div>
                         </Col>
@@ -91,13 +92,13 @@ export default class Dashboard extends ShallowComponent {
                         </Col>
                         <Col xs={12} lg={6}>
                             <h4>Response (events/second)</h4>
-                            <LineChart
+                            <BarChart
                                 propsOfChart={{ width: 500, height: 300, data:this.__httpResponse() }}
                                 propsOfChildrens={[
-                        { dataKey: "xx2", stroke: "#5cb85c",name:"2xx",unit:" events/second" },
-                        { dataKey: "xx3", stroke: "#8dd1e1",name:"3xx",unit:" events/second" },
-                        { dataKey: "xx4", stroke: "#337ab7",name:"4xx",unit:" events/second" },
-                        { dataKey: "xx5", stroke: "#d9534f",name:"5xx",unit:" events/second" }]}
+                                        { dataKey: "xx2", fill: "#5cb85c",name:"2xx",unit:" events/second" },
+                                        { dataKey: "xx3", fill: "#8dd1e1",name:"3xx",unit:" events/second" },
+                                        { dataKey: "xx4", fill: "#f0ad4e",name:"4xx",unit:" events/second" },
+                                        { dataKey: "xx5", fill: "#d9534f",name:"5xx",unit:" events/second" }]}
                                 propsOfXAxis={{ dataKey: "name" }}
                                 propsOfYAxis
                                 propsOfToolTip
@@ -112,13 +113,13 @@ export default class Dashboard extends ShallowComponent {
                         <BarChart
                             propsOfChart={{ width: 500, height: 300, data:this.__serviceList() }}
                             propsOfChildrens={[
-                        { dataKey: "login", fill: "#5cb85c",name:"Login",unit:" Sec" },
-                        { dataKey: "logout", fill: "#d9534f",name:"Logout",unit:" Sec" }]}
+                                { dataKey: "min", fill: "#5cb85c",unit:" Sec" },
+                                { dataKey: "max", fill: "#f0ad4e",unit:" Sec" },
+                                { dataKey: "mean", fill: "#5bc0de",unit:" Sec" }]}
                             propsOfXAxis={{ dataKey: "name" }}
                             propsOfYAxis
                             propsOfToolTip
                             propsOfCartesianGrid
-                            propsOfLegend
                         />
                     </Panel>
                 </Col>
@@ -126,7 +127,7 @@ export default class Dashboard extends ShallowComponent {
                     <Panel header="Log Detayları">
                         <BarChart
                             propsOfChart={{ width: 500, height: 300, data: this.__logData()}}
-                            propsOfChildrens={[{dataKey: "log",fill:"blue",name:"Debug" }]}
+                            propsOfChildrens={[{dataKey: "log",fill:"blue",name:"Log Sayısı" }]}
                             propsOfXAxis={{ dataKey: "name" }}
                             propsOfYAxis
                             propsOfToolTip
@@ -139,6 +140,39 @@ export default class Dashboard extends ShallowComponent {
         );
     }
 
+    __serviceList():array {
+        let loginMax = 0;
+        let loginMin = 0;
+        let loginMean = 0;
+        let logoutMax = 0;
+        let logoutMin = 0;
+        let logoutMean = 0;
+
+        try {
+            loginMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["max"]).toFixed(4));
+            logoutMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["max"]).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            loginMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["min"]).toFixed(4));
+            logoutMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["min"]).toFixed(4));
+        } catch (e) {
+        }
+        try {
+            loginMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["mean"]).toFixed(4));
+            logoutMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["mean"]).toFixed(4));
+        } catch (e) {
+        }
+
+        let service = [
+            {name: "Login", min: loginMin, max: loginMax, mean: loginMean},
+            {name: "Logout", min: logoutMin, max: logoutMax, mean: logoutMean}
+        ];
+
+        return service;
+
+    }
+
     __logData() {
         let debug = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.debug"].count.toFixed(4));
         let info = parseFloat(this.state.jsonData.meters["ch.qos.logback.core.Appender.info"].count.toFixed(4));
@@ -147,7 +181,7 @@ export default class Dashboard extends ShallowComponent {
 
         let log = [
             {name: "Debug", log: debug, fill: "#5cb85c"},
-            {name: "Warn", log: warn, fill: "#8dd1e1"},
+            {name: "Warn", log: warn, fill: "#f0ad4e"},
             {name: "Info", log: info, fill: "#5bc0de"},
             {name: "Error", log: error, fill: "#d9534f"}
         ];
@@ -201,12 +235,17 @@ export default class Dashboard extends ShallowComponent {
             survior = parseFloat((this.state.jsonData.gauges[`jvm.memory.pools.PS-Survivor-Space.usage`].value).toFixed(4));
         } catch (e) {
         }
+        let all = eden + old + perm + survior;
+        eden = parseFloat((100 * eden / all).toFixed(4));
+        old = parseFloat((100 * old / all).toFixed(4));
+        perm = parseFloat((100 * perm / all).toFixed(4));
+        survior = parseFloat((100 * survior / all).toFixed(4));
 
         let pool = [
             {name: "Eden", pool: eden, fill: "#5cb85c", unit: " %"},
             {name: "Old", pool: old, fill: "#5bc0de", unit: " %"},
-            {name: "Perm", pool: perm, fill: "#8dd1e1", unit: " %"},
-            {name: "Survior", pool: survior, fill: "#d9534f", unit: " %"}
+            {name: "Survior", pool: survior, fill: "#d9534f", unit: " %"},
+            {name: "Perm", pool: perm, fill: "#8dd1e1", unit: " %"}
         ];
 
         return pool;
@@ -285,7 +324,7 @@ export default class Dashboard extends ShallowComponent {
         let xx = [
             {name: "2xx", xx: xx2, fill: "#5cb85c", unit: " %"},
             {name: "3xx", xx: xx3, fill: "#5bc0de", unit: " %"},
-            {name: "4xx", xx: xx4, fill: "#8dd1e1", unit: " %"},
+            {name: "4xx", xx: xx4, fill: "#f0ad4e", unit: " %"},
             {name: "5xx", xx: xx5, fill: "#d9534f", unit: " %"}
         ];
 
@@ -350,48 +389,15 @@ export default class Dashboard extends ShallowComponent {
         return http;
     }
 
-    __serviceList():array {
-        let loginMax = 0;
-        let loginMin = 0;
-        let loginMean = 0;
-        let logoutMax = 0;
-        let logoutMin = 0;
-        let logoutMean = 0;
-
-        try {
-            loginMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["max"]).toFixed(4));
-            logoutMax = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["max"]).toFixed(4));
-        } catch (e) {
-        }
-        try {
-            loginMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["min"]).toFixed(4));
-            logoutMin = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["min"]).toFixed(4));
-        } catch (e) {
-        }
-        try {
-            loginMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.login`]["mean"]).toFixed(4));
-            logoutMean = parseFloat((this.state.jsonData.timers[`io.robe.admin.resources.AuthResource.logout`]["mean"]).toFixed(4));
-        } catch (e) {
-        }
-
-        let service = [
-            {name: "Min", login: loginMin, logout: logoutMin},
-            {name: "Max", login: loginMax, logout: logoutMax},
-            {name: "Mean", login: loginMean, logout: logoutMean}
-        ];
-
-        return service;
-
-    }
-
     componentDidMount() {
         let readRequest = new AjaxRequest({
             url: "metrics",
             type: "GET"
         });
 
-        readRequest.call(undefined, undefined, (response:Object) => {
-            this.setState({jsonData: response});
-        }, undefined);
+        readRequest.call(undefined, undefined,
+            function (response) {
+                this.setState({jsonData: response});
+            }.bind(this), undefined);
     }
 }

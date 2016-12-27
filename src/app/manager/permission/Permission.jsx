@@ -155,14 +155,15 @@ export default class Permission extends ShallowComponent {
             type: "GET"
         });
 
-        readRequest.call(undefined, undefined, function (res) {
-            this.setState({
-                selectedGroup: Arrays.extractValueArray(res.service, "group"),
-                selectedMenus: Arrays.extractValueArray(res.menu, "oid"),
-                selectedServices: Arrays.extractValueArray(res.service, "oid")
+        readRequest.call(undefined, undefined,
+            function (res) {
+                this.setState({
+                    selectedGroup: Arrays.extractValueArray(res.service, "group"),
+                    selectedMenus: Arrays.extractValueArray(res.menu, "oid"),
+                    selectedServices: Arrays.extractValueArray(res.service, "oid")
 
-            });
-        }.bind(this));
+                });
+            }.bind(this));
 
     };
 
