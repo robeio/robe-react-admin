@@ -12,7 +12,7 @@ export default class QuartzJob extends ShallowComponent {
 
 
     static idField = "oid";
-    triggersStore:undefined;
+    triggersStore: undefined;
 
     constructor(props) {
         super(props);
@@ -38,24 +38,26 @@ export default class QuartzJob extends ShallowComponent {
         return (
             <Card header="İş Zamanlama Yönetimi">
                 <DataGrid
+                    key="jobs"
                     fields={QuartzModel.fields}
                     store={this.state.store}
                     ref={"quartzTable"}
-                    toolbar={[{name: "create", text: "Ekle"}, {name: "edit", text: "Düzenle"}, {name: "delete", text: "Sil"}]}
+                    toolbar={[{ name: "create", text: "Ekle" }, { name: "edit", text: "Düzenle" }, { name: "delete", text: "Sil" }]}
                     pagination={{ emptyText: "No data.", pageSize: 50 }}
                     editable={false}
                     pageable={false}
-                />
+                    onSelection={this.__onSelection}
+                    />
                 {this.renderTriggerGrid()}
             </Card>
         );
     }
 
-    renderTriggerGrid() {
-        if (!this.state.selection)
+    renderTriggerGrid(): Object {
+        if (!this.state.selection) {
             return null;
-
-        let url = `triggers?parentId="${this.state.selection.id}`;
+        }
+        let url = `triggers?_filter=jobOid=${this.state.selection.oid}`;
 
         let store = new Store({
             endPoint: new RemoteEndPoint({
@@ -69,9 +71,10 @@ export default class QuartzJob extends ShallowComponent {
 
         return ([
             <DataGrid
-                toolbar={[{name: "create", text: "Ekle"}]}
+                key="triggers"
+                toolbar={[{ name: "create", text: "Ekle" }]}
                 fields={TriggerModel.fields}
-                store={store}
+                store={this.triggersStore}
                 ref="triggerTable"
                 onNewClick={this.__add}
                 onEditClick={this.__edit}
@@ -80,7 +83,7 @@ export default class QuartzJob extends ShallowComponent {
                 pageable={false}
                 editable={true}
                 searchable={false}
-            />,
+                />,
             <ModalDataForm
                 ref="detailModal"
                 header="Trigger"
@@ -89,19 +92,19 @@ export default class QuartzJob extends ShallowComponent {
                 onCancel={this.__onCancel}
                 defaulValues={this.state.item}
                 fields={TriggerModel.fields}
-            />]);
+                />]);
     }
 
     __onSelection(item) {
         if (item) {
-            this.setState({selection: item});
+            this.setState({ selection: item });
         }
-    };
+    }
 
     __add() {
         let empty = {};
         this.__showModal(empty);
-    };
+    }
 
     __edit() {
         let selectedRows = this.refs.triggerTable.getSelectedRows();
@@ -109,24 +112,24 @@ export default class QuartzJob extends ShallowComponent {
             return;
         }
         this.__showModal(selectedRows[0]);
-    };
+    }
 
     __onCancel() {
-        this.setState({showModal: false});
-    };
+        this.setState({ showModal: false });
+    }
 
     __onSave(newData, callback) {
         newData.parentId = this.state.selection.id;
 
         this.triggersStore.create(newData, callback(true));
-    };
+    }
 
     __remove() {
         let selectedRows = this.refs.triggerTable.getSelectedRows();
         this.triggersStore.delete(selectedRows[0]);
-    };
+    }
 
     __showModal(newItem) {
-        this.setState({showModal: true, item: newItem});
-    };
+        this.setState({ showModal: true, item: newItem });
+    }
 }
