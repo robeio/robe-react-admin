@@ -9,95 +9,79 @@ import QuartzModel from "./QuartzModel.json";
 import TriggerModel from "./TriggerModel.json";
 
 export default class QuartzJob extends ShallowComponent {
-
-
     static idField = "oid";
-    triggersStore: undefined;
 
-    constructor(props) {
+    constructor(props: Object) {
         super(props);
 
-        let store = new Store({
-            endPoint: new RemoteEndPoint({
-                url: "quartzjobs"
-            }),
-            idField: QuartzJob.idField,
-            autoLoad: true,
-            _offset: "offset"
-        });
-
         this.state = {
-            store: store,
+            jobStore: new Store({
+                endPoint: new RemoteEndPoint({
+                    url: "quartzjobs"
+                }),
+                idField: QuartzJob.idField,
+                autoLoad: true,
+                _offset: "offset"
+            }),
             selection: undefined,
             item: {},
-            showModal: false
+            showModal: false,
+            triggersStore: new Store({
+                endPoint: new RemoteEndPoint({
+                    url: "triggers?_filter=jobOid=undefined"
+                }),
+                idField: QuartzJob.idField,
+                autoLoad: true
+            })
         };
     }
 
-    render() {
+    render(): Object {
         return (
             <Card header="İş Zamanlama Yönetimi">
                 <DataGrid
                     key="jobs"
                     fields={QuartzModel.fields}
-                    store={this.state.store}
+                    store={this.state.jobStore}
                     ref={"quartzTable"}
-                    toolbar={[{ name: "create", text: "Ekle" }, { name: "edit", text: "Düzenle" }, { name: "delete", text: "Sil" }]}
                     pagination={{ emptyText: "No data.", pageSize: 50 }}
                     editable={false}
                     pageable={false}
                     onSelection={this.__onSelection}
                     />
-                {this.renderTriggerGrid()}
+                <DataGrid
+                    key="triggers"
+                    toolbar={[{ name: "create", text: "Ekle" }]}
+                    fields={TriggerModel.fields}
+                    store={this.state.triggersStore}
+                    ref="triggerTable"
+                    onNewClick={this.__add}
+                    onEditClick={this.__edit}
+                    onDeleteClick={this.__remove}
+                    onSelection={this.__onSelection}
+                    pageable={false}
+                    editable={true}
+                    searchable={false}
+                    />,
+                <ModalDataForm
+                    ref="detailModal"
+                    header="Trigger"
+                    show={this.state.showModal}
+                    onSubmit={this.__onSave}
+                    onCancel={this.__onCancel}
+                    defaulValues={this.state.item}
+                    fields={TriggerModel.fields}
+                    />
             </Card>
         );
     }
-
-    renderTriggerGrid(): Object {
-        if (!this.state.selection) {
-            return null;
-        }
-        let url = `triggers?_filter=jobOid=${this.state.selection.oid}`;
-
-        let store = new Store({
-            endPoint: new RemoteEndPoint({
-                url: url
-            }),
-            idField: QuartzJob.idField,
-            autoLoad: true
-        });
-
-        this.triggersStore = store;
-
-        return ([
-            <DataGrid
-                key="triggers"
-                toolbar={[{ name: "create", text: "Ekle" }]}
-                fields={TriggerModel.fields}
-                store={this.triggersStore}
-                ref="triggerTable"
-                onNewClick={this.__add}
-                onEditClick={this.__edit}
-                onDeleteClick={this.__remove}
-                onSelection={this.__onSelection}
-                pageable={false}
-                editable={true}
-                searchable={false}
-                />,
-            <ModalDataForm
-                ref="detailModal"
-                header="Trigger"
-                show={this.state.showModal}
-                onSubmit={this.__onSave}
-                onCancel={this.__onCancel}
-                defaulValues={this.state.item}
-                fields={TriggerModel.fields}
-                />]);
-    }
-
-    __onSelection(item) {
+    __onSelection(item: Object) {
         if (item) {
-            this.setState({ selection: item });
+            this.state.triggersStore.setReadUrl(`triggers?_filter=jobOid=${item.oid}`);
+            this.setState({
+                selection: item,
+            });
+            this.refs.triggerTable.__readData();
         }
     }
 
