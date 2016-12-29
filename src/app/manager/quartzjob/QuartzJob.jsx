@@ -58,7 +58,6 @@ export default class QuartzJob extends ShallowComponent {
                     onNewClick={this.__add}
                     onEditClick={this.__edit}
                     onDeleteClick={this.__remove}
-                    onSelection={this.__onSelection}
                     pageable={false}
                     editable={true}
                     searchable={false}
