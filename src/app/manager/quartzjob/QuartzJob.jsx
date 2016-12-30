@@ -7,6 +7,7 @@ import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent
 import Store from "robe-react-commons/lib/stores/Store";
 import QuartzModel from "./QuartzModel.json";
 import TriggerModel from "./TriggerModel.json";
+import ControlBar from "./ControlBar";
 
 export default class QuartzJob extends ShallowComponent {
     static idField = "oid";
@@ -28,7 +29,7 @@ export default class QuartzJob extends ShallowComponent {
             showModal: false,
             triggersStore: new Store({
                 endPoint: new RemoteEndPoint({
-                    url: "triggers?_filter=jobOid=undefined"
+                    url: "quartzjobs/undefined/triggers"
                 }),
                 idField: QuartzJob.idField,
                 autoLoad: true
@@ -48,6 +49,7 @@ export default class QuartzJob extends ShallowComponent {
                     editable={false}
                     pageable={false}
                     onSelection={this.__onSelection}
+                    cellRenderer={this.__jobCellRenderer}
                     />
                 <DataGrid
                     key="triggers"
@@ -61,7 +63,8 @@ export default class QuartzJob extends ShallowComponent {
                     pageable={false}
                     editable={true}
                     searchable={false}
-                    />,
+                    cellRenderer={this.__triggerCellRenderer}
+                    />
                 <ModalDataForm
                     ref="detailModal"
                     header="Trigger"
@@ -76,7 +79,7 @@ export default class QuartzJob extends ShallowComponent {
     }
     __onSelection(item: Object) {
         if (item) {
-            this.state.triggersStore.setReadUrl(`triggers?_filter=jobOid=${item.oid}`);
+            this.state.triggersStore.setReadUrl(`quartzjobs/${item.oid}/triggers`);
             this.setState({
                 selection: item,
             });
@@ -114,5 +117,33 @@ export default class QuartzJob extends ShallowComponent {
 
     __showModal(newItem) {
         this.setState({ showModal: true, item: newItem });
+    }
+
+    __onJobStatusChange() {
+        this.state.jobStore.read();
+        this.state.triggersStore.read();
+    }
+    __onTriggerStatusChange() {
+        this.state.jobStore.read();
+        this.state.triggersStore.read();
+    }
+
+    __jobCellRenderer(idx: number, fields: Array, row: Object) {
+        if (idx === 3) {
+            return <td key={fields[idx].name}>{row[fields[idx].name]}<ControlBar servicePath="quartzjobs" item={row} onChange={this.__onJobStatusChange} /></td>;
+        }
+        if (fields[idx].visible !== false) {
+            return <td key={fields[idx].name}>{row[fields[idx].name]}</td>;
+        }
+        return undefined;
+    }
+    __triggerCellRenderer(idx: number, fields: Array, row: Object) {
+        if (idx === 6) {
+            return <td key={fields[idx].name}>{row[fields[idx].name]}<ControlBar servicePath="triggers" item={row} onChange={this.__onTriggerStatusChange} /></td>;
+        }
+        if (fields[idx].visible !== false) {
+            return <td key={fields[idx].name}>{row[fields[idx].name]}</td>;
+        }
+        return undefined;
     }
 }
