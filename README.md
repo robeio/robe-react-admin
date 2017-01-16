@@ -4,9 +4,6 @@
 
 RRA = Robe-React-Admin
 
-##### Motivation
-
-
 ##### What's inside
 * [Webpack](https://webpack.github.io/) for all development (server,hotload etc.) and build (package, optimize, etc.) needs.
 * [Babel](https://babeljs.io/flow) for writing codes with ES6 syntax and transpiling them browser compatible codes. 
@@ -19,8 +16,7 @@ RRA = Robe-React-Admin
 ##For Server Side
 ### robe-chat-server [more...](https://github.com/robeio/robe)
 
-
-### Documentation
+## Documentation
 
 ### Quick Start
 
