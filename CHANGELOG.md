@@ -1,6 +1,7 @@
 # Change Log
 
 ## 1.0.2 Developing
+* New version of Toast and Application In used.
 
 ## 1.0.1
 * added Card in src/libs
@@ -14,7 +15,6 @@
 * Added Charts to Dashboard
 * `dev` and `prod` configurations changed. 
 * lazy module loading changed. Added loader.js file to root path.
-* New version of Toast and Application In used.
 
 
 
