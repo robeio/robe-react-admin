@@ -4,7 +4,7 @@ import AjaxRequest from "robe-react-commons/lib/connections/AjaxRequest";
 import TextInput from "robe-react-ui/lib/inputs/TextInput";
 import Row from "react-bootstrap/lib/Row";
 import Col from "react-bootstrap/lib/Col";
-import Card from "libs/card/Card";// eslint-disable-line import/no-unresolved
+import Card from "app/card/Card";// eslint-disable-line import/no-unresolved
 
 export default class Profile extends ShallowComponent {
 

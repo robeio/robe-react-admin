@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "libs/card/Card";
+import Card from "app/card/Card";
 import ModalDataForm from "robe-react-ui/lib/form/ModalDataForm";
 import DataGrid from "robe-react-ui/lib/datagrid/DataGrid";
 import Assertions from "robe-react-commons/lib/utils/Assertions";

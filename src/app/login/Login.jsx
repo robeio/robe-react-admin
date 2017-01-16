@@ -7,7 +7,7 @@ import FaIcon from "robe-react-ui/lib/faicon/FaIcon";
 import Toast from "robe-react-ui/lib/toast/Toast";
 import SHA256 from "crypto-js/sha256";
 import cookie from "react-cookie";
-import Card from "libs/card/Card";
+import Card from "app/card/Card";
 
 class Login extends ShallowComponent {
 

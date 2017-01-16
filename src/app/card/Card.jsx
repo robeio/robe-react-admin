@@ -1,7 +1,7 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
 import Col from "react-bootstrap/lib/Col";
-import "libs/card/style.css";
+import "./style.css";
 
 export default class Card extends ShallowComponent {
 

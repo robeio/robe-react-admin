@@ -3,7 +3,7 @@ import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent
 import Header from "app/header/Header";
 import SideMenu from "robe-react-ui/lib/sidemenu/SideMenu";
 import Col from "react-bootstrap/lib/Col";
-import Card from "libs/card/Card";
+import Card from "app/card/Card";
 
 export default class Workspace extends ShallowComponent {
 

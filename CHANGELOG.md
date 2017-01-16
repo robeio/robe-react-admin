@@ -14,6 +14,7 @@
 * Added Charts to Dashboard
 * `dev` and `prod` configurations changed. 
 * lazy module loading changed. Added loader.js file to root path.
+* New version of Toast and Application In used.
 
 
 

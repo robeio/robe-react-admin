@@ -1,6 +1,6 @@
 import React from "react";
 import ShallowComponent from "robe-react-commons/lib/components/ShallowComponent";
-import Card from "libs/card/Card";
+import Card from "app/card/Card";
 
 export default class Welcome extends ShallowComponent {
     render():Object {

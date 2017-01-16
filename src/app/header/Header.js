@@ -63,22 +63,22 @@ export default class Header extends ShallowComponent {
                     <Col className="pull-right">
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-user" size="fa-md"/>
+                            <FaIcon code="fa-user"/>
                         </Button>
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-comments-o" size="fa-md"/>
+                            <FaIcon code="fa-comments-o"/>
                             <Badge>{this.state.messageCount}</Badge>
                         </Button>
                         <Button
                             className="robe-navbar-button">
-                            <FaIcon code="fa-bell" size="fa-md"/>
+                            <FaIcon code="fa-bell"/>
                             <Badge>{this.state.notificationCount}</Badge>
                         </Button>
                         <Button
                             className="robe-navbar-button"
-                            onClick={this.__onExit.bind(undefined,"header-exit-icon")}>
-                            <FaIcon code="fa-sign-out" size="fa-md"/>
+                            onClick={this.__onExit}>
+                            <FaIcon code="fa-sign-out"/>
                         </Button>
                     </Col>
                 </div>
@@ -87,21 +87,17 @@ export default class Header extends ShallowComponent {
     }
 
     __onExit = ()=> {
-        this.logoutPost.call(undefined, undefined, this.__logoutSuccess, this.__logoutError);
+        cookie.remove('domain');
+        cookie.remove('username');
 
+        this.logoutPost.call(undefined, undefined,
+            function (res) {
+                location.reload();
+            }.bind(this),
+            function (res) {
+                location.reload();
+            }.bind(this));
     };
-
-    __logoutSuccess(response) {
-        location.reload();
-
-    }
-
-    __logoutError(response, textStatus, xhr) {
-        cookie.remove("domain", {path: "/"});
-        cookie.remove("username", {path: "/"});
-        cookie.remove("password", {path: "/"});
-        location.reload();
-    }
 
     __onToggle = ()=> {
         if (this.props.onToggle)

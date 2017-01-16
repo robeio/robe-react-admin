@@ -2,7 +2,7 @@ import React from "react";
 import {ShallowComponent, AjaxRequest} from "robe-react-commons";
 import Col from "react-bootstrap/lib/Col";
 import Panel from "react-bootstrap/lib/Panel";
-import Card from "libs/card/Card";
+import Card from "app/card/Card";
 import BarChart from "robe-react-ui/lib/chart/BarChart";
 import PieChart from "robe-react-ui/lib/chart/PieChart";
 

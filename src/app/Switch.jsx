@@ -2,7 +2,6 @@ import React from "react";
 import {ShallowComponent, AjaxRequest} from "robe-react-commons";
 import HasAuthorization from "./HasAuthorization";
 import NoAuthorization from "./NoAuthorization";
-import ToastContainer from "robe-react-ui/lib/toast/ToastContainer";
 import Toast from "robe-react-ui/lib/toast/Toast";
 import Progress from "robe-react-ui/lib/progress/Progress";
 import cookie from "react-cookie";
@@ -62,7 +61,6 @@ export default class Switch extends ShallowComponent {
 
         return (
             <div>
-                <ToastContainer/>
                 {content}
             </div>
         );
