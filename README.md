@@ -14,7 +14,7 @@ RRA = Robe-React-Admin
 * [React-Bootstrap](https://react-bootstrap.github.io/) for ui components
 
 ##For Server Side
-### robe-chat-server [more...](https://github.com/robeio/robe)
+### Robe [more...](https://github.com/robeio/robe)
 
 ## Documentation
 
